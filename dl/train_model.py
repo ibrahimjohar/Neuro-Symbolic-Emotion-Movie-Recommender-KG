@@ -14,6 +14,7 @@ from torch.optim import AdamW
 
 from dl.dataset_loader import load_goemotions
 from dl.preprocess import tokenize_texts, binarize_labels
+from dl.preprocess import tokenizer
 
 """
 torch → tensors + training
@@ -106,6 +107,12 @@ def train():
             optimizer.zero_grad()
             
             print(f"loss: {loss.item():.4f}")
+    
+        save_path = "models/emotion_classifier"
+        model.save_pretrained(save_path)
+        tokenizer.save_pretrained(save_path)
+        print(f"Model and tokenizer saved to {save_path}")
+
             
 
 """
