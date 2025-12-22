@@ -80,10 +80,66 @@
     
 
 
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Action">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NarrativeGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Adventure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Adventure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NarrativeGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Animation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Animation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#FormatGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Biography -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Biography">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ContextualGenre"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#CognitiveEmotion -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#CognitiveEmotion">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Comedy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Comedy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ContextualGenre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ContextualGenre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Crime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Crime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NarrativeGenre"/>
     </owl:Class>
     
 
@@ -96,9 +152,111 @@
     
 
 
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Documentary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Documentary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#FormatGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Drama -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Drama">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Family -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Family">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#FormatGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Fantasy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Fantasy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#SpeculativeGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#FilmNoir -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#FilmNoir">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#FormatGenre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#FormatGenre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#History -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#History">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ContextualGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Horror -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Horror">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Musical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Musical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#FormatGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Mystery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Mystery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NarrativeGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NarrativeGenre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NarrativeGenre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+    </owl:Class>
     
 
 
@@ -126,10 +284,50 @@
     
 
 
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PsychologicalDrama -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PsychologicalDrama">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ReflectiveEmotion -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ReflectiveEmotion">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Romance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Romance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#SciFi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#SciFi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#SpeculativeGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#SpeculativeGenre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#SpeculativeGenre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Sport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Sport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ContextualGenre"/>
     </owl:Class>
     
 
@@ -140,10 +338,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Thriller -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Thriller">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#UpliftingEmotion -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#UpliftingEmotion">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#War -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#War">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ContextualGenre"/>
     </owl:Class>
     
 
