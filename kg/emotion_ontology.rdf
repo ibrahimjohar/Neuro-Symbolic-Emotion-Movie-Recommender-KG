@@ -13,6 +13,44 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#contributesTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#contributesTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#expressesEmotion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#expressesEmotion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#TextualInput"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#hasDominantEmotion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#hasDominantEmotion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#TextualInput"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -51,6 +89,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NeutralEmotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NeutralEmotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PositiveEmotion -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PositiveEmotion">
@@ -64,6 +110,12 @@
     <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ReflectiveEmotion">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#TextualInput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#TextualInput"/>
     
 
 
