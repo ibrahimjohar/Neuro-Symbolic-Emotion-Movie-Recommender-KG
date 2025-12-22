@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/"
+     xml:base="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#CognitiveEmotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#CognitiveEmotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#DistressedEmotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#DistressedEmotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NegativeEmotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NegativeEmotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PositiveEmotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PositiveEmotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ReflectiveEmotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ReflectiveEmotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#UpliftingEmotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#UpliftingEmotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#admiration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#admiration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PositiveEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#anger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#anger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NegativeEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#confusion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#confusion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#CognitiveEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#curiosity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#curiosity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#CognitiveEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#disappointment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#disappointment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NegativeEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#disgust -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#disgust">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NegativeEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#excitement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#excitement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PositiveEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#fear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#fear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NegativeEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#grief -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#grief">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NegativeEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#joy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#joy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PositiveEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#love -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#love">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PositiveEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#optimism -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#optimism">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PositiveEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#realization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#realization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#CognitiveEmotion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#sadness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#sadness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NegativeEmotion"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
