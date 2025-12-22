@@ -1,0 +1,4 @@
+*.ttl  linguist-language=RDF
+*.rdf  linguist-language=RDF
+*.owl  linguist-language=OWL
+*.owx  linguist-language=OWL
