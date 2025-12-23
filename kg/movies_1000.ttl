@@ -1,0 +1,6044 @@
+@prefix emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+emo:movie_1 a emo:Movie ;
+  emo:title "Toy Story" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_2 a emo:Movie ;
+  emo:title "Jumanji" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_3 a emo:Movie ;
+  emo:title "Grumpier Old Men" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_4 a emo:Movie ;
+  emo:title "Waiting to Exhale" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_5 a emo:Movie ;
+  emo:title "Father of the Bride Part II" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_6 a emo:Movie ;
+  emo:title "Heat" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_7 a emo:Movie ;
+  emo:title "Sabrina" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_8 a emo:Movie ;
+  emo:title "Tom and Huck" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_9 a emo:Movie ;
+  emo:title "Sudden Death" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action .
+
+emo:movie_10 a emo:Movie ;
+  emo:title "GoldenEye" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_11 a emo:Movie ;
+  emo:title "American President, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_12 a emo:Movie ;
+  emo:title "Dracula: Dead and Loving It" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_13 a emo:Movie ;
+  emo:title "Balto" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_14 a emo:Movie ;
+  emo:title "Nixon" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_15 a emo:Movie ;
+  emo:title "Cutthroat Island" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_16 a emo:Movie ;
+  emo:title "Casino" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_17 a emo:Movie ;
+  emo:title "Sense and Sensibility" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_18 a emo:Movie ;
+  emo:title "Four Rooms" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_19 a emo:Movie ;
+  emo:title "Ace Ventura: When Nature Calls" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_20 a emo:Movie ;
+  emo:title "Money Train" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_21 a emo:Movie ;
+  emo:title "Get Shorty" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_22 a emo:Movie ;
+  emo:title "Copycat" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_23 a emo:Movie ;
+  emo:title "Assassins" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_24 a emo:Movie ;
+  emo:title "Powder" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_25 a emo:Movie ;
+  emo:title "Leaving Las Vegas" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_26 a emo:Movie ;
+  emo:title "Othello" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_27 a emo:Movie ;
+  emo:title "Now and Then" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_28 a emo:Movie ;
+  emo:title "Persuasion" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_29 a emo:Movie ;
+  emo:title "City of Lost Children, The (Cité des enfants perdus, La)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_30 a emo:Movie ;
+  emo:title "Shanghai Triad (Yao a yao yao dao waipo qiao)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_31 a emo:Movie ;
+  emo:title "Dangerous Minds" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_32 a emo:Movie ;
+  emo:title "Twelve Monkeys (a.k.a. 12 Monkeys)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_33 a emo:Movie ;
+  emo:title "Wings of Courage" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_34 a emo:Movie ;
+  emo:title "Babe" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_35 a emo:Movie ;
+  emo:title "Carrington" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_36 a emo:Movie ;
+  emo:title "Dead Man Walking" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_37 a emo:Movie ;
+  emo:title "Across the Sea of Time" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_38 a emo:Movie ;
+  emo:title "It Takes Two" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_39 a emo:Movie ;
+  emo:title "Clueless" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_40 a emo:Movie ;
+  emo:title "Cry, the Beloved Country" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_41 a emo:Movie ;
+  emo:title "Richard III" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_42 a emo:Movie ;
+  emo:title "Dead Presidents" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_43 a emo:Movie ;
+  emo:title "Restoration" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_44 a emo:Movie ;
+  emo:title "Mortal Kombat" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_45 a emo:Movie ;
+  emo:title "To Die For" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_46 a emo:Movie ;
+  emo:title "How to Make an American Quilt" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_47 a emo:Movie ;
+  emo:title "Seven (a.k.a. Se7en)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_48 a emo:Movie ;
+  emo:title "Pocahontas" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_49 a emo:Movie ;
+  emo:title "When Night Is Falling" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_50 a emo:Movie ;
+  emo:title "Usual Suspects, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_51 a emo:Movie ;
+  emo:title "Guardian Angel" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_52 a emo:Movie ;
+  emo:title "Mighty Aphrodite" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_53 a emo:Movie ;
+  emo:title "Lamerica" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_54 a emo:Movie ;
+  emo:title "Big Green, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_55 a emo:Movie ;
+  emo:title "Georgia" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_56 a emo:Movie ;
+  emo:title "Kids of the Round Table" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_57 a emo:Movie ;
+  emo:title "Home for the Holidays" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_58 a emo:Movie ;
+  emo:title "Postman, The (Postino, Il)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_59 a emo:Movie ;
+  emo:title "Confessional, The (Confessionnal, Le)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_60 a emo:Movie ;
+  emo:title "Indian in the Cupboard, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_61 a emo:Movie ;
+  emo:title "Eye for an Eye" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_62 a emo:Movie ;
+  emo:title "Mr. Holland's Opus" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_63 a emo:Movie ;
+  emo:title "Don't Be a Menace to South Central While Drinking Your Juice in the Hood" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_64 a emo:Movie ;
+  emo:title "Two if by Sea" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_65 a emo:Movie ;
+  emo:title "Bio-Dome" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_66 a emo:Movie ;
+  emo:title "Lawnmower Man 2: Beyond Cyberspace" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_67 a emo:Movie ;
+  emo:title "Two Bits" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_68 a emo:Movie ;
+  emo:title "French Twist (Gazon maudit)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_69 a emo:Movie ;
+  emo:title "Friday" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_70 a emo:Movie ;
+  emo:title "From Dusk Till Dawn" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_71 a emo:Movie ;
+  emo:title "Fair Game" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action .
+
+emo:movie_72 a emo:Movie ;
+  emo:title "Kicking and Screaming" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_73 a emo:Movie ;
+  emo:title "Misérables, Les" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_74 a emo:Movie ;
+  emo:title "Bed of Roses" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_75 a emo:Movie ;
+  emo:title "Big Bully" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_76 a emo:Movie ;
+  emo:title "Screamers" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_77 a emo:Movie ;
+  emo:title "Nico Icon" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_78 a emo:Movie ;
+  emo:title "Crossing Guard, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_79 a emo:Movie ;
+  emo:title "Juror, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_80 a emo:Movie ;
+  emo:title "White Balloon, The (Badkonake sefid)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_81 a emo:Movie ;
+  emo:title "Things to Do in Denver When You're Dead" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_82 a emo:Movie ;
+  emo:title "Antonia's Line (Antonia)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_83 a emo:Movie ;
+  emo:title "Once Upon a Time... When We Were Colored" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_84 a emo:Movie ;
+  emo:title "Last Summer in the Hamptons" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_85 a emo:Movie ;
+  emo:title "Angels and Insects" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_86 a emo:Movie ;
+  emo:title "White Squall" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_87 a emo:Movie ;
+  emo:title "Dunston Checks In" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_88 a emo:Movie ;
+  emo:title "Black Sheep" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_89 a emo:Movie ;
+  emo:title "Nick of Time" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_90 a emo:Movie ;
+  emo:title "The Journey of August King" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_92 a emo:Movie ;
+  emo:title "Mary Reilly" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_93 a emo:Movie ;
+  emo:title "Vampire in Brooklyn" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_94 a emo:Movie ;
+  emo:title "Beautiful Girls" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_95 a emo:Movie ;
+  emo:title "Broken Arrow" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_96 a emo:Movie ;
+  emo:title "In the Bleak Midwinter" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_97 a emo:Movie ;
+  emo:title "Hate (Haine, La)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_98 a emo:Movie ;
+  emo:title "Shopping" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_99 a emo:Movie ;
+  emo:title "Heidi Fleiss: Hollywood Madam" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_100 a emo:Movie ;
+  emo:title "City Hall" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_101 a emo:Movie ;
+  emo:title "Bottle Rocket" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_102 a emo:Movie ;
+  emo:title "Mr. Wrong" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_103 a emo:Movie ;
+  emo:title "Unforgettable" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_104 a emo:Movie ;
+  emo:title "Happy Gilmore" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_105 a emo:Movie ;
+  emo:title "Bridges of Madison County, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_106 a emo:Movie ;
+  emo:title "Nobody Loves Me (Keiner liebt mich)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_107 a emo:Movie ;
+  emo:title "Muppet Treasure Island" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_108 a emo:Movie ;
+  emo:title "Catwalk" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_109 a emo:Movie ;
+  emo:title "Headless Body in Topless Bar" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_110 a emo:Movie ;
+  emo:title "Braveheart" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_111 a emo:Movie ;
+  emo:title "Taxi Driver" ;
+  emo:releaseYear "1976"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_112 a emo:Movie ;
+  emo:title "Rumble in the Bronx (Hont faan kui)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_113 a emo:Movie ;
+  emo:title "Before and After" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_114 a emo:Movie ;
+  emo:title "Margaret's Museum" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_115 a emo:Movie ;
+  emo:title "Happiness Is in the Field (Bonheur est dans le pré, Le)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_116 a emo:Movie ;
+  emo:title "Anne Frank Remembered" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_117 a emo:Movie ;
+  emo:title "Young Poisoner's Handbook, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_118 a emo:Movie ;
+  emo:title "If Lucy Fell" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_119 a emo:Movie ;
+  emo:title "Steal Big, Steal Little" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_120 a emo:Movie ;
+  emo:title "Race the Sun" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_121 a emo:Movie ;
+  emo:title "Boys of St. Vincent, The" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_122 a emo:Movie ;
+  emo:title "Boomerang" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_123 a emo:Movie ;
+  emo:title "Chungking Express (Chung Hing sam lam)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_124 a emo:Movie ;
+  emo:title "Star Maker, The (Uomo delle stelle, L')" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_125 a emo:Movie ;
+  emo:title "Flirting With Disaster" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_126 a emo:Movie ;
+  emo:title "NeverEnding Story III, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_127 a emo:Movie ;
+  emo:title "Silences of the Palace, The (Saimt el Qusur)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_128 a emo:Movie ;
+  emo:title "Jupiter's Wife" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_129 a emo:Movie ;
+  emo:title "Pie in the Sky" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_130 a emo:Movie ;
+  emo:title "Angela" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_131 a emo:Movie ;
+  emo:title "Frankie Starlight" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_132 a emo:Movie ;
+  emo:title "Jade" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_133 a emo:Movie ;
+  emo:title "Nueba Yol" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_134 a emo:Movie ;
+  emo:title "Sonic Outlaws" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_135 a emo:Movie ;
+  emo:title "Down Periscope" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_136 a emo:Movie ;
+  emo:title "From the Journals of Jean Seberg" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_137 a emo:Movie ;
+  emo:title "Man of the Year" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_138 a emo:Movie ;
+  emo:title "Neon Bible, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_139 a emo:Movie ;
+  emo:title "Target" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_140 a emo:Movie ;
+  emo:title "Up Close and Personal" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_141 a emo:Movie ;
+  emo:title "Birdcage, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_142 a emo:Movie ;
+  emo:title "Shadows (Cienie)" ;
+  emo:releaseYear "1988"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_143 a emo:Movie ;
+  emo:title "Gospa" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_144 a emo:Movie ;
+  emo:title "Brothers McMullen, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_145 a emo:Movie ;
+  emo:title "Bad Boys" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_146 a emo:Movie ;
+  emo:title "Amazing Panda Adventure, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_147 a emo:Movie ;
+  emo:title "Basketball Diaries, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_148 a emo:Movie ;
+  emo:title "Awfully Big Adventure, An" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_149 a emo:Movie ;
+  emo:title "Amateur" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_150 a emo:Movie ;
+  emo:title "Apollo 13" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_151 a emo:Movie ;
+  emo:title "Rob Roy" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_152 a emo:Movie ;
+  emo:title "Addiction, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_153 a emo:Movie ;
+  emo:title "Batman Forever" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_154 a emo:Movie ;
+  emo:title "Beauty of the Day (Belle de jour)" ;
+  emo:releaseYear "1967"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_155 a emo:Movie ;
+  emo:title "Beyond Rangoon" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_156 a emo:Movie ;
+  emo:title "Blue in the Face" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_157 a emo:Movie ;
+  emo:title "Canadian Bacon" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_158 a emo:Movie ;
+  emo:title "Casper" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_159 a emo:Movie ;
+  emo:title "Clockers" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_160 a emo:Movie ;
+  emo:title "Congo" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_161 a emo:Movie ;
+  emo:title "Crimson Tide" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_162 a emo:Movie ;
+  emo:title "Crumb" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_163 a emo:Movie ;
+  emo:title "Desperado" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_164 a emo:Movie ;
+  emo:title "Devil in a Blue Dress" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:FilmNoir ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_165 a emo:Movie ;
+  emo:title "Die Hard: With a Vengeance" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_166 a emo:Movie ;
+  emo:title "Doom Generation, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_167 a emo:Movie ;
+  emo:title "Feast of July" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_168 a emo:Movie ;
+  emo:title "First Knight" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_169 a emo:Movie ;
+  emo:title "Free Willy 2: The Adventure Home" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_170 a emo:Movie ;
+  emo:title "Hackers" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_171 a emo:Movie ;
+  emo:title "Jeffrey" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_172 a emo:Movie ;
+  emo:title "Johnny Mnemonic" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_173 a emo:Movie ;
+  emo:title "Judge Dredd" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_174 a emo:Movie ;
+  emo:title "Jury Duty" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_175 a emo:Movie ;
+  emo:title "Kids" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_176 a emo:Movie ;
+  emo:title "Living in Oblivion" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_177 a emo:Movie ;
+  emo:title "Lord of Illusions" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_178 a emo:Movie ;
+  emo:title "Love & Human Remains" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_179 a emo:Movie ;
+  emo:title "Mad Love" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_180 a emo:Movie ;
+  emo:title "Mallrats" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_181 a emo:Movie ;
+  emo:title "Mighty Morphin Power Rangers: The Movie" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_182 a emo:Movie ;
+  emo:title "Moonlight and Valentino" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_183 a emo:Movie ;
+  emo:title "Mute Witness" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_184 a emo:Movie ;
+  emo:title "Nadja" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_185 a emo:Movie ;
+  emo:title "Net, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_186 a emo:Movie ;
+  emo:title "Nine Months" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_187 a emo:Movie ;
+  emo:title "Party Girl" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_188 a emo:Movie ;
+  emo:title "Prophecy, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_189 a emo:Movie ;
+  emo:title "Reckless" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_190 a emo:Movie ;
+  emo:title "Safe" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_191 a emo:Movie ;
+  emo:title "Scarlet Letter, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_192 a emo:Movie ;
+  emo:title "The Show" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_193 a emo:Movie ;
+  emo:title "Showgirls" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_194 a emo:Movie ;
+  emo:title "Smoke" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_195 a emo:Movie ;
+  emo:title "Something to Talk About" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_196 a emo:Movie ;
+  emo:title "Species" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_197 a emo:Movie ;
+  emo:title "Stars Fell on Henrietta, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_198 a emo:Movie ;
+  emo:title "Strange Days" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_199 a emo:Movie ;
+  emo:title "Umbrellas of Cherbourg, The (Parapluies de Cherbourg, Les)" ;
+  emo:releaseYear "1964"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_200 a emo:Movie ;
+  emo:title "Tie That Binds, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_201 a emo:Movie ;
+  emo:title "Three Wishes" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_202 a emo:Movie ;
+  emo:title "Total Eclipse" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_203 a emo:Movie ;
+  emo:title "To Wong Foo, Thanks for Everything! Julie Newmar" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_204 a emo:Movie ;
+  emo:title "Under Siege 2: Dark Territory" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action .
+
+emo:movie_205 a emo:Movie ;
+  emo:title "Unstrung Heroes" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_206 a emo:Movie ;
+  emo:title "Unzipped" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_207 a emo:Movie ;
+  emo:title "Walk in the Clouds, A" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_208 a emo:Movie ;
+  emo:title "Waterworld" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_209 a emo:Movie ;
+  emo:title "White Man's Burden" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_210 a emo:Movie ;
+  emo:title "Wild Bill" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_211 a emo:Movie ;
+  emo:title "Browning Version, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_212 a emo:Movie ;
+  emo:title "Bushwhacked" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_213 a emo:Movie ;
+  emo:title "Burnt by the Sun (Utomlyonnye solntsem)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_214 a emo:Movie ;
+  emo:title "Before the Rain (Pred dozhdot)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_215 a emo:Movie ;
+  emo:title "Before Sunrise" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_216 a emo:Movie ;
+  emo:title "Billy Madison" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_217 a emo:Movie ;
+  emo:title "Babysitter, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_218 a emo:Movie ;
+  emo:title "Boys on the Side" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_219 a emo:Movie ;
+  emo:title "Cure, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_220 a emo:Movie ;
+  emo:title "Castle Freak" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_222 a emo:Movie ;
+  emo:title "Circle of Friends" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_223 a emo:Movie ;
+  emo:title "Clerks" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_224 a emo:Movie ;
+  emo:title "Don Juan DeMarco" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_225 a emo:Movie ;
+  emo:title "Disclosure" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_226 a emo:Movie ;
+  emo:title "Dream Man" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_227 a emo:Movie ;
+  emo:title "Drop Zone" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_228 a emo:Movie ;
+  emo:title "Destiny Turns on the Radio" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_229 a emo:Movie ;
+  emo:title "Death and the Maiden" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_230 a emo:Movie ;
+  emo:title "Dolores Claiborne" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_231 a emo:Movie ;
+  emo:title "Dumb & Dumber (Dumb and Dumber)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_232 a emo:Movie ;
+  emo:title "Eat Drink Man Woman (Yin shi nan nu)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_233 a emo:Movie ;
+  emo:title "Exotica" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_234 a emo:Movie ;
+  emo:title "Exit to Eden" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_235 a emo:Movie ;
+  emo:title "Ed Wood" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_236 a emo:Movie ;
+  emo:title "French Kiss" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_237 a emo:Movie ;
+  emo:title "Forget Paris" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_238 a emo:Movie ;
+  emo:title "Far From Home: The Adventures of Yellow Dog" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_239 a emo:Movie ;
+  emo:title "Goofy Movie, A" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_240 a emo:Movie ;
+  emo:title "Hideaway" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_241 a emo:Movie ;
+  emo:title "Fluke" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_242 a emo:Movie ;
+  emo:title "Farinelli: il castrato" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_243 a emo:Movie ;
+  emo:title "Gordy" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_244 a emo:Movie ;
+  emo:title "Gumby: The Movie" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_245 a emo:Movie ;
+  emo:title "The Glass Shield" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_246 a emo:Movie ;
+  emo:title "Hoop Dreams" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_247 a emo:Movie ;
+  emo:title "Heavenly Creatures" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_248 a emo:Movie ;
+  emo:title "Houseguest" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_249 a emo:Movie ;
+  emo:title "Immortal Beloved" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_250 a emo:Movie ;
+  emo:title "Heavyweights (Heavy Weights)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_251 a emo:Movie ;
+  emo:title "Hunted, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action .
+
+emo:movie_252 a emo:Movie ;
+  emo:title "I.Q." ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_253 a emo:Movie ;
+  emo:title "Interview with the Vampire: The Vampire Chronicles" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_254 a emo:Movie ;
+  emo:title "Jefferson in Paris" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_255 a emo:Movie ;
+  emo:title "Jerky Boys, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_256 a emo:Movie ;
+  emo:title "Junior" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_257 a emo:Movie ;
+  emo:title "Just Cause" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_258 a emo:Movie ;
+  emo:title "Kid in King Arthur's Court, A" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_259 a emo:Movie ;
+  emo:title "Kiss of Death" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_260 a emo:Movie ;
+  emo:title "Star Wars: Episode IV - A New Hope" ;
+  emo:releaseYear "1977"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_261 a emo:Movie ;
+  emo:title "Little Women" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_262 a emo:Movie ;
+  emo:title "Little Princess, A" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_263 a emo:Movie ;
+  emo:title "Ladybird Ladybird" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_264 a emo:Movie ;
+  emo:title "Enfer, L'" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_265 a emo:Movie ;
+  emo:title "Like Water for Chocolate (Como agua para chocolate)" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_266 a emo:Movie ;
+  emo:title "Legends of the Fall" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:War ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_267 a emo:Movie ;
+  emo:title "Major Payne" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_268 a emo:Movie ;
+  emo:title "Little Odessa" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_269 a emo:Movie ;
+  emo:title "My Crazy Life (Mi vida loca)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_270 a emo:Movie ;
+  emo:title "Love Affair" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_271 a emo:Movie ;
+  emo:title "Losing Isaiah" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_272 a emo:Movie ;
+  emo:title "Madness of King George, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_273 a emo:Movie ;
+  emo:title "Mary Shelley's Frankenstein (Frankenstein)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_274 a emo:Movie ;
+  emo:title "Man of the House" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_275 a emo:Movie ;
+  emo:title "Mixed Nuts" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_276 a emo:Movie ;
+  emo:title "Milk Money" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_277 a emo:Movie ;
+  emo:title "Miracle on 34th Street" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_278 a emo:Movie ;
+  emo:title "Miami Rhapsody" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_279 a emo:Movie ;
+  emo:title "My Family" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_280 a emo:Movie ;
+  emo:title "Murder in the First" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_281 a emo:Movie ;
+  emo:title "Nobody's Fool" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_282 a emo:Movie ;
+  emo:title "Nell" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_283 a emo:Movie ;
+  emo:title "New Jersey Drive" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_284 a emo:Movie ;
+  emo:title "New York Cop (Nyû Yôku no koppu)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_285 a emo:Movie ;
+  emo:title "Beyond Bedlam" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_286 a emo:Movie ;
+  emo:title "Nemesis 2: Nebula" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_287 a emo:Movie ;
+  emo:title "Nina Takes a Lover" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_288 a emo:Movie ;
+  emo:title "Natural Born Killers" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_289 a emo:Movie ;
+  emo:title "Only You" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_290 a emo:Movie ;
+  emo:title "Once Were Warriors" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_292 a emo:Movie ;
+  emo:title "Outbreak" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_293 a emo:Movie ;
+  emo:title "Léon: The Professional (a.k.a. The Professional) (Léon)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_294 a emo:Movie ;
+  emo:title "Perez Family, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_295 a emo:Movie ;
+  emo:title "Pyromaniac's Love Story, A" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_296 a emo:Movie ;
+  emo:title "Pulp Fiction" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_297 a emo:Movie ;
+  emo:title "Panther" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_298 a emo:Movie ;
+  emo:title "Pushing Hands (Tui shou)" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_299 a emo:Movie ;
+  emo:title "Priest" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_300 a emo:Movie ;
+  emo:title "Quiz Show" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_301 a emo:Movie ;
+  emo:title "Picture Bride (Bijo photo)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_302 a emo:Movie ;
+  emo:title "Queen Margot (Reine Margot, La)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_303 a emo:Movie ;
+  emo:title "Quick and the Dead, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Thriller ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_304 a emo:Movie ;
+  emo:title "Roommates" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_305 a emo:Movie ;
+  emo:title "Ready to Wear (Pret-A-Porter)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_306 a emo:Movie ;
+  emo:title "Three Colors: Red (Trois couleurs: Rouge)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_307 a emo:Movie ;
+  emo:title "Three Colors: Blue (Trois couleurs: Bleu)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_308 a emo:Movie ;
+  emo:title "Three Colors: White (Trzy kolory: Bialy)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_309 a emo:Movie ;
+  emo:title "Red Firecracker, Green Firecracker (Pao Da Shuang Deng)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_310 a emo:Movie ;
+  emo:title "Rent-a-Kid" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_311 a emo:Movie ;
+  emo:title "Relative Fear" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_312 a emo:Movie ;
+  emo:title "Stuart Saves His Family" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_313 a emo:Movie ;
+  emo:title "Swan Princess, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_314 a emo:Movie ;
+  emo:title "Secret of Roan Inish, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_315 a emo:Movie ;
+  emo:title "Specialist, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_316 a emo:Movie ;
+  emo:title "Stargate" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_317 a emo:Movie ;
+  emo:title "Santa Clause, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_318 a emo:Movie ;
+  emo:title "Shawshank Redemption, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_319 a emo:Movie ;
+  emo:title "Shallow Grave" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_320 a emo:Movie ;
+  emo:title "Suture" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:FilmNoir ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_321 a emo:Movie ;
+  emo:title "Strawberry and Chocolate (Fresa y chocolate)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_322 a emo:Movie ;
+  emo:title "Swimming with Sharks" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_324 a emo:Movie ;
+  emo:title "Sum of Us, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_325 a emo:Movie ;
+  emo:title "National Lampoon's Senior Trip" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_326 a emo:Movie ;
+  emo:title "To Live (Huozhe)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_327 a emo:Movie ;
+  emo:title "Tank Girl" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_328 a emo:Movie ;
+  emo:title "Tales from the Crypt Presents: Demon Knight" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_329 a emo:Movie ;
+  emo:title "Star Trek: Generations" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_330 a emo:Movie ;
+  emo:title "Tales from the Hood" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_331 a emo:Movie ;
+  emo:title "Tom & Viv" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_332 a emo:Movie ;
+  emo:title "Village of the Damned" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_333 a emo:Movie ;
+  emo:title "Tommy Boy" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_334 a emo:Movie ;
+  emo:title "Vanya on 42nd Street" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_335 a emo:Movie ;
+  emo:title "Underneath" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_336 a emo:Movie ;
+  emo:title "Walking Dead, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_337 a emo:Movie ;
+  emo:title "What's Eating Gilbert Grape" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_338 a emo:Movie ;
+  emo:title "Virtuosity" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_339 a emo:Movie ;
+  emo:title "While You Were Sleeping" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_340 a emo:Movie ;
+  emo:title "War, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_341 a emo:Movie ;
+  emo:title "Double Happiness" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_342 a emo:Movie ;
+  emo:title "Muriel's Wedding" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_343 a emo:Movie ;
+  emo:title "Baby-Sitters Club, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_344 a emo:Movie ;
+  emo:title "Ace Ventura: Pet Detective" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_345 a emo:Movie ;
+  emo:title "Adventures of Priscilla, Queen of the Desert, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_346 a emo:Movie ;
+  emo:title "Backbeat" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_347 a emo:Movie ;
+  emo:title "Bitter Moon" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:FilmNoir ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_348 a emo:Movie ;
+  emo:title "Bullets Over Broadway" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_349 a emo:Movie ;
+  emo:title "Clear and Present Danger" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_350 a emo:Movie ;
+  emo:title "Client, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_351 a emo:Movie ;
+  emo:title "Corrina, Corrina" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_352 a emo:Movie ;
+  emo:title "Crooklyn" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_353 a emo:Movie ;
+  emo:title "Crow, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_354 a emo:Movie ;
+  emo:title "Cobb" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_355 a emo:Movie ;
+  emo:title "Flintstones, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_356 a emo:Movie ;
+  emo:title "Forrest Gump" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_357 a emo:Movie ;
+  emo:title "Four Weddings and a Funeral" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_358 a emo:Movie ;
+  emo:title "Higher Learning" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_359 a emo:Movie ;
+  emo:title "I Like It Like That" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_360 a emo:Movie ;
+  emo:title "I Love Trouble" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_361 a emo:Movie ;
+  emo:title "It Could Happen to You" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_362 a emo:Movie ;
+  emo:title "Jungle Book, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_363 a emo:Movie ;
+  emo:title "Wonderful, Horrible Life of Leni Riefenstahl, The (Macht der Bilder: Leni Riefenstahl, Die)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_364 a emo:Movie ;
+  emo:title "Lion King, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_365 a emo:Movie ;
+  emo:title "Little Buddha" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_366 a emo:Movie ;
+  emo:title "Wes Craven's New Nightmare (Nightmare on Elm Street Part 7: Freddy's Finale, A)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_367 a emo:Movie ;
+  emo:title "Mask, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_368 a emo:Movie ;
+  emo:title "Maverick" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_369 a emo:Movie ;
+  emo:title "Mrs. Parker and the Vicious Circle" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_370 a emo:Movie ;
+  emo:title "Naked Gun 33 1/3: The Final Insult" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_371 a emo:Movie ;
+  emo:title "Paper, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_372 a emo:Movie ;
+  emo:title "Reality Bites" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_373 a emo:Movie ;
+  emo:title "Red Rock West" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_374 a emo:Movie ;
+  emo:title "Richie Rich" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_375 a emo:Movie ;
+  emo:title "Safe Passage" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_376 a emo:Movie ;
+  emo:title "River Wild, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_377 a emo:Movie ;
+  emo:title "Speed" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_378 a emo:Movie ;
+  emo:title "Speechless" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_379 a emo:Movie ;
+  emo:title "Timecop" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_380 a emo:Movie ;
+  emo:title "True Lies" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_381 a emo:Movie ;
+  emo:title "When a Man Loves a Woman" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_382 a emo:Movie ;
+  emo:title "Wolf" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_383 a emo:Movie ;
+  emo:title "Wyatt Earp" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_384 a emo:Movie ;
+  emo:title "Bad Company" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_385 a emo:Movie ;
+  emo:title "Man of No Importance, A" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_386 a emo:Movie ;
+  emo:title "S.F.W." ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_387 a emo:Movie ;
+  emo:title "Low Down Dirty Shame, A" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_388 a emo:Movie ;
+  emo:title "Boys Life" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_389 a emo:Movie ;
+  emo:title "Colonel Chabert, Le" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_390 a emo:Movie ;
+  emo:title "Faster Pussycat! Kill! Kill!" ;
+  emo:releaseYear "1965"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_391 a emo:Movie ;
+  emo:title "Jason's Lyric" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_392 a emo:Movie ;
+  emo:title "Secret Adventures of Tom Thumb, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation .
+
+emo:movie_393 a emo:Movie ;
+  emo:title "Street Fighter" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_394 a emo:Movie ;
+  emo:title "Coldblooded" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_395 a emo:Movie ;
+  emo:title "Desert Winds" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_396 a emo:Movie ;
+  emo:title "Fall Time" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_397 a emo:Movie ;
+  emo:title "Fear, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_398 a emo:Movie ;
+  emo:title "Frank and Ollie" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_399 a emo:Movie ;
+  emo:title "Girl in the Cadillac" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_400 a emo:Movie ;
+  emo:title "Homage" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_401 a emo:Movie ;
+  emo:title "Mirage" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_402 a emo:Movie ;
+  emo:title "Open Season" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_403 a emo:Movie ;
+  emo:title "Two Crimes (Dos crímenes)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_404 a emo:Movie ;
+  emo:title "Brother Minister: The Assassination of Malcolm X" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_405 a emo:Movie ;
+  emo:title "Highlander III: The Sorcerer (a.k.a. Highlander: The Final Dimension)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_406 a emo:Movie ;
+  emo:title "Federal Hill" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_407 a emo:Movie ;
+  emo:title "In the Mouth of Madness" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_408 a emo:Movie ;
+  emo:title "8 Seconds" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_409 a emo:Movie ;
+  emo:title "Above the Rim" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_410 a emo:Movie ;
+  emo:title "Addams Family Values" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_411 a emo:Movie ;
+  emo:title "Martin Lawrence: You So Crazy" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_412 a emo:Movie ;
+  emo:title "Age of Innocence, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_413 a emo:Movie ;
+  emo:title "Airheads" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_414 a emo:Movie ;
+  emo:title "Air Up There, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_415 a emo:Movie ;
+  emo:title "Another Stakeout" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_416 a emo:Movie ;
+  emo:title "Bad Girls" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_417 a emo:Movie ;
+  emo:title "Barcelona" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_418 a emo:Movie ;
+  emo:title "Being Human" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_419 a emo:Movie ;
+  emo:title "Beverly Hillbillies, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_420 a emo:Movie ;
+  emo:title "Beverly Hills Cop III" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_421 a emo:Movie ;
+  emo:title "Black Beauty" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_422 a emo:Movie ;
+  emo:title "Blink" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_423 a emo:Movie ;
+  emo:title "Blown Away" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_424 a emo:Movie ;
+  emo:title "Blue Chips" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_425 a emo:Movie ;
+  emo:title "Blue Sky" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_426 a emo:Movie ;
+  emo:title "Body Snatchers" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_427 a emo:Movie ;
+  emo:title "Boxing Helena" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_428 a emo:Movie ;
+  emo:title "Bronx Tale, A" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_429 a emo:Movie ;
+  emo:title "Cabin Boy" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_430 a emo:Movie ;
+  emo:title "Calendar Girl" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_431 a emo:Movie ;
+  emo:title "Carlito's Way" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_432 a emo:Movie ;
+  emo:title "City Slickers II: The Legend of Curly's Gold" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_433 a emo:Movie ;
+  emo:title "Clean Slate" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_434 a emo:Movie ;
+  emo:title "Cliffhanger" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_435 a emo:Movie ;
+  emo:title "Coneheads" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_436 a emo:Movie ;
+  emo:title "Color of Night" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_437 a emo:Movie ;
+  emo:title "Cops and Robbersons" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_438 a emo:Movie ;
+  emo:title "Cowboy Way, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_439 a emo:Movie ;
+  emo:title "Dangerous Game" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_440 a emo:Movie ;
+  emo:title "Dave" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_441 a emo:Movie ;
+  emo:title "Dazed and Confused" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_442 a emo:Movie ;
+  emo:title "Demolition Man" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_443 a emo:Movie ;
+  emo:title "Endless Summer 2, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_444 a emo:Movie ;
+  emo:title "Even Cowgirls Get the Blues" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_445 a emo:Movie ;
+  emo:title "Fatal Instinct" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_446 a emo:Movie ;
+  emo:title "Farewell My Concubine (Ba wang bie ji)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_447 a emo:Movie ;
+  emo:title "Favor, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_448 a emo:Movie ;
+  emo:title "Fearless" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_449 a emo:Movie ;
+  emo:title "Fear of a Black Hat" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_450 a emo:Movie ;
+  emo:title "With Honors" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_451 a emo:Movie ;
+  emo:title "Flesh and Bone" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_452 a emo:Movie ;
+  emo:title "Widows' Peak" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_453 a emo:Movie ;
+  emo:title "For Love or Money" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_454 a emo:Movie ;
+  emo:title "Firm, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_455 a emo:Movie ;
+  emo:title "Free Willy" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_456 a emo:Movie ;
+  emo:title "Fresh" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_457 a emo:Movie ;
+  emo:title "Fugitive, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_458 a emo:Movie ;
+  emo:title "Geronimo: An American Legend" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_459 a emo:Movie ;
+  emo:title "Getaway, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_460 a emo:Movie ;
+  emo:title "Getting Even with Dad" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_461 a emo:Movie ;
+  emo:title "Go Fish" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_462 a emo:Movie ;
+  emo:title "Good Man in Africa, A" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure .
+
+emo:movie_463 a emo:Movie ;
+  emo:title "Guilty as Sin" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_464 a emo:Movie ;
+  emo:title "Hard Target" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_465 a emo:Movie ;
+  emo:title "Heaven & Earth" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_466 a emo:Movie ;
+  emo:title "Hot Shots! Part Deux" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_467 a emo:Movie ;
+  emo:title "Live Nude Girls" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_468 a emo:Movie ;
+  emo:title "Englishman Who Went Up a Hill But Came Down a Mountain, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_469 a emo:Movie ;
+  emo:title "House of the Spirits, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_470 a emo:Movie ;
+  emo:title "House Party 3" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_471 a emo:Movie ;
+  emo:title "Hudsucker Proxy, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_472 a emo:Movie ;
+  emo:title "I'll Do Anything" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_473 a emo:Movie ;
+  emo:title "In the Army Now" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_474 a emo:Movie ;
+  emo:title "In the Line of Fire" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_475 a emo:Movie ;
+  emo:title "In the Name of the Father" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_476 a emo:Movie ;
+  emo:title "Inkwell, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_477 a emo:Movie ;
+  emo:title "What's Love Got to Do with It?" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_478 a emo:Movie ;
+  emo:title "Jimmy Hollywood" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_479 a emo:Movie ;
+  emo:title "Judgment Night" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_480 a emo:Movie ;
+  emo:title "Jurassic Park" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_481 a emo:Movie ;
+  emo:title "Kalifornia" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_482 a emo:Movie ;
+  emo:title "Killing Zoe" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_483 a emo:Movie ;
+  emo:title "King of the Hill" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_484 a emo:Movie ;
+  emo:title "Lassie" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_485 a emo:Movie ;
+  emo:title "Last Action Hero" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_486 a emo:Movie ;
+  emo:title "Life with Mikey" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_487 a emo:Movie ;
+  emo:title "Lightning Jack" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_488 a emo:Movie ;
+  emo:title "M. Butterfly" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_489 a emo:Movie ;
+  emo:title "Made in America" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_490 a emo:Movie ;
+  emo:title "Malice" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_491 a emo:Movie ;
+  emo:title "Man Without a Face, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_492 a emo:Movie ;
+  emo:title "Manhattan Murder Mystery" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_493 a emo:Movie ;
+  emo:title "Menace II Society" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_494 a emo:Movie ;
+  emo:title "Executive Decision" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_495 a emo:Movie ;
+  emo:title "In the Realm of the Senses (Ai no corrida)" ;
+  emo:releaseYear "1976"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_496 a emo:Movie ;
+  emo:title "What Happened Was..." ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_497 a emo:Movie ;
+  emo:title "Much Ado About Nothing" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_498 a emo:Movie ;
+  emo:title "Mr. Jones" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_499 a emo:Movie ;
+  emo:title "Mr. Wonderful" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_500 a emo:Movie ;
+  emo:title "Mrs. Doubtfire" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_501 a emo:Movie ;
+  emo:title "Naked" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_502 a emo:Movie ;
+  emo:title "Next Karate Kid, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_503 a emo:Movie ;
+  emo:title "New Age, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_504 a emo:Movie ;
+  emo:title "No Escape" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_505 a emo:Movie ;
+  emo:title "North" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_506 a emo:Movie ;
+  emo:title "Orlando" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_507 a emo:Movie ;
+  emo:title "Perfect World, A" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_508 a emo:Movie ;
+  emo:title "Philadelphia" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_509 a emo:Movie ;
+  emo:title "Piano, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_510 a emo:Movie ;
+  emo:title "Poetic Justice" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_511 a emo:Movie ;
+  emo:title "Program, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_512 a emo:Movie ;
+  emo:title "Puppet Masters, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_513 a emo:Movie ;
+  emo:title "Radioland Murders" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_514 a emo:Movie ;
+  emo:title "Ref, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_515 a emo:Movie ;
+  emo:title "Remains of the Day, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_516 a emo:Movie ;
+  emo:title "Renaissance Man" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_517 a emo:Movie ;
+  emo:title "Rising Sun" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_518 a emo:Movie ;
+  emo:title "Road to Wellville, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_519 a emo:Movie ;
+  emo:title "RoboCop 3" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_520 a emo:Movie ;
+  emo:title "Robin Hood: Men in Tights" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_521 a emo:Movie ;
+  emo:title "Romeo Is Bleeding" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_522 a emo:Movie ;
+  emo:title "Romper Stomper" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_523 a emo:Movie ;
+  emo:title "Ruby in Paradise" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_524 a emo:Movie ;
+  emo:title "Rudy" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_525 a emo:Movie ;
+  emo:title "Saint of Fort Washington, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_526 a emo:Movie ;
+  emo:title "Savage Nights (Nuits fauves, Les)" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_527 a emo:Movie ;
+  emo:title "Schindler's List" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_528 a emo:Movie ;
+  emo:title "Scout, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_529 a emo:Movie ;
+  emo:title "Searching for Bobby Fischer" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_530 a emo:Movie ;
+  emo:title "Second Best" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_531 a emo:Movie ;
+  emo:title "Secret Garden, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_532 a emo:Movie ;
+  emo:title "Serial Mom" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_533 a emo:Movie ;
+  emo:title "Shadow, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_534 a emo:Movie ;
+  emo:title "Shadowlands" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_535 a emo:Movie ;
+  emo:title "Short Cuts" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_536 a emo:Movie ;
+  emo:title "Simple Twist of Fate, A" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_537 a emo:Movie ;
+  emo:title "Sirens" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_538 a emo:Movie ;
+  emo:title "Six Degrees of Separation" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_539 a emo:Movie ;
+  emo:title "Sleepless in Seattle" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_540 a emo:Movie ;
+  emo:title "Sliver" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_541 a emo:Movie ;
+  emo:title "Blade Runner" ;
+  emo:releaseYear "1982"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_542 a emo:Movie ;
+  emo:title "Son in Law" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_543 a emo:Movie ;
+  emo:title "So I Married an Axe Murderer" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_544 a emo:Movie ;
+  emo:title "Striking Distance" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_546 a emo:Movie ;
+  emo:title "Super Mario Bros." ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_547 a emo:Movie ;
+  emo:title "Surviving the Game" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_548 a emo:Movie ;
+  emo:title "Terminal Velocity" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_549 a emo:Movie ;
+  emo:title "Thirty-Two Short Films About Glenn Gould" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_550 a emo:Movie ;
+  emo:title "Threesome" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_551 a emo:Movie ;
+  emo:title "Nightmare Before Christmas, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_552 a emo:Movie ;
+  emo:title "Three Musketeers, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_553 a emo:Movie ;
+  emo:title "Tombstone" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_554 a emo:Movie ;
+  emo:title "Trial by Jury" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_555 a emo:Movie ;
+  emo:title "True Romance" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_556 a emo:Movie ;
+  emo:title "War Room, The" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_558 a emo:Movie ;
+  emo:title "Pagemaster, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_559 a emo:Movie ;
+  emo:title "Paris, France" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_560 a emo:Movie ;
+  emo:title "Beans of Egypt, Maine, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_561 a emo:Movie ;
+  emo:title "Killer (Bulletproof Heart)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_562 a emo:Movie ;
+  emo:title "Welcome to the Dollhouse" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_563 a emo:Movie ;
+  emo:title "Germinal" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_564 a emo:Movie ;
+  emo:title "Chasers" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_565 a emo:Movie ;
+  emo:title "Cronos" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_566 a emo:Movie ;
+  emo:title "Naked in New York" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_567 a emo:Movie ;
+  emo:title "Kika" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_568 a emo:Movie ;
+  emo:title "Bhaji on the Beach" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_569 a emo:Movie ;
+  emo:title "Little Big League" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_570 a emo:Movie ;
+  emo:title "Slingshot, The (Kådisbellan)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_571 a emo:Movie ;
+  emo:title "Wedding Gift, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_572 a emo:Movie ;
+  emo:title "Foreign Student" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_573 a emo:Movie ;
+  emo:title "Ciao, Professore! (Io speriamo che me la cavo)" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_574 a emo:Movie ;
+  emo:title "Spanking the Monkey" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_575 a emo:Movie ;
+  emo:title "Little Rascals, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_576 a emo:Movie ;
+  emo:title "Fausto" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_577 a emo:Movie ;
+  emo:title "Andre" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_579 a emo:Movie ;
+  emo:title "Escort, The (Scorta, La)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_580 a emo:Movie ;
+  emo:title "Princess Caraboo" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_581 a emo:Movie ;
+  emo:title "Celluloid Closet, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_582 a emo:Movie ;
+  emo:title "Métisse (Café au Lait)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_583 a emo:Movie ;
+  emo:title "Dear Diary (Caro Diario)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_584 a emo:Movie ;
+  emo:title "I Don't Want to Talk About It (De eso no se habla)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_585 a emo:Movie ;
+  emo:title "Brady Bunch Movie, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_586 a emo:Movie ;
+  emo:title "Home Alone" ;
+  emo:releaseYear "1990"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_587 a emo:Movie ;
+  emo:title "Ghost" ;
+  emo:releaseYear "1990"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_588 a emo:Movie ;
+  emo:title "Aladdin" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_589 a emo:Movie ;
+  emo:title "Terminator 2: Judgment Day" ;
+  emo:releaseYear "1991"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_590 a emo:Movie ;
+  emo:title "Dances with Wolves" ;
+  emo:releaseYear "1990"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_591 a emo:Movie ;
+  emo:title "Tough and Deadly" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_592 a emo:Movie ;
+  emo:title "Batman" ;
+  emo:releaseYear "1989"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_593 a emo:Movie ;
+  emo:title "Silence of the Lambs, The" ;
+  emo:releaseYear "1991"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_594 a emo:Movie ;
+  emo:title "Snow White and the Seven Dwarfs" ;
+  emo:releaseYear "1937"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_595 a emo:Movie ;
+  emo:title "Beauty and the Beast" ;
+  emo:releaseYear "1991"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_596 a emo:Movie ;
+  emo:title "Pinocchio" ;
+  emo:releaseYear "1940"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_597 a emo:Movie ;
+  emo:title "Pretty Woman" ;
+  emo:releaseYear "1990"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_598 a emo:Movie ;
+  emo:title "Window to Paris (Okno v Parizh)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_599 a emo:Movie ;
+  emo:title "Wild Bunch, The" ;
+  emo:releaseYear "1969"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_600 a emo:Movie ;
+  emo:title "Love and a .45" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_601 a emo:Movie ;
+  emo:title "Wooden Man's Bride, The (Yan shen)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_602 a emo:Movie ;
+  emo:title "Great Day in Harlem, A" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_603 a emo:Movie ;
+  emo:title "Bye Bye, Love" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_604 a emo:Movie ;
+  emo:title "Criminals" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_605 a emo:Movie ;
+  emo:title "One Fine Day" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_606 a emo:Movie ;
+  emo:title "Candyman: Farewell to the Flesh" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_607 a emo:Movie ;
+  emo:title "Century" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_608 a emo:Movie ;
+  emo:title "Fargo" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_609 a emo:Movie ;
+  emo:title "Homeward Bound II: Lost in San Francisco" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_610 a emo:Movie ;
+  emo:title "Heavy Metal" ;
+  emo:releaseYear "1981"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_611 a emo:Movie ;
+  emo:title "Hellraiser: Bloodline" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_612 a emo:Movie ;
+  emo:title "Pallbearer, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_613 a emo:Movie ;
+  emo:title "Jane Eyre" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_614 a emo:Movie ;
+  emo:title "Loaded" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_615 a emo:Movie ;
+  emo:title "Bread and Chocolate (Pane e cioccolata)" ;
+  emo:releaseYear "1973"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_616 a emo:Movie ;
+  emo:title "Aristocats, The" ;
+  emo:releaseYear "1970"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_617 a emo:Movie ;
+  emo:title "Flower of My Secret, The (La flor de mi secreto)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_618 a emo:Movie ;
+  emo:title "Two Much" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_619 a emo:Movie ;
+  emo:title "Ed" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_620 a emo:Movie ;
+  emo:title "Scream of Stone (Cerro Torre: Schrei aus Stein)" ;
+  emo:releaseYear "1991"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_621 a emo:Movie ;
+  emo:title "My Favorite Season" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_623 a emo:Movie ;
+  emo:title "Modern Affair, A" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_625 a emo:Movie ;
+  emo:title "Asfour Stah" ;
+  emo:releaseYear "1990"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_626 a emo:Movie ;
+  emo:title "Thin Line Between Love and Hate, A" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_627 a emo:Movie ;
+  emo:title "Last Supper, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_628 a emo:Movie ;
+  emo:title "Primal Fear" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_629 a emo:Movie ;
+  emo:title "Rude" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_630 a emo:Movie ;
+  emo:title "Carried Away" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_631 a emo:Movie ;
+  emo:title "All Dogs Go to Heaven 2" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_632 a emo:Movie ;
+  emo:title "Land and Freedom (Tierra y libertad)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_633 a emo:Movie ;
+  emo:title "Denise Calls Up" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_634 a emo:Movie ;
+  emo:title "Theodore Rex" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_635 a emo:Movie ;
+  emo:title "Family Thing, A" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_636 a emo:Movie ;
+  emo:title "Frisk" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_637 a emo:Movie ;
+  emo:title "Sgt. Bilko" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_638 a emo:Movie ;
+  emo:title "Jack and Sarah" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_639 a emo:Movie ;
+  emo:title "Girl 6" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_640 a emo:Movie ;
+  emo:title "Diabolique" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_641 a emo:Movie ;
+  emo:title "Little Indian, Big City (Un indien dans la ville)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_642 a emo:Movie ;
+  emo:title "Roula" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_643 a emo:Movie ;
+  emo:title "Peanuts - Die Bank zahlt alles" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_644 a emo:Movie ;
+  emo:title "Happy Weekend" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_645 a emo:Movie ;
+  emo:title "Nelly & Monsieur Arnaud" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_647 a emo:Movie ;
+  emo:title "Courage Under Fire" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_648 a emo:Movie ;
+  emo:title "Mission: Impossible" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_649 a emo:Movie ;
+  emo:title "Cold Fever (Á köldum klaka)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_650 a emo:Movie ;
+  emo:title "Moll Flanders" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_651 a emo:Movie ;
+  emo:title "Superweib, Das" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_652 a emo:Movie ;
+  emo:title "301, 302 (301/302)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_653 a emo:Movie ;
+  emo:title "Dragonheart" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_654 a emo:Movie ;
+  emo:title "And Nobody Weeps for Me (Und keiner weint mir nach)" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_655 a emo:Movie ;
+  emo:title "My Mother's Courage (Mutters Courage)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_656 a emo:Movie ;
+  emo:title "Eddie" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_657 a emo:Movie ;
+  emo:title "Yankee Zulu" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_658 a emo:Movie ;
+  emo:title "Billy's Holiday" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_659 a emo:Movie ;
+  emo:title "Purple Noon (Plein soleil)" ;
+  emo:releaseYear "1960"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_660 a emo:Movie ;
+  emo:title "August" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_661 a emo:Movie ;
+  emo:title "James and the Giant Peach" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_662 a emo:Movie ;
+  emo:title "Fear" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_663 a emo:Movie ;
+  emo:title "Kids in the Hall: Brain Candy" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_664 a emo:Movie ;
+  emo:title "Faithful" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_665 a emo:Movie ;
+  emo:title "Underground" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_666 a emo:Movie ;
+  emo:title "All Things Fair (Lust och fägring stor)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_667 a emo:Movie ;
+  emo:title "Bloodsport 2 (a.k.a. Bloodsport II: The Next Kumite)" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action .
+
+emo:movie_668 a emo:Movie ;
+  emo:title "Song of the Little Road (Pather Panchali)" ;
+  emo:releaseYear "1955"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_670 a emo:Movie ;
+  emo:title "World of Apu, The (Apur Sansar)" ;
+  emo:releaseYear "1959"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_671 a emo:Movie ;
+  emo:title "Mystery Science Theater 3000: The Movie" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_672 a emo:Movie ;
+  emo:title "Tarantella" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_673 a emo:Movie ;
+  emo:title "Space Jam" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_674 a emo:Movie ;
+  emo:title "Barbarella" ;
+  emo:releaseYear "1968"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_675 a emo:Movie ;
+  emo:title "Hostile Intentions" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_676 a emo:Movie ;
+  emo:title "They Bite" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_678 a emo:Movie ;
+  emo:title "Some Folks Call It a Sling Blade" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_679 a emo:Movie ;
+  emo:title "Run of the Country, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_680 a emo:Movie ;
+  emo:title "Alphaville (Alphaville, une étrange aventure de Lemmy Caution)" ;
+  emo:releaseYear "1965"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_681 a emo:Movie ;
+  emo:title "Coup de torchon (Clean Slate)" ;
+  emo:releaseYear "1981"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_682 a emo:Movie ;
+  emo:title "Tigrero: A Film That Was Never Made" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_683 a emo:Movie ;
+  emo:title "Eye of Vichy, The (Oeil de Vichy, L')" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_684 a emo:Movie ;
+  emo:title "Windows" ;
+  emo:releaseYear "1980"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_685 a emo:Movie ;
+  emo:title "It's My Party" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_687 a emo:Movie ;
+  emo:title "Country Life" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_688 a emo:Movie ;
+  emo:title "Operation Dumbo Drop" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_690 a emo:Movie ;
+  emo:title "Promise, The (Versprechen, Das)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_691 a emo:Movie ;
+  emo:title "Mrs. Winterbourne" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_692 a emo:Movie ;
+  emo:title "Solo" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_693 a emo:Movie ;
+  emo:title "Under the Domim Tree (Etz Hadomim Tafus)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_694 a emo:Movie ;
+  emo:title "Substitute, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_695 a emo:Movie ;
+  emo:title "True Crime" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_696 a emo:Movie ;
+  emo:title "Butterfly Kiss" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_697 a emo:Movie ;
+  emo:title "Feeling Minnesota" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_698 a emo:Movie ;
+  emo:title "Delta of Venus" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_699 a emo:Movie ;
+  emo:title "To Cross the Rubicon" ;
+  emo:releaseYear "1991"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_700 a emo:Movie ;
+  emo:title "Angus" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_701 a emo:Movie ;
+  emo:title "Daens" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_702 a emo:Movie ;
+  emo:title "Faces" ;
+  emo:releaseYear "1968"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_703 a emo:Movie ;
+  emo:title "Boys" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_704 a emo:Movie ;
+  emo:title "Quest, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure .
+
+emo:movie_705 a emo:Movie ;
+  emo:title "Cosi" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_706 a emo:Movie ;
+  emo:title "Sunset Park" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_707 a emo:Movie ;
+  emo:title "Mulholland Falls" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_708 a emo:Movie ;
+  emo:title "Truth About Cats & Dogs, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_709 a emo:Movie ;
+  emo:title "Oliver & Company" ;
+  emo:releaseYear "1988"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_710 a emo:Movie ;
+  emo:title "Celtic Pride" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_711 a emo:Movie ;
+  emo:title "Flipper" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_712 a emo:Movie ;
+  emo:title "Captives" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_713 a emo:Movie ;
+  emo:title "Of Love and Shadows" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_714 a emo:Movie ;
+  emo:title "Dead Man" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_715 a emo:Movie ;
+  emo:title "Horseman on the Roof, The (Hussard sur le toit, Le)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_716 a emo:Movie ;
+  emo:title "Switchblade Sisters" ;
+  emo:releaseYear "1975"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_717 a emo:Movie ;
+  emo:title "Mouth to Mouth (Boca a boca)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_718 a emo:Movie ;
+  emo:title "Visitors, The (Visiteurs, Les)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_719 a emo:Movie ;
+  emo:title "Multiplicity" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_720 a emo:Movie ;
+  emo:title "Wallace & Gromit: The Best of Aardman Animation" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_721 a emo:Movie ;
+  emo:title "Halfmoon (Paul Bowles - Halbmond)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_722 a emo:Movie ;
+  emo:title "Haunted World of Edward D. Wood Jr., The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_723 a emo:Movie ;
+  emo:title "Two Friends" ;
+  emo:releaseYear "1986"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_724 a emo:Movie ;
+  emo:title "Craft, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_725 a emo:Movie ;
+  emo:title "Great White Hype, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_726 a emo:Movie ;
+  emo:title "Last Dance" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_727 a emo:Movie ;
+  emo:title "War Stories" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_728 a emo:Movie ;
+  emo:title "Cold Comfort Farm" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_729 a emo:Movie ;
+  emo:title "Institute Benjamenta, or This Dream People Call Human Life" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_730 a emo:Movie ;
+  emo:title "Low Life" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_731 a emo:Movie ;
+  emo:title "Heaven's Prisoners" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_732 a emo:Movie ;
+  emo:title "Original Gangstas" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_733 a emo:Movie ;
+  emo:title "Rock, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_734 a emo:Movie ;
+  emo:title "Getting Away With Murder" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_735 a emo:Movie ;
+  emo:title "Cemetery Man (Dellamorte Dellamore)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_736 a emo:Movie ;
+  emo:title "Twister" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_737 a emo:Movie ;
+  emo:title "Barb Wire" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_738 a emo:Movie ;
+  emo:title "Garçu, Le" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_739 a emo:Movie ;
+  emo:title "Honey Moon (Honigmond)" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_741 a emo:Movie ;
+  emo:title "Ghost in the Shell (Kôkaku kidôtai)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_742 a emo:Movie ;
+  emo:title "Thinner" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_743 a emo:Movie ;
+  emo:title "Spy Hard" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_744 a emo:Movie ;
+  emo:title "Brothers in Trouble" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_745 a emo:Movie ;
+  emo:title "Wallace & Gromit: A Close Shave" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_746 a emo:Movie ;
+  emo:title "Force of Evil" ;
+  emo:releaseYear "1948"^^xsd:gYear ;
+  emo:belongsToGenre emo:FilmNoir .
+
+emo:movie_747 a emo:Movie ;
+  emo:title "Stupids, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_748 a emo:Movie ;
+  emo:title "Arrival, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_749 a emo:Movie ;
+  emo:title "Man from Down Under, The" ;
+  emo:releaseYear "1943"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_750 a emo:Movie ;
+  emo:title "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb" ;
+  emo:releaseYear "1964"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_751 a emo:Movie ;
+  emo:title "Careful" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_752 a emo:Movie ;
+  emo:title "Vermont Is For Lovers" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Documentary ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_753 a emo:Movie ;
+  emo:title "Month by the Lake, A" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_754 a emo:Movie ;
+  emo:title "Gold Diggers: The Secret of Bear Mountain" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_755 a emo:Movie ;
+  emo:title "Kim" ;
+  emo:releaseYear "1950"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_756 a emo:Movie ;
+  emo:title "Carmen Miranda: Bananas Is My Business" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_757 a emo:Movie ;
+  emo:title "Ashes of Time (Dung che sai duk)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_758 a emo:Movie ;
+  emo:title "Jar, The (Khomreh)" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_759 a emo:Movie ;
+  emo:title "Maya Lin: A Strong Clear Vision" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_760 a emo:Movie ;
+  emo:title "Stalingrad" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_761 a emo:Movie ;
+  emo:title "Phantom, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure .
+
+emo:movie_762 a emo:Movie ;
+  emo:title "Striptease" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_763 a emo:Movie ;
+  emo:title "Last of the High Kings, The (a.k.a. Summer Fling)" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_764 a emo:Movie ;
+  emo:title "Heavy" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_765 a emo:Movie ;
+  emo:title "Jack" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_766 a emo:Movie ;
+  emo:title "I Shot Andy Warhol" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_767 a emo:Movie ;
+  emo:title "Grass Harp, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_768 a emo:Movie ;
+  emo:title "Someone Else's America" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_769 a emo:Movie ;
+  emo:title "Marlene Dietrich: Shadow and Light" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_770 a emo:Movie ;
+  emo:title "Costa Brava" ;
+  emo:releaseYear "1946"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_771 a emo:Movie ;
+  emo:title "Life Is Rosy (a.k.a. Life Is Beautiful) (Vie est belle, La)" ;
+  emo:releaseYear "1987"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_772 a emo:Movie ;
+  emo:title "Quartier Mozart" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_773 a emo:Movie ;
+  emo:title "Touki Bouki" ;
+  emo:releaseYear "1973"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_774 a emo:Movie ;
+  emo:title "Wend Kuuni (a.k.a. God's Gift)" ;
+  emo:releaseYear "1982"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_775 a emo:Movie ;
+  emo:title "Spirits of the Dead" ;
+  emo:releaseYear "1968"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_776 a emo:Movie ;
+  emo:title "Babyfever" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_777 a emo:Movie ;
+  emo:title "Pharaoh's Army" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_778 a emo:Movie ;
+  emo:title "Trainspotting" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_779 a emo:Movie ;
+  emo:title "'Til There Was You" ;
+  emo:releaseYear "1997"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_780 a emo:Movie ;
+  emo:title "Independence Day (a.k.a. ID4)" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_781 a emo:Movie ;
+  emo:title "Stealing Beauty" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_782 a emo:Movie ;
+  emo:title "Fan, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_783 a emo:Movie ;
+  emo:title "Hunchback of Notre Dame, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_784 a emo:Movie ;
+  emo:title "Cable Guy, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_785 a emo:Movie ;
+  emo:title "Kingpin" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_786 a emo:Movie ;
+  emo:title "Eraser" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_787 a emo:Movie ;
+  emo:title "Gate of Heavenly Peace, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_788 a emo:Movie ;
+  emo:title "Nutty Professor, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_789 a emo:Movie ;
+  emo:title "I, the Worst of All (Yo, la peor de todas)" ;
+  emo:releaseYear "1990"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_790 a emo:Movie ;
+  emo:title "Unforgettable Summer, An (Un été inoubliable)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_791 a emo:Movie ;
+  emo:title "Last Klezmer: Leopold Kozlowski, His Life and Music, The" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_792 a emo:Movie ;
+  emo:title "Hungarian Fairy Tale, A (Hol volt, hol nem volt)" ;
+  emo:releaseYear "1987"^^xsd:gYear ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_793 a emo:Movie ;
+  emo:title "My Life and Times With Antonin Artaud (En compagnie d'Antonin Artaud)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_794 a emo:Movie ;
+  emo:title "Midnight Dancers (Sibak)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_795 a emo:Movie ;
+  emo:title "Somebody to Love" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_796 a emo:Movie ;
+  emo:title "Very Natural Thing, A" ;
+  emo:releaseYear "1974"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_797 a emo:Movie ;
+  emo:title "Old Lady Who Walked in the Sea, The (Vieille qui marchait dans la mer, La)" ;
+  emo:releaseYear "1991"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_798 a emo:Movie ;
+  emo:title "Daylight" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_799 a emo:Movie ;
+  emo:title "Frighteners, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_800 a emo:Movie ;
+  emo:title "Lone Star" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_801 a emo:Movie ;
+  emo:title "Harriet the Spy" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_802 a emo:Movie ;
+  emo:title "Phenomenon" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_803 a emo:Movie ;
+  emo:title "Walking and Talking" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_804 a emo:Movie ;
+  emo:title "She's the One" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_805 a emo:Movie ;
+  emo:title "Time to Kill, A" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_806 a emo:Movie ;
+  emo:title "American Buffalo" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_807 a emo:Movie ;
+  emo:title "Rendezvous in Paris (Rendez-vous de Paris, Les)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_808 a emo:Movie ;
+  emo:title "Alaska" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_809 a emo:Movie ;
+  emo:title "Fled" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure .
+
+emo:movie_810 a emo:Movie ;
+  emo:title "Kazaam" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_812 a emo:Movie ;
+  emo:title "Magic Hunter (Büvös vadász)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_813 a emo:Movie ;
+  emo:title "Larger Than Life" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_814 a emo:Movie ;
+  emo:title "Boy Called Hate, A" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_815 a emo:Movie ;
+  emo:title "Power 98" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_816 a emo:Movie ;
+  emo:title "Two Deaths" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_818 a emo:Movie ;
+  emo:title "Very Brady Sequel, A" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_819 a emo:Movie ;
+  emo:title "Stefano Quantestorie" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_820 a emo:Movie ;
+  emo:title "Death in the Garden (Mort en ce jardin, La)" ;
+  emo:releaseYear "1956"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_821 a emo:Movie ;
+  emo:title "Crude Oasis, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_822 a emo:Movie ;
+  emo:title "Hedd Wyn" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_823 a emo:Movie ;
+  emo:title "Collector, The (La collectionneuse)" ;
+  emo:releaseYear "1967"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_824 a emo:Movie ;
+  emo:title "Kaspar Hauser" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_825 a emo:Movie ;
+  emo:title "Regular Guys (Echte Kerle)" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_826 a emo:Movie ;
+  emo:title "Women Robbers (Diebinnen)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_827 a emo:Movie ;
+  emo:title "Convent, The (O Convento)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_828 a emo:Movie ;
+  emo:title "Adventures of Pinocchio, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_829 a emo:Movie ;
+  emo:title "Joe's Apartment" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_830 a emo:Movie ;
+  emo:title "First Wives Club, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_831 a emo:Movie ;
+  emo:title "Stonewall" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_832 a emo:Movie ;
+  emo:title "Ransom" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_833 a emo:Movie ;
+  emo:title "High School High" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_834 a emo:Movie ;
+  emo:title "Phat Beach" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_835 a emo:Movie ;
+  emo:title "Foxfire" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_836 a emo:Movie ;
+  emo:title "Chain Reaction" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_837 a emo:Movie ;
+  emo:title "Matilda" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_838 a emo:Movie ;
+  emo:title "Emma" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_839 a emo:Movie ;
+  emo:title "Crow: City of Angels, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_840 a emo:Movie ;
+  emo:title "House Arrest" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_841 a emo:Movie ;
+  emo:title "Eyes Without a Face (Yeux sans visage, Les)" ;
+  emo:releaseYear "1959"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_842 a emo:Movie ;
+  emo:title "Tales from the Crypt Presents: Bordello of Blood" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Horror .
+
+emo:movie_843 a emo:Movie ;
+  emo:title "Lotto Land" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_844 a emo:Movie ;
+  emo:title "Story of Xinghua, The (Xinghua san yue tian)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_845 a emo:Movie ;
+  emo:title "Day the Sun Turned Cold, The (Tianguo niezi)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_846 a emo:Movie ;
+  emo:title "Flirt" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_847 a emo:Movie ;
+  emo:title "Big Squeeze, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_848 a emo:Movie ;
+  emo:title "Spitfire Grill, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_849 a emo:Movie ;
+  emo:title "Escape from L.A." ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_850 a emo:Movie ;
+  emo:title "Cyclo (Xich lo)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_851 a emo:Movie ;
+  emo:title "Basquiat" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_852 a emo:Movie ;
+  emo:title "Tin Cup" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_853 a emo:Movie ;
+  emo:title "Dingo" ;
+  emo:releaseYear "1991"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_854 a emo:Movie ;
+  emo:title "Ballad of Narayama, The (Narayama Bushiko)" ;
+  emo:releaseYear "1958"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_855 a emo:Movie ;
+  emo:title "Every Other Weekend (Un week-end sur deux)" ;
+  emo:releaseYear "1990"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_856 a emo:Movie ;
+  emo:title "Mille bolle blu" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_857 a emo:Movie ;
+  emo:title "Crows and Sparrows (Wuya yu maque)" ;
+  emo:releaseYear "1949"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_858 a emo:Movie ;
+  emo:title "Godfather, The" ;
+  emo:releaseYear "1972"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_859 a emo:Movie ;
+  emo:title "Hippie Revolution, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_860 a emo:Movie ;
+  emo:title "Maybe, Maybe Not (Bewegte Mann, Der)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_861 a emo:Movie ;
+  emo:title "Supercop (Police Story 3: Supercop) (Jing cha gu shi III: Chao ji jing cha)" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_862 a emo:Movie ;
+  emo:title "Manny & Lo" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_864 a emo:Movie ;
+  emo:title "Wife, The" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_865 a emo:Movie ;
+  emo:title "Small Faces" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_866 a emo:Movie ;
+  emo:title "Bound" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_867 a emo:Movie ;
+  emo:title "Carpool" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_868 a emo:Movie ;
+  emo:title "Death in Brunswick" ;
+  emo:releaseYear "1991"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_869 a emo:Movie ;
+  emo:title "Kansas City" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_870 a emo:Movie ;
+  emo:title "Gone Fishin'" ;
+  emo:releaseYear "1997"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_871 a emo:Movie ;
+  emo:title "Lover's Knot" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_872 a emo:Movie ;
+  emo:title "Vive L'Amour (Ai qing wan sui)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_873 a emo:Movie ;
+  emo:title "Shadow of Angels (Schatten der Engel)" ;
+  emo:releaseYear "1976"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_874 a emo:Movie ;
+  emo:title "Killer: A Journal of Murder" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_875 a emo:Movie ;
+  emo:title "Nothing to Lose" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_876 a emo:Movie ;
+  emo:title "Supercop 2 (Project S) (Chao ji ji hua)" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_877 a emo:Movie ;
+  emo:title "Girls Town" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_878 a emo:Movie ;
+  emo:title "Bye-Bye" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_879 a emo:Movie ;
+  emo:title "Relic, The" ;
+  emo:releaseYear "1997"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_880 a emo:Movie ;
+  emo:title "Island of Dr. Moreau, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_881 a emo:Movie ;
+  emo:title "First Kid" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_882 a emo:Movie ;
+  emo:title "Trigger Effect, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_884 a emo:Movie ;
+  emo:title "Sweet Nothing" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_885 a emo:Movie ;
+  emo:title "Bogus" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_886 a emo:Movie ;
+  emo:title "Bulletproof" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_887 a emo:Movie ;
+  emo:title "Talk of Angels" ;
+  emo:releaseYear "1998"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_889 a emo:Movie ;
+  emo:title "1-900 (06)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_890 a emo:Movie ;
+  emo:title "Baton Rouge (Bâton rouge)" ;
+  emo:releaseYear "1988"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_891 a emo:Movie ;
+  emo:title "Halloween: The Curse of Michael Myers (Halloween 6: The Curse of Michael Myers)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_892 a emo:Movie ;
+  emo:title "Twelfth Night" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_893 a emo:Movie ;
+  emo:title "Mother Night" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_894 a emo:Movie ;
+  emo:title "Liebelei" ;
+  emo:releaseYear "1933"^^xsd:gYear ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_895 a emo:Movie ;
+  emo:title "Venice/Venice" ;
+  emo:releaseYear "1992"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_896 a emo:Movie ;
+  emo:title "Wild Reeds (Les roseaux sauvages)" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_897 a emo:Movie ;
+  emo:title "For Whom the Bell Tolls" ;
+  emo:releaseYear "1943"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_898 a emo:Movie ;
+  emo:title "Philadelphia Story, The" ;
+  emo:releaseYear "1940"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_899 a emo:Movie ;
+  emo:title "Singin' in the Rain" ;
+  emo:releaseYear "1952"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_900 a emo:Movie ;
+  emo:title "American in Paris, An" ;
+  emo:releaseYear "1951"^^xsd:gYear ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_901 a emo:Movie ;
+  emo:title "Funny Face" ;
+  emo:releaseYear "1957"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_902 a emo:Movie ;
+  emo:title "Breakfast at Tiffany's" ;
+  emo:releaseYear "1961"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_903 a emo:Movie ;
+  emo:title "Vertigo" ;
+  emo:releaseYear "1958"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_904 a emo:Movie ;
+  emo:title "Rear Window" ;
+  emo:releaseYear "1954"^^xsd:gYear ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_905 a emo:Movie ;
+  emo:title "It Happened One Night" ;
+  emo:releaseYear "1934"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_906 a emo:Movie ;
+  emo:title "Gaslight" ;
+  emo:releaseYear "1944"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_907 a emo:Movie ;
+  emo:title "Gay Divorcee, The" ;
+  emo:releaseYear "1934"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_908 a emo:Movie ;
+  emo:title "North by Northwest" ;
+  emo:releaseYear "1959"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_909 a emo:Movie ;
+  emo:title "Apartment, The" ;
+  emo:releaseYear "1960"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_910 a emo:Movie ;
+  emo:title "Some Like It Hot" ;
+  emo:releaseYear "1959"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_911 a emo:Movie ;
+  emo:title "Charade" ;
+  emo:releaseYear "1963"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_912 a emo:Movie ;
+  emo:title "Casablanca" ;
+  emo:releaseYear "1942"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_913 a emo:Movie ;
+  emo:title "Maltese Falcon, The" ;
+  emo:releaseYear "1941"^^xsd:gYear ;
+  emo:belongsToGenre emo:FilmNoir ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_914 a emo:Movie ;
+  emo:title "My Fair Lady" ;
+  emo:releaseYear "1964"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_915 a emo:Movie ;
+  emo:title "Sabrina" ;
+  emo:releaseYear "1954"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_916 a emo:Movie ;
+  emo:title "Roman Holiday" ;
+  emo:releaseYear "1953"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_917 a emo:Movie ;
+  emo:title "Little Princess, The" ;
+  emo:releaseYear "1939"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_918 a emo:Movie ;
+  emo:title "Meet Me in St. Louis" ;
+  emo:releaseYear "1944"^^xsd:gYear ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_919 a emo:Movie ;
+  emo:title "Wizard of Oz, The" ;
+  emo:releaseYear "1939"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_920 a emo:Movie ;
+  emo:title "Gone with the Wind" ;
+  emo:releaseYear "1939"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_921 a emo:Movie ;
+  emo:title "My Favorite Year" ;
+  emo:releaseYear "1982"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_922 a emo:Movie ;
+  emo:title "Sunset Blvd. (a.k.a. Sunset Boulevard)" ;
+  emo:releaseYear "1950"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:FilmNoir ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_923 a emo:Movie ;
+  emo:title "Citizen Kane" ;
+  emo:releaseYear "1941"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_924 a emo:Movie ;
+  emo:title "2001: A Space Odyssey" ;
+  emo:releaseYear "1968"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_925 a emo:Movie ;
+  emo:title "Golden Earrings" ;
+  emo:releaseYear "1947"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_926 a emo:Movie ;
+  emo:title "All About Eve" ;
+  emo:releaseYear "1950"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_927 a emo:Movie ;
+  emo:title "Women, The" ;
+  emo:releaseYear "1939"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_928 a emo:Movie ;
+  emo:title "Rebecca" ;
+  emo:releaseYear "1940"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_929 a emo:Movie ;
+  emo:title "Foreign Correspondent" ;
+  emo:releaseYear "1940"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:FilmNoir ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_930 a emo:Movie ;
+  emo:title "Notorious" ;
+  emo:releaseYear "1946"^^xsd:gYear ;
+  emo:belongsToGenre emo:FilmNoir ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_931 a emo:Movie ;
+  emo:title "Spellbound" ;
+  emo:releaseYear "1945"^^xsd:gYear ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_932 a emo:Movie ;
+  emo:title "Affair to Remember, An" ;
+  emo:releaseYear "1957"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_933 a emo:Movie ;
+  emo:title "To Catch a Thief" ;
+  emo:releaseYear "1955"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_934 a emo:Movie ;
+  emo:title "Father of the Bride" ;
+  emo:releaseYear "1950"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_935 a emo:Movie ;
+  emo:title "Band Wagon, The" ;
+  emo:releaseYear "1953"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_936 a emo:Movie ;
+  emo:title "Ninotchka" ;
+  emo:releaseYear "1939"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_937 a emo:Movie ;
+  emo:title "Love in the Afternoon" ;
+  emo:releaseYear "1957"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_938 a emo:Movie ;
+  emo:title "Gigi" ;
+  emo:releaseYear "1958"^^xsd:gYear ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_939 a emo:Movie ;
+  emo:title "Reluctant Debutante, The" ;
+  emo:releaseYear "1958"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_940 a emo:Movie ;
+  emo:title "Adventures of Robin Hood, The" ;
+  emo:releaseYear "1938"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_941 a emo:Movie ;
+  emo:title "Mark of Zorro, The" ;
+  emo:releaseYear "1940"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure .
+
+emo:movie_942 a emo:Movie ;
+  emo:title "Laura" ;
+  emo:releaseYear "1944"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:FilmNoir ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_943 a emo:Movie ;
+  emo:title "Ghost and Mrs. Muir, The" ;
+  emo:releaseYear "1947"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_944 a emo:Movie ;
+  emo:title "Lost Horizon" ;
+  emo:releaseYear "1937"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_945 a emo:Movie ;
+  emo:title "Top Hat" ;
+  emo:releaseYear "1935"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_946 a emo:Movie ;
+  emo:title "To Be or Not to Be" ;
+  emo:releaseYear "1942"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_947 a emo:Movie ;
+  emo:title "My Man Godfrey" ;
+  emo:releaseYear "1936"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_948 a emo:Movie ;
+  emo:title "Giant" ;
+  emo:releaseYear "1956"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_949 a emo:Movie ;
+  emo:title "East of Eden" ;
+  emo:releaseYear "1955"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_950 a emo:Movie ;
+  emo:title "Thin Man, The" ;
+  emo:releaseYear "1934"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_951 a emo:Movie ;
+  emo:title "His Girl Friday" ;
+  emo:releaseYear "1940"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_952 a emo:Movie ;
+  emo:title "Around the World in 80 Days" ;
+  emo:releaseYear "1956"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_953 a emo:Movie ;
+  emo:title "It's a Wonderful Life" ;
+  emo:releaseYear "1946"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_954 a emo:Movie ;
+  emo:title "Mr. Smith Goes to Washington" ;
+  emo:releaseYear "1939"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_955 a emo:Movie ;
+  emo:title "Bringing Up Baby" ;
+  emo:releaseYear "1938"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_956 a emo:Movie ;
+  emo:title "Penny Serenade" ;
+  emo:releaseYear "1941"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_957 a emo:Movie ;
+  emo:title "Scarlet Letter, The" ;
+  emo:releaseYear "1926"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_958 a emo:Movie ;
+  emo:title "Lady of Burlesque" ;
+  emo:releaseYear "1943"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_959 a emo:Movie ;
+  emo:title "Of Human Bondage" ;
+  emo:releaseYear "1934"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_960 a emo:Movie ;
+  emo:title "Angel on My Shoulder" ;
+  emo:releaseYear "1946"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_961 a emo:Movie ;
+  emo:title "Little Lord Fauntleroy" ;
+  emo:releaseYear "1936"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_962 a emo:Movie ;
+  emo:title "They Made Me a Criminal" ;
+  emo:releaseYear "1939"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_963 a emo:Movie ;
+  emo:title "Inspector General, The" ;
+  emo:releaseYear "1949"^^xsd:gYear ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_964 a emo:Movie ;
+  emo:title "Angel and the Badman" ;
+  emo:releaseYear "1947"^^xsd:gYear ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_965 a emo:Movie ;
+  emo:title "39 Steps, The" ;
+  emo:releaseYear "1935"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Mystery ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_966 a emo:Movie ;
+  emo:title "A Walk in the Sun" ;
+  emo:releaseYear "1945"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_967 a emo:Movie ;
+  emo:title "Outlaw, The" ;
+  emo:releaseYear "1943"^^xsd:gYear ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_968 a emo:Movie ;
+  emo:title "Night of the Living Dead" ;
+  emo:releaseYear "1968"^^xsd:gYear ;
+  emo:belongsToGenre emo:Horror ;
+  emo:belongsToGenre emo:SciFi ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_969 a emo:Movie ;
+  emo:title "African Queen, The" ;
+  emo:releaseYear "1951"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_970 a emo:Movie ;
+  emo:title "Beat the Devil" ;
+  emo:releaseYear "1953"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_971 a emo:Movie ;
+  emo:title "Cat on a Hot Tin Roof" ;
+  emo:releaseYear "1958"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_972 a emo:Movie ;
+  emo:title "Last Time I Saw Paris, The" ;
+  emo:releaseYear "1954"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_973 a emo:Movie ;
+  emo:title "Meet John Doe" ;
+  emo:releaseYear "1941"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_974 a emo:Movie ;
+  emo:title "Algiers" ;
+  emo:releaseYear "1938"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_975 a emo:Movie ;
+  emo:title "Something to Sing About" ;
+  emo:releaseYear "1937"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Musical .
+
+emo:movie_976 a emo:Movie ;
+  emo:title "Farewell to Arms, A" ;
+  emo:releaseYear "1932"^^xsd:gYear ;
+  emo:belongsToGenre emo:Romance ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_977 a emo:Movie ;
+  emo:title "Moonlight Murder" ;
+  emo:releaseYear "1936"^^xsd:gYear ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_979 a emo:Movie ;
+  emo:title "Nothing Personal" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:War .
+
+emo:movie_980 a emo:Movie ;
+  emo:title "Yes, Madam (a.k.a. Police Assassins) (a.k.a. In the Line of Duty 2) (Huang gu shi jie)" ;
+  emo:releaseYear "1985"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action .
+
+emo:movie_981 a emo:Movie ;
+  emo:title "Dangerous Ground" ;
+  emo:releaseYear "1997"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_982 a emo:Movie ;
+  emo:title "Picnic" ;
+  emo:releaseYear "1955"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_983 a emo:Movie ;
+  emo:title "Madagascar Skin" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_984 a emo:Movie ;
+  emo:title "Pompatus of Love, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_985 a emo:Movie ;
+  emo:title "Small Wonders" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Documentary .
+
+emo:movie_986 a emo:Movie ;
+  emo:title "Fly Away Home" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_987 a emo:Movie ;
+  emo:title "Bliss" ;
+  emo:releaseYear "1997"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_988 a emo:Movie ;
+  emo:title "Grace of My Heart" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_989 a emo:Movie ;
+  emo:title "Brother of Sleep (Schlafes Bruder)" ;
+  emo:releaseYear "1995"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_990 a emo:Movie ;
+  emo:title "Maximum Risk" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_991 a emo:Movie ;
+  emo:title "Michael Collins" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_992 a emo:Movie ;
+  emo:title "Rich Man's Wife, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_993 a emo:Movie ;
+  emo:title "Infinity" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_994 a emo:Movie ;
+  emo:title "Big Night" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_996 a emo:Movie ;
+  emo:title "Last Man Standing" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_997 a emo:Movie ;
+  emo:title "Caught" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_998 a emo:Movie ;
+  emo:title "Set It Off" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_999 a emo:Movie ;
+  emo:title "2 Days in the Valley" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime ;
+  emo:belongsToGenre emo:FilmNoir .
+
+emo:movie_1000 a emo:Movie ;
+  emo:title "Curdled" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Crime .
+
+emo:movie_1001 a emo:Movie ;
+  emo:title "Associate, The (Associé, L')" ;
+  emo:releaseYear "1979"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_1002 a emo:Movie ;
+  emo:title "Ed's Next Move" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_1003 a emo:Movie ;
+  emo:title "Extreme Measures" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_1004 a emo:Movie ;
+  emo:title "Glimmer Man, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Action ;
+  emo:belongsToGenre emo:Thriller .
+
+emo:movie_1005 a emo:Movie ;
+  emo:title "D3: The Mighty Ducks" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_1006 a emo:Movie ;
+  emo:title "Chamber, The" ;
+  emo:releaseYear "1996"^^xsd:gYear ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_1007 a emo:Movie ;
+  emo:title "Apple Dumpling Gang, The" ;
+  emo:releaseYear "1975"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_1008 a emo:Movie ;
+  emo:title "Davy Crockett, King of the Wild Frontier" ;
+  emo:releaseYear "1955"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Western .
+
+emo:movie_1009 a emo:Movie ;
+  emo:title "Escape to Witch Mountain" ;
+  emo:releaseYear "1975"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy .
+
+emo:movie_1010 a emo:Movie ;
+  emo:title "Love Bug, The" ;
+  emo:releaseYear "1969"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_1011 a emo:Movie ;
+  emo:title "Herbie Rides Again" ;
+  emo:releaseYear "1974"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_1012 a emo:Movie ;
+  emo:title "Old Yeller" ;
+  emo:releaseYear "1957"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_1013 a emo:Movie ;
+  emo:title "Parent Trap, The" ;
+  emo:releaseYear "1961"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Romance .
+
+emo:movie_1014 a emo:Movie ;
+  emo:title "Pollyanna" ;
+  emo:releaseYear "1960"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_1015 a emo:Movie ;
+  emo:title "Homeward Bound: The Incredible Journey" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Drama .
+
+emo:movie_1016 a emo:Movie ;
+  emo:title "Shaggy Dog, The" ;
+  emo:releaseYear "1959"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_1017 a emo:Movie ;
+  emo:title "Swiss Family Robinson" ;
+  emo:releaseYear "1960"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Family .
+
+emo:movie_1018 a emo:Movie ;
+  emo:title "That Darn Cat!" ;
+  emo:releaseYear "1965"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy ;
+  emo:belongsToGenre emo:Mystery .
+
+emo:movie_1019 a emo:Movie ;
+  emo:title "20,000 Leagues Under the Sea" ;
+  emo:releaseYear "1954"^^xsd:gYear ;
+  emo:belongsToGenre emo:Adventure ;
+  emo:belongsToGenre emo:Drama ;
+  emo:belongsToGenre emo:SciFi .
+
+emo:movie_1020 a emo:Movie ;
+  emo:title "Cool Runnings" ;
+  emo:releaseYear "1993"^^xsd:gYear ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_1021 a emo:Movie ;
+  emo:title "Angels in the Outfield" ;
+  emo:releaseYear "1994"^^xsd:gYear ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Comedy .
+
+emo:movie_1022 a emo:Movie ;
+  emo:title "Cinderella" ;
+  emo:releaseYear "1950"^^xsd:gYear ;
+  emo:belongsToGenre emo:Animation ;
+  emo:belongsToGenre emo:Family ;
+  emo:belongsToGenre emo:Fantasy ;
+  emo:belongsToGenre emo:Musical ;
+  emo:belongsToGenre emo:Romance .
