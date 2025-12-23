@@ -518,6 +518,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#text_001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#text_001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#TextualInput"/>
+        <emotion-ontology:expressesEmotion rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#confusion_1"/>
+        <emotion-ontology:expressesEmotion rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#curiosity_1"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#text_1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#text_1">
