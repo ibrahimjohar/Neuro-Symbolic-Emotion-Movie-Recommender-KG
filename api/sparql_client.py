@@ -1,6 +1,6 @@
 import requests
 
-JENA_ENDPOINT = "http://localhost:3030/emotion/sparql"
+JENA_ENDPOINT = "http://fuseki:3030/emotion/sparql"
 
 def run_query(query: str):
     r = requests.post(
