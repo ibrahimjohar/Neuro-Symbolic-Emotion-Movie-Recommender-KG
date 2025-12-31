@@ -76,6 +76,9 @@ def normalize_genres(genres_str):
 df_clean["genres_normalized"] = df_clean["genres"].apply(normalize_genres)
 #drop movie with no mappable genres
 df_clean = df_clean.dropna(subset=["genres_normalized"])
+
+df_clean = df_clean[~df_clean["genres_normalized"].str.contains("Western", na=False)]
+
 #keep final cols
 df_final = df_clean[["movie_id", "title", "year", "genres_normalized"]]
 #save final kb
