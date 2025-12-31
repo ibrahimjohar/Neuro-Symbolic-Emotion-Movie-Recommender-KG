@@ -299,6 +299,34 @@
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#action_genre
+:action_genre rdf:type owl:NamedIndividual ,
+                       :Action ,
+                       :MovieGenre ,
+                       :NarrativeGenre .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#adventure_genre
+:adventure_genre rdf:type owl:NamedIndividual ,
+                          :Adventure ,
+                          :MovieGenre ,
+                          :NarrativeGenre .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#animation_genre
+:animation_genre rdf:type owl:NamedIndividual ,
+                          :Animation ,
+                          :FormatGenre ,
+                          :MovieGenre .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#biography_genre
+:biography_genre rdf:type owl:NamedIndividual ,
+                          :Biography ,
+                          :ContextualGenre ,
+                          :MovieGenre .
+
+
 ###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#comedy_genre
 :comedy_genre rdf:type owl:NamedIndividual ,
                        :Comedy ,
@@ -314,11 +342,25 @@
                       :confusion .
 
 
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#crime_genre
+:crime_genre rdf:type owl:NamedIndividual ,
+                      :Crime ,
+                      :MovieGenre ,
+                      :NarrativeGenre .
+
+
 ###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#curiosity_1
 :curiosity_1 rdf:type owl:NamedIndividual ,
                       :CognitiveEmotion ,
                       :EmotionalState ,
                       :curiosity .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#documentary_genre
+:documentary_genre rdf:type owl:NamedIndividual ,
+                            :Documentary ,
+                            :FormatGenre ,
+                            :MovieGenre .
 
 
 ###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#drama_genre
@@ -328,10 +370,87 @@
                       :MovieGenre .
 
 
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#family_genre
+:family_genre rdf:type owl:NamedIndividual ,
+                       :Family ,
+                       :FormatGenre ,
+                       :MovieGenre .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#fantasy_genre
+:fantasy_genre rdf:type owl:NamedIndividual ,
+                        :Fantasy ,
+                        :MovieGenre ,
+                        :SpeculativeGenre .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#filmNoir_genre
+:filmNoir_genre rdf:type owl:NamedIndividual ,
+                         :EmotionDrivenGenre ,
+                         :FilmNoir ,
+                         :MovieGenre .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#history_genre
+:history_genre rdf:type owl:NamedIndividual ,
+                        :ContextualGenre ,
+                        :History ,
+                        :MovieGenre .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#horror_genre
+:horror_genre rdf:type owl:NamedIndividual ,
+                       :EmotionDrivenGenre ,
+                       :Horror ,
+                       :MovieGenre .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#musical_genre
+:musical_genre rdf:type owl:NamedIndividual ,
+                        :FormatGenre ,
+                        :MovieGenre ,
+                        :Musical .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#mystery_genre
+:mystery_genre rdf:type owl:NamedIndividual ,
+                        :MovieGenre ,
+                        :Mystery ,
+                        :NarrativeGenre .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#psychDrama_genre
+:psychDrama_genre rdf:type owl:NamedIndividual ,
+                           :EmotionDrivenGenre ,
+                           :MovieGenre ,
+                           :PsychologicalDrama .
+
+
 ###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#reflective_1
 :reflective_1 rdf:type owl:NamedIndividual ,
                        :EmotionalState ,
                        :ReflectiveEmotion .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#romance_genre
+:romance_genre rdf:type owl:NamedIndividual ,
+                        :EmotionDrivenGenre ,
+                        :MovieGenre ,
+                        :Romance .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#sciFi_genre
+:sciFi_genre rdf:type owl:NamedIndividual ,
+                      :MovieGenre ,
+                      :SciFi ,
+                      :SpeculativeGenre .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#sport_genre
+:sport_genre rdf:type owl:NamedIndividual ,
+                      :ContextualGenre ,
+                      :MovieGenre ,
+                      :Sport .
 
 
 ###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#text_001
@@ -340,8 +459,14 @@
           :expressesEmotion :confusion_1 ,
                             :curiosity_1 ,
                             :reflective_1 ;
-          :suggestsGenre :comedy_genre ,
-                         :drama_genre .
+          :suggestsGenre :biography_genre ,
+                         :comedy_genre ,
+                         :documentary_genre ,
+                         :drama_genre ,
+                         :fantasy_genre ,
+                         :history_genre ,
+                         :mystery_genre ,
+                         :psychDrama_genre .
 
 
 ###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#text_1
@@ -350,7 +475,27 @@
         :expressesEmotion :confusion_1 ,
                           :curiosity_1 ,
                           :reflective_1 ;
-        :suggestsGenre :drama_genre .
+        :suggestsGenre :biography_genre ,
+                       :documentary_genre ,
+                       :drama_genre ,
+                       :fantasy_genre ,
+                       :history_genre ,
+                       :mystery_genre ,
+                       :psychDrama_genre .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#thriller_genre
+:thriller_genre rdf:type owl:NamedIndividual ,
+                         :EmotionDrivenGenre ,
+                         :MovieGenre ,
+                         :Thriller .
+
+
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#war_genre
+:war_genre rdf:type owl:NamedIndividual ,
+                    :ContextualGenre ,
+                    :MovieGenre ,
+                    :War .
 
 
 #################################################################
@@ -372,6 +517,579 @@
 <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/re> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/u> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "FearToActionRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :fear ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Action ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "CuriosityToDocumentaryRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :curiosity ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Documentary ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ReflectiveToDramaRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :ReflectiveEmotion ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Drama ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ReflectiveToBiographyRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :ReflectiveEmotion ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Biography ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "GriefToDramaRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :grief ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Drama ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "JoyToFamilyRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :joy ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Family ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "CuriosityToFantasyRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :curiosity ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Fantasy ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ReflectiveToHistoryRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :ReflectiveEmotion ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :History ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "FearToHorrorRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :fear ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Horror ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "JoyToMusicalRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :joy ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Musical ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "CuriosityToMysteryRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :curiosity ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Mystery ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ReflectiveToPsychDramaRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :ReflectiveEmotion ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :PsychologicalDrama ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ReflectiveEmotionRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e1>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :curiosity ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e1>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e2>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#classPredicate> :confusion ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e2>
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#classPredicate> :ReflectiveEmotion ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/re>
+                                                                                                            ] ;
+                                                                                                  rdf:rest rdf:nil
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/re>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "LoveToRomanceRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :love ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Romance ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment "" ;
@@ -415,6 +1133,139 @@
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment "" ;
+   rdfs:label "CuriosityFearToSciFiRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e1>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :curiosity ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e1>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e2>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#classPredicate> :fear ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e2>
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#classPredicate> :SciFi ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                                            ] ;
+                                                                                                  rdf:rest rdf:nil
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ExcitementToSportRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :excitement ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Sport ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "JoyToUpliftingRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :joy ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :UpliftingEmotion ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/u>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/u>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
    rdfs:label "LoveToUpliftingRule" ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
@@ -448,6 +1299,86 @@
                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
                                                        <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/u>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "JoyToComedyRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :joy ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Comedy ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "FearToCrimeRule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :fear ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Crime ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
                                                      ] ;
                                            rdf:rest rdf:nil
                                          ]
@@ -575,7 +1506,7 @@
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment "" ;
-   rdfs:label "ReflectiveToDramaRule" ;
+   rdfs:label "DistressedToWarRule" ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
@@ -590,12 +1521,12 @@
                                                                 ] ;
                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :ReflectiveEmotion ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :DistressedEmotion ;
                                                                              <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
                                                                            ] ;
                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Drama ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :War ;
                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
                                                                                       ] ;
                                                                             rdf:rest rdf:nil
@@ -608,179 +1539,6 @@
                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
                                                        <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "FearToHorrorRule" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :fear ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Horror ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "ReflectiveToPsychDramaRule" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :ReflectiveEmotion ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :PsychologicalDrama ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :suggestsGenre ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/g>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "ReflectiveEmotionRule" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e1>
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :curiosity ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e1>
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e2>
-                                                                                      ] ;
-                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                                                   <http://www.w3.org/2003/11/swrl#classPredicate> :confusion ;
-                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e2>
-                                                                                                 ] ;
-                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                                                              <http://www.w3.org/2003/11/swrl#classPredicate> :ReflectiveEmotion ;
-                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/re>
-                                                                                                            ] ;
-                                                                                                  rdf:rest rdf:nil
-                                                                                                ]
-                                                                                     ]
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/re>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "JoyToUpliftingRule" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TextualInput ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :joy ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/e>
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :UpliftingEmotion ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/u>
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :expressesEmotion ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/t> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology/u>
                                                      ] ;
                                            rdf:rest rdf:nil
                                          ]
