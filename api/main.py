@@ -20,13 +20,16 @@ def recommend(text_id: str):
 
     SELECT DISTINCT ?title ?genreLabel
     WHERE {{
-        emo:{text_id} emo:suggestsGenre ?gInd .
-        ?gInd rdf:type ?gClass .
-        ?gClass rdfs:label ?genreLabel .
-        ?movie a emo:Movie ;
+    emo:text_test emo:suggestsGenre ?genreInd .
+
+    ?genreInd rdf:type ?genreClass .
+    ?genreClass rdfs:label ?genreLabel .
+
+    ?movie a emo:Movie ;
             emo:title ?title ;
-            emo:belongsToGenre ?gClass .
+            emo:belongsToGenre ?genreClass .
     }}
-    LIMIT 20
+    ORDER BY ?genreLabel ?title
+    LIMIT 50
     """
     return run_query(query)
