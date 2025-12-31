@@ -299,6 +299,14 @@
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#comedy_genre
+:comedy_genre rdf:type owl:NamedIndividual ,
+                       :Comedy ,
+                       :EmotionDrivenGenre ,
+                       :MovieGenre ;
+              rdfs:label "\"Comedy\"" .
+
+
 ###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#confusion_1
 :confusion_1 rdf:type owl:NamedIndividual ,
                       :CognitiveEmotion ,
@@ -324,7 +332,8 @@
                    :TextualInput ;
           :expressesEmotion :confusion_1 ,
                             :curiosity_1 ,
-                            :reflective_1 .
+                            :reflective_1 ;
+          :suggestsGenre :comedy_genre .
 
 
 ###  http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#text_1

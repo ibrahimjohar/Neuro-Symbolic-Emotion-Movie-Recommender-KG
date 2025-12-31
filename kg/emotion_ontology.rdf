@@ -494,6 +494,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#comedy_genre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#comedy_genre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Comedy"/>
+        <rdfs:label>&quot;Comedy&quot;</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#confusion_1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#confusion_1">
@@ -524,6 +533,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#TextualInput"/>
         <emotion-ontology:expressesEmotion rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#confusion_1"/>
         <emotion-ontology:expressesEmotion rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#curiosity_1"/>
+        <emotion-ontology:suggestsGenre rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#comedy_genre"/>
     </owl:NamedIndividual>
     
 
