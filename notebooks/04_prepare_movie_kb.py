@@ -50,7 +50,6 @@ GENRE_MAPPING = {
     "Mystery": "Mystery",
     "Crime": "Crime",
     "Musical": "Musical",
-    "Western": "Western"
 }
 
 #normalize genres to ontology-aligned labels
