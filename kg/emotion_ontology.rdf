@@ -535,6 +535,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Action"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NarrativeGenre"/>
+        <rdfs:label>&quot;Action&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -585,6 +586,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Biography"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ContextualGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+        <rdfs:label>&quot;Biography&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -616,6 +618,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Crime"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NarrativeGenre"/>
+        <rdfs:label>&quot;Crime&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -665,6 +668,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Documentary"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#FormatGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+        <rdfs:label>&quot;Documentary&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -675,6 +679,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Drama"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+        <rdfs:label>&quot;Drama&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -695,6 +700,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Family"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#FormatGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+        <rdfs:label>&quot;Family&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -705,6 +711,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Fantasy"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#SpeculativeGenre"/>
+        <rdfs:label>&quot;Fantasy&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -745,6 +752,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ContextualGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#History"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+        <rdfs:label>&quot;History&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -755,6 +763,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Horror"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
+        <rdfs:label>&quot;Horror&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -785,6 +794,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#FormatGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Musical"/>
+        <rdfs:label>&quot;Musical&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -795,6 +805,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Mystery"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#NarrativeGenre"/>
+        <rdfs:label>&quot;Mystery&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -815,6 +826,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#PsychologicalDrama"/>
+        <rdfs:label>&quot;Psychological Drama&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -844,6 +856,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#EmotionDrivenGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Romance"/>
+        <rdfs:label>&quot;Romance&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -864,6 +877,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#SciFi"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#SpeculativeGenre"/>
+        <rdfs:label>&quot;Sci-Fi&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -874,6 +888,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ContextualGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#Sport"/>
+        <rdfs:label>&quot;Sport&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -976,6 +991,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#ContextualGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#MovieGenre"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#War"/>
+        <rdfs:label>&quot;War&quot;</rdfs:label>
     </owl:NamedIndividual>
     
 
