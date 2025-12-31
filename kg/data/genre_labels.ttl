@@ -1,0 +1,21 @@
+@prefix emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+emo:Action        rdfs:label "Action" .
+emo:Adventure     rdfs:label "Adventure" .
+emo:Animation     rdfs:label "Animation" .
+emo:Comedy        rdfs:label "Comedy" .
+emo:Crime         rdfs:label "Crime" .
+emo:Drama         rdfs:label "Drama" .
+emo:Family        rdfs:label "Family" .
+emo:Fantasy       rdfs:label "Fantasy" .
+emo:Horror        rdfs:label "Horror" .
+emo:Romance       rdfs:label "Romance" .
+emo:SciFi         rdfs:label "Sci-Fi" .
+emo:Thriller      rdfs:label "Thriller" .
+emo:War           rdfs:label "War" .
+emo:Documentary   rdfs:label "Documentary" .
+emo:Mystery       rdfs:label "Mystery" .
+emo:Musical       rdfs:label "Musical" .
+emo:FilmNoir      rdfs:label "Film Noir" .
+emo:Western       rdfs:label "Western" .
