@@ -20,34 +20,35 @@ MOVIES_LIMIT_PER_GENRE = 20   # how many movies to return in total (will be trim
 
 # Map ML emotion label -> ontology genre URIs (must match your ontology prefixes)
 # NOTE: keys should match the labels your predictor returns (lowercase). Adjust if necessary.
+# IMPORTANT: Genre classes in KG are capitalized (emo:Comedy, emo:Drama) NOT lowercase with _genre suffix
 ONTOLOGY_EMOTION_TO_GENRES = {
-    "admiration": ["emo:biography_genre"],
-    "amusement": ["emo:comedy_genre"],
-    "anger": ["emo:crime_genre", "emo:thriller_genre"],
-    "annoyance": ["emo:drama_genre"],
-    "approval": ["emo:drama_genre"],
-    "caring": ["emo:family_genre"],
-    "confusion": ["emo:mystery_genre"],
-    "curiosity": ["emo:mystery_genre", "emo:fantasy_genre"],
-    "desire": ["emo:romance_genre"],
-    "disappointment": ["emo:drama_genre"],
-    "disgust": ["emo:horror_genre"],
-    "embarrassment": ["emo:drama_genre"],
-    "excitement": ["emo:action_genre", "emo:adventure_genre"],
-    "fear": ["emo:horror_genre", "emo:thriller_genre"],
-    "gratitude": ["emo:uplifting_genre", "emo:family_genre"],
-    "grief": ["emo:drama_genre"],
-    "joy": ["emo:comedy_genre"],
-    "love": ["emo:romance_genre"],
-    "nervousness": ["emo:thriller_genre"],
-    "optimism": ["emo:family_genre", "emo:uplifting_genre"],
-    "pride": ["emo:drama_genre"],
-    "realization": ["emo:psychDrama_genre"],
-    "relief": ["emo:uplifting_genre"],
-    "remorse": ["emo:drama_genre"],
-    "sadness": ["emo:drama_genre"],
-    "surprise": ["emo:fantasy_genre"],
-    "neutral": ["emo:documentary_genre"],
+    "admiration": ["emo:Drama"],  # Biography not in movies, use Drama
+    "amusement": ["emo:Comedy"],
+    "anger": ["emo:Crime", "emo:Thriller"],
+    "annoyance": ["emo:Drama"],
+    "approval": ["emo:Drama"],
+    "caring": ["emo:Family"],
+    "confusion": ["emo:Drama"],  # Mystery not in movies, use Drama
+    "curiosity": ["emo:Drama", "emo:Fantasy"],  # Mystery not in movies, use Drama
+    "desire": ["emo:Romance"],
+    "disappointment": ["emo:Drama"],
+    "disgust": ["emo:Horror"],
+    "embarrassment": ["emo:Drama"],
+    "excitement": ["emo:Action", "emo:Adventure"],
+    "fear": ["emo:Horror", "emo:Thriller"],
+    "gratitude": ["emo:Family", "emo:Drama"],  # Uplifting not in movies, use Drama
+    "grief": ["emo:Drama"],
+    "joy": ["emo:Comedy"],
+    "love": ["emo:Romance"],
+    "nervousness": ["emo:Thriller"],
+    "optimism": ["emo:Family", "emo:Drama"],  # Uplifting not in movies, use Drama
+    "pride": ["emo:Drama"],
+    "realization": ["emo:Drama"],  # PsychologicalDrama not in movies, use Drama
+    "relief": ["emo:Drama"],  # Uplifting not in movies, use Drama
+    "remorse": ["emo:Drama"],
+    "sadness": ["emo:Drama"],
+    "surprise": ["emo:Fantasy"],
+    "neutral": ["emo:Drama"],  # Documentary not in movies, use Drama
     # add any other labels you use
 }
 
@@ -86,7 +87,7 @@ def top_k_genres_sorted(genre_scores: Dict[str, float], k: int = TOP_K_GENRES) -
 def build_movies_query_for_genres(genre_uris: List[str], limit: int = MOVIES_LIMIT_PER_GENRE):
     """
     Build SPARQL SELECT to fetch movies that belong to any of the provided genre URIs.
-    genre_uris should be strings like 'emo:comedy_genre'.
+    genre_uris should be strings like 'emo:Comedy', 'emo:Drama' (capitalized, no _genre suffix).
     """
     if not genre_uris:
         return None
@@ -105,6 +106,7 @@ def build_movies_query_for_genres(genre_uris: List[str], limit: int = MOVIES_LIM
         }}
         LIMIT {limit}
         """
+    print(f"DEBUG build_movies_query: genre_uris={genre_uris}, query={query}")
     return query
 
 def fetch_movies_for_genres(genre_uris: List[str], limit:int = MOVIES_LIMIT_PER_GENRE) -> List[Dict[str, str]]:
@@ -189,6 +191,10 @@ def chat(req: ChatRequest):
     if not text or not text.strip():
         raise HTTPException(status_code=400, detail="text must be provided")
 
+    # Initialize variables
+    movies = []
+    top_genres = []
+    
     # ML
     try:
         ml_scores = infer_emotions(text)   # returns {label:score}
@@ -202,57 +208,112 @@ def chat(req: ChatRequest):
         print("DEBUG dominant_emotions:", dominant_emotions)
 
         ontology_inds = map_ml_to_ontology_individuals(dominant_emotions)
-        print("DEBUG ontology_inds:", ontology_inds)   # SHOULD NOT BE []
+        print("DEBUG ontology_inds:", ontology_inds)
 
-        if not ontology_inds:
-            # nothing to query
-            reply = "I couldn't confidently detect a dominant emotion-driven genre from that text. Try a different description."
-            return {"request_id": str(uuid.uuid4()), "reply": reply, "ml_scores": ml_scores, "genre_scores": [], "movies": []}
+        # Try SPARQL query if we have ontology individuals, otherwise use fallback
+        if ontology_inds:
+            # Build the VALUES block for SPARQL: e.g. VALUES ?emotionInd { emo:joy_1 emo:fear_1 }
+            # Format ontology individuals with proper prefix
+            values_block = " ".join([f"emo:{ind}" for ind in ontology_inds])
+            
+            # Use user_id from request if provided, otherwise default to text_test
+            text_individual = f"emo:{req.user_id}" if req.user_id else "emo:text_test"
 
-        # Build the VALUES block for SPARQL: e.g. VALUES ?emotionInd { <...> <...> }
-        values_block = " ".join(ontology_inds)
+            query = f"""
+            PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-        query = f"""
-        PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            SELECT DISTINCT ?title ?genreLabel
+            WHERE {{
+            VALUES ?emotionInd {{ {values_block} }}
 
-        SELECT DISTINCT ?title ?genreLabel
-        WHERE {{
-        VALUES ?emotionInd {{ {values_block} }}
+            # two ways to find genre classes:
+            {{
+                # if text individual has expressesEmotion ?emotionInd AND also suggestsGenre assertions created already
+                {text_individual} emo:expressesEmotion ?emotionInd .
+                {text_individual} emo:suggestsGenre ?genreInd .
+            }} UNION {{
+                # or if the emotion individual itself has direct suggestsGenre -> genreInd
+                ?emotionInd emo:suggestsGenre ?genreInd .
+            }}
 
-        # two ways to find genre classes:
-        {{
-            # if text_test has expressesEmotion ?emotionInd AND also suggestsGenre assertions created already
-            emo:text_test emo:expressesEmotion ?emotionInd .
-            emo:text_test emo:suggestsGenre ?genreInd .
-        }} UNION {{
-            # or if the emotion individual itself has direct suggestsGenre -> genreInd
-            ?emotionInd emo:suggestsGenre ?genreInd .
-        }}
+            ?genreInd rdf:type ?genreClass .
+            ?genreClass rdfs:label ?genreLabel .
 
-        ?genreInd rdf:type ?genreClass .
-        ?genreClass rdfs:label ?genreLabel .
-
-        ?movie a emo:Movie ;
-                emo:title ?title ;
-                emo:belongsToGenre ?genreClass .
-        }}
-        ORDER BY ?genreLabel ?title
-        LIMIT 50
-        """
-        print("DEBUG SPARQL query:", query)
+            ?movie a emo:Movie ;
+                    emo:title ?title ;
+                    emo:belongsToGenre ?genreClass .
+            }}
+            ORDER BY ?genreLabel ?title
+            LIMIT 50
+            """
+            print("DEBUG SPARQL query:", query)
+            
+            # Actually execute the SPARQL query
+            try:
+                sparql_response = run_select(query)
+                print("DEBUG SPARQL response:", sparql_response)
+                
+                # Parse SPARQL results
+                bindings = sparql_response.get("results", {}).get("bindings", [])
+                sparql_movies = []
+                
+                for b in bindings:
+                    title = b.get("title", {}).get("value")
+                    genreLabel = b.get("genreLabel", {}).get("value") if b.get("genreLabel") else None
+                    if title:
+                        sparql_movies.append({"title": title, "genre": genreLabel})
+                
+                # If we got results from SPARQL, use them
+                if sparql_movies:
+                    movies = sparql_movies
+                    print(f"DEBUG: Found {len(movies)} movies from SPARQL query")
+                else:
+                    print("DEBUG: SPARQL query returned no movies, will use genre-based fallback")
+                    
+            except Exception as sparql_error:
+                # If SPARQL query fails, will use fallback below
+                print(f"DEBUG: SPARQL query failed: {sparql_error}, will use genre-based fallback")
+        else:
+            print("DEBUG: No ontology individuals found, using genre-based approach")
+        
+        # Always compute genre scores (needed for response)
+        # Use a lower threshold if the default one filters everything out
+        genre_scores_dict = compute_genre_scores(ml_scores, threshold=threshold)
+        
+        # If threshold is too high and filters everything, use a lower threshold
+        if not genre_scores_dict and threshold >= 0.3:
+            print(f"DEBUG: Threshold {threshold} filtered all emotions, trying lower threshold 0.2")
+            genre_scores_dict = compute_genre_scores(ml_scores, threshold=0.2)
+        
+        # If still empty, use top emotions by score (no threshold)
+        if not genre_scores_dict:
+            print("DEBUG: Still no genre scores, using top emotions without threshold")
+            # Get top emotions by raw score
+            sorted_emotions = sorted(ml_scores.items(), key=lambda x: x[1], reverse=True)[:top_k]
+            # Manually build genre scores from top emotions
+            for emo_label, score in sorted_emotions:
+                key = emo_label.lower()
+                genres = ONTOLOGY_EMOTION_TO_GENRES.get(key, [])
+                for g in genres:
+                    genre_scores_dict[g] = genre_scores_dict.get(g, 0.0) + float(score)
+        
+        top_genres = top_k_genres_sorted(genre_scores_dict, k=top_k)
+        print(f"DEBUG: top_genres count: {len(top_genres)}")
+        
+        # If we don't have movies from SPARQL, use the working genre-based approach
+        if not movies:
+            if top_genres:
+                genre_uris = [g["genre_uri"] for g in top_genres]
+                print(f"DEBUG: Fetching movies for genres: {genre_uris}")
+                movies = fetch_movies_for_genres(genre_uris, limit=MOVIES_LIMIT_PER_GENRE)
+                print(f"DEBUG: Fetched {len(movies)} movies")
+            else:
+                print("DEBUG: No top_genres available, cannot fetch movies")
+            
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"ML inference failed: {e}")
-
-
-    # compute genre weights and top-k
-    genre_scores_dict = compute_genre_scores(ml_scores, threshold=threshold)
-    top_genres = top_k_genres_sorted(genre_scores_dict, k=top_k)
-    genre_uris = [g["genre_uri"] for g in top_genres]
-
-    # fetch movies
-    movies = fetch_movies_for_genres(genre_uris, limit=MOVIES_LIMIT_PER_GENRE)
 
     # build assistant reply (concise, factual)
     if top_genres:
