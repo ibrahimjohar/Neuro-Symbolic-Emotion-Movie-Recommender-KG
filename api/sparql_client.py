@@ -1,22 +1,21 @@
 import requests
 
-JENA_ENDPOINT = "http://fuseki:3030/emotion/sparql"
+JENA_SELECT_ENDPOINT = "http://localhost:3030/emotion/sparql"
+JENA_UPDATE_ENDPOINT = "http://localhost:3030/emotion/update"
 
-def run_query(query: str):
+def run_select(query: str, timeout: int = 30) -> dict:
     r = requests.post(
-        JENA_ENDPOINT,
-        data=query.encode("utf-8"),
-        headers={
-            "Content-Type": "application/sparql-query",
-            "Accept": "application/sparql-results+json",
-        },
-        timeout=30
+        JENA_SELECT_ENDPOINT,
+        data={"query": query},
+        headers={"Accept": "application/sparql-results+json"}
     )
-
-    #CRITICAL: surface Jena errors instead of crashing blindly
-    if not r.ok:
-        raise RuntimeError(
-            f"Jena error {r.status_code}:\n{r.text}"
-        )
-
+    r.raise_for_status()
     return r.json()
+
+def run_update(update_query: str, timeout: int = 30) -> None:
+    r = requests.post(
+        JENA_UPDATE_ENDPOINT,
+        data=update_query.encode("utf-8"),
+        headers={"Content-Type": "application/sparql-update"}
+    )
+    r.raise_for_status()
