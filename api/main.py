@@ -5,6 +5,11 @@ import uuid
 
 from dl.emotion_inference import infer_emotions  # returns {label: score}
 from api.sparql_client import run_select  # existing function in your project
+from nlp.emotion_dominance import select_dominant_emotions
+from nlp.emotion_mapper import (
+    map_ml_to_ontology_individuals,
+    map_ontology_individuals_to_genres
+)
 
 app = FastAPI(title="Neuro-Symbolic Emotion Movie Recommender")
 
@@ -88,18 +93,18 @@ def build_movies_query_for_genres(genre_uris: List[str], limit: int = MOVIES_LIM
 
     genre_list = ", ".join(genre_uris)
     query = f"""
-PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?title ?genreLabel WHERE {{
-  ?movie a emo:Movie ;
-         emo:title ?title ;
-         emo:belongsToGenre ?g .
-  FILTER (?g IN ({genre_list}))
-  OPTIONAL {{ ?g rdfs:label ?genreLabel }}
-}}
-LIMIT {limit}
-"""
+        SELECT DISTINCT ?title ?genreLabel WHERE {{
+        ?movie a emo:Movie ;
+                emo:title ?title ;
+                emo:belongsToGenre ?g .
+        FILTER (?g IN ({genre_list}))
+        OPTIONAL {{ ?g rdfs:label ?genreLabel }}
+        }}
+        LIMIT {limit}
+        """
     return query
 
 def fetch_movies_for_genres(genre_uris: List[str], limit:int = MOVIES_LIMIT_PER_GENRE) -> List[Dict[str, str]]:
@@ -186,9 +191,60 @@ def chat(req: ChatRequest):
 
     # ML
     try:
-        ml_scores = infer_emotions(text)
+        ml_scores = infer_emotions(text)   # returns {label:score}
+        print("DEBUG ML scores:", ml_scores)
+
+        dominant_emotions = select_dominant_emotions(
+            ml_scores,
+            top_k=2,
+            min_prob=0.15
+        )
+        print("DEBUG dominant_emotions:", dominant_emotions)
+
+        ontology_inds = map_ml_to_ontology_individuals(dominant_emotions)
+        print("DEBUG ontology_inds:", ontology_inds)   # SHOULD NOT BE []
+
+        if not ontology_inds:
+            # nothing to query
+            reply = "I couldn't confidently detect a dominant emotion-driven genre from that text. Try a different description."
+            return {"request_id": str(uuid.uuid4()), "reply": reply, "ml_scores": ml_scores, "genre_scores": [], "movies": []}
+
+        # Build the VALUES block for SPARQL: e.g. VALUES ?emotionInd { <...> <...> }
+        values_block = " ".join(ontology_inds)
+
+        query = f"""
+        PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+        SELECT DISTINCT ?title ?genreLabel
+        WHERE {{
+        VALUES ?emotionInd {{ {values_block} }}
+
+        # two ways to find genre classes:
+        {{
+            # if text_test has expressesEmotion ?emotionInd AND also suggestsGenre assertions created already
+            emo:text_test emo:expressesEmotion ?emotionInd .
+            emo:text_test emo:suggestsGenre ?genreInd .
+        }} UNION {{
+            # or if the emotion individual itself has direct suggestsGenre -> genreInd
+            ?emotionInd emo:suggestsGenre ?genreInd .
+        }}
+
+        ?genreInd rdf:type ?genreClass .
+        ?genreClass rdfs:label ?genreLabel .
+
+        ?movie a emo:Movie ;
+                emo:title ?title ;
+                emo:belongsToGenre ?genreClass .
+        }}
+        ORDER BY ?genreLabel ?title
+        LIMIT 50
+        """
+        print("DEBUG SPARQL query:", query)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"ML inference failed: {e}")
+
 
     # compute genre weights and top-k
     genre_scores_dict = compute_genre_scores(ml_scores, threshold=threshold)
