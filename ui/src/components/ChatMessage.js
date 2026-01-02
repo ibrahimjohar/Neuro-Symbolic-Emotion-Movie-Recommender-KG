@@ -35,7 +35,7 @@ const ChatMessage = ({ message }) => {
           </div>
         )}
 
-        {isBot && message.movies && message.movies.length === 0 && !isError && (
+        {isBot && message.movies && message.movies.length === 0 && !isError && message.genreScores && message.genreScores.length > 0 && (
           <div className="no-movies">
             <p>I couldn't find specific movies, but I detected these genre preferences:</p>
             {message.genreScores && message.genreScores.length > 0 && (

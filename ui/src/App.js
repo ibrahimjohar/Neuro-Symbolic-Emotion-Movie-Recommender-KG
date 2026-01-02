@@ -20,6 +20,7 @@ function App() {
   const [error, setError] = useState(null);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+  const [sessionId] = useState(() => 'session_' + Math.random().toString(36).slice(2));
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -52,7 +53,7 @@ function App() {
     try {
       const response = await axios.post(API_URL, {
         text: userMessage,
-        user_id: `user_${Date.now()}`,
+        session_id: sessionId,
         threshold: 0.2,
         top_k: 5
       }, {
