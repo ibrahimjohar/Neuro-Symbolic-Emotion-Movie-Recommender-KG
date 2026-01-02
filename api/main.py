@@ -7,6 +7,7 @@ import re
 
 from dl.emotion_inference import infer_emotions
 from api.sparql_client import run_select
+from session_state import update_session, dominant_emotions
 
 app = FastAPI(title="Neuro-Symbolic Emotion Movie Recommender")
 
@@ -45,7 +46,13 @@ def detect_explicit_emotion(text: str) -> Optional[str]:
             return emotion
     return None
 
+def rank_movies(movies, top_emotions):
+    total_weight = sum(score for _, score in top_emotions)
 
+    for m in movies:
+        m["score"] = total_weight
+
+    return sorted(movies, key=lambda x: x["score"], reverse=True)
 
 class ChatRequest(BaseModel):
     text: str
@@ -68,13 +75,17 @@ def chat(req: ChatRequest):
         raise HTTPException(status_code=400, detail="Text must be provided")
 
     explicit_emotion = detect_explicit_emotion(text)
+    
+    session_id = req.request_id if hasattr(req, "request_id") else "default"
 
     ml_scores = infer_emotions(text)
     if explicit_emotion:
         ml_scores[explicit_emotion] = max(ml_scores.get(explicit_emotion, 0.0), 0.75)
 
-    sorted_scores = sorted(ml_scores.items(), key=lambda x: x[1], reverse=True)
-    dominant_emotion = sorted_scores[0][0]
+    session_scores = update_session(session_id, ml_scores)
+    top_emotions = dominant_emotions(session_scores)
+    dominant_emotion = top_emotions[0][0]
+
 
     query = f"""
             PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
@@ -110,6 +121,8 @@ def chat(req: ChatRequest):
 
     genres = list(genres)
     
+    movies = rank_movies(movies, top_emotions)
+    
     if movies:
         sample_titles = ", ".join(m["title"] for m in movies[:5])
         reply = (
@@ -119,9 +132,10 @@ def chat(req: ChatRequest):
         )
     else:
         reply = (
-            f"I detected you're feeling {dominant_emotion}, "
-            f"but the ontology did not infer any matching movies."
+            f"Based on your recent emotions ({', '.join(e for e, _ in top_emotions)}), "
+            f"and genres inferred by the ontology, here are some recommendations."
         )
+
         
     return ChatResponse(
         request_id=str(uuid.uuid4()),
