@@ -4,17 +4,31 @@ from typing import Dict
 #in-memory session store
 _SESSIONS = {}
 
+_SESSIONS.clear()
+
+def update_emotions(session_id: str, ml_scores: dict):
+    session = get_session(session_id)
+
+    if "confidence" not in session:
+        session["confidence"] = 0.0
+
 CONFIDENCE_INCREMENT = 0.2
 CONFIDENCE_THRESHOLD = 0.6
 
 def get_session(session_id: str):
-    if session_id not in _SESSIONS:
-        _SESSIONS[session_id] = {
-            "emotions": defaultdict(list),   # emotion -> [scores]
-            "preferences": {},               # future extension
-            "confidence": 0.0
+    session = _SESSIONS.setdefault(
+        session_id,
+        {
+            "emotions": {},
+            "turns": 0,
+            "confidence": 0.0,
         }
-    return _SESSIONS[session_id]
+    )
+
+    if "confidence" not in session:
+        session["confidence"] = 0.0
+
+    return session
 
 def _get_session(session_id):
     if session_id not in _SESSIONS:
@@ -40,18 +54,25 @@ def clear_pending_question(session_id):
     session["pending_question"] = None
 
 
-def update_emotions(session_id: str, emotion_scores: dict):
-    session = get_session(session_id)
-
-    for emo, score in emotion_scores.items():
-        session["emotions"][emo].append(score)
-
-    session["confidence"] = min(
-        1.0,
-        session["confidence"] + CONFIDENCE_INCREMENT
+def update_emotions(session_id: str, ml_scores: dict):
+    session = _SESSIONS.setdefault(
+        session_id,
+        {
+            "emotions": {},
+            "turns": 0,
+            "confidence": 0.0
+        }
     )
 
-    return session
+    for emo, score in ml_scores.items():
+        if emo not in session["emotions"]:
+            session["emotions"][emo] = []
+
+        session["emotions"][emo].append(score)
+
+    session["turns"] += 1
+    
+    session["confidence"] = max(session["confidence"], max(ml_scores.values(), default=0.0))
 
 def aggregated_emotions(session_id: str):
     session = get_session(session_id)
