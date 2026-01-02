@@ -32,31 +32,7 @@ EMOTION_TO_ONTOLOGY: Dict[str, str] = {
     # add any other labels you use — keep lowercase keys matching ML output
 }
 
-# --- Map ontology emotion individual -> ontology genre URIs (used by SPARQL filter) ---
-ONTOLOGY_EMOTION_TO_GENRES: Dict[str, List[str]] = {
-    "joy_1": ["emo:comedy_genre", "emo:family_genre"],
-    "amusement_1": ["emo:comedy_genre"],
-    "anger_1": ["emo:crime_genre", "emo:thriller_genre"],
-    "confusion_1": ["emo:mystery_genre"],
-    "curiosity_1": ["emo:mystery_genre", "emo:fantasy_genre"],
-    "fear_1": ["emo:horror_genre", "emo:thriller_genre"],
-    "excitement_1": ["emo:action_genre", "emo:adventure_genre"],
-    "sadness_1": ["emo:drama_genre"],
-    "grief_1": ["emo:drama_genre"],
-    "love_1": ["emo:romance_genre"],
-    "neutral_1": ["emo:documentary_genre"],
-    # continue for all your emotion individuals...
-}
-
 # --- Helpers ---
 def map_ml_to_ontology_individuals(emotions: List[str]) -> List[str]:
     """Given ML labels (lowercase), return ontology individual names (e.g., 'confusion_1')."""
     return [EMOTION_TO_ONTOLOGY[e] for e in emotions if e in EMOTION_TO_ONTOLOGY]
-
-def map_ontology_individuals_to_genres(individuals: List[str]) -> List[str]:
-    """Given ontology individuals, return a unique list of genre URIs (e.g., 'emo:comedy_genre')."""
-    out = []
-    for ind in individuals:
-        out.extend(ONTOLOGY_EMOTION_TO_GENRES.get(ind, []))
-    # preserve order but dedupe
-    return list(dict.fromkeys(out))
