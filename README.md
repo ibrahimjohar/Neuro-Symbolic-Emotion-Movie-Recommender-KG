@@ -79,6 +79,14 @@ Quick test:
 Invoke-WebRequest -Uri http://localhost:8000/health
 ```
 
+Optional: set TMDb API key for external movie details (kept server-side)
+```powershell
+# PowerShell (session-only)
+$env:TMDB_API_KEY = 'your_tmdb_api_key_here'
+```
+New endpoint (used by the UI for the highlight panel):
+- Movie details: `POST http://localhost:8000/movie/details` with body `{ "title": "Inception", "year": "2010" }`
+
 ## 5) Run the UI (React)
 ```powershell
 cd ui

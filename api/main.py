@@ -7,6 +7,8 @@ import uuid
 import re
 import logging
 import random
+import os
+import requests
 
 from dl.emotion_inference import infer_emotions
 from nlp.emotion_mapper import map_ml_to_ontology_individuals, EMOTION_TO_ONTOLOGY
@@ -715,5 +717,117 @@ def interpret_followup_answer(pending_id: str, user_text: str, ml_scores: Dict[s
                     return f"emo:{value}"
                 return value
     return None
+
+# --- External movie details (TMDb) ---
+from typing import Any
+
+TMDB_API_KEY = (os.getenv("TMDB_API_KEY") or "").strip()
+TMDB_IMG_BASE = "https://image.tmdb.org/t/p/w500"
+MOVIE_DETAILS_CACHE: Dict[str, Dict[str, Any]] = {}
+
+class MovieDetailsRequest(BaseModel):
+    title: str
+    year: Optional[str] = None
+
+class MovieDetailsResponse(BaseModel):
+    found: bool
+    details: Optional[Dict[str, Any]]
+
+
+def _fetch_tmdb_details(title: str, year: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    if not TMDB_API_KEY:
+        logger.warning("TMDB_API_KEY not set; skipping external lookup")
+        return None
+    cache_key = f"{title}|{year or ''}".strip()
+    if cache_key in MOVIE_DETAILS_CACHE:
+        return MOVIE_DETAILS_CACHE[cache_key]
+
+    def _norm(s: str) -> str:
+        return re.sub(r"[^a-z0-9]+", " ", str(s).lower()).strip()
+
+    def _parse_year(y: Optional[str]) -> Optional[int]:
+        if y is None:
+            return None
+        m = re.search(r"\b(19|20)\d{2}\b", str(y))
+        if m:
+            try:
+                return int(m.group(0))
+            except Exception:
+                pass
+        try:
+            return int(float(str(y)))
+        except Exception:
+            return None
+
+    try:
+        y = _parse_year(year)
+        params = {
+            "api_key": TMDB_API_KEY,
+            "query": title,
+            "include_adult": "false",
+            "language": "en-US",
+        }
+        if y:
+            params["year"] = y
+        r = requests.get("https://api.themoviedb.org/3/search/movie", params=params, timeout=10)
+        r.raise_for_status()
+        data = r.json()
+        results = data.get("results", [])
+        if not results:
+            return None
+        nt = _norm(title)
+        # score candidates by exact/partial title match, year match, and vote_count as tie-breaker
+        scored = []
+        for mres in results:
+            rel_year = (mres.get("release_date") or "")[:4]
+            tf = [mres.get("title") or "", mres.get("original_title") or ""]
+            score = 0.0
+            if any(_norm(t) == nt for t in tf):
+                score += 3.0
+            elif any(nt and (nt in _norm(t)) for t in tf):
+                score += 1.0
+            if y and rel_year == str(y):
+                score += 2.0
+            try:
+                score += (float(mres.get("vote_count", 0)) / 10000.0)
+            except Exception:
+                pass
+            scored.append((score, mres))
+        scored.sort(key=lambda x: x[0], reverse=True)
+        match = scored[0][1] if scored else None
+        if not match:
+            return None
+        movie_id = match.get("id")
+        dresp = requests.get(
+            f"https://api.themoviedb.org/3/movie/{movie_id}",
+            params={"api_key": TMDB_API_KEY, "append_to_response": "credits"},
+            timeout=10,
+        )
+        dresp.raise_for_status()
+        d = dresp.json()
+        details = {
+            "title": d.get("title") or match.get("title"),
+            "year": (d.get("release_date") or match.get("release_date") or "")[:4],
+            "rating": d.get("vote_average"),
+            "genres": [g.get("name") for g in d.get("genres", [])],
+            "cast": [c.get("name") for c in d.get("credits", {}).get("cast", [])[:8]],
+            "overview": d.get("overview"),
+            "poster_url": (TMDB_IMG_BASE + d["poster_path"]) if d.get("poster_path") else None,
+            "tmdb_id": movie_id,
+            "source": "tmdb",
+        }
+        MOVIE_DETAILS_CACHE[cache_key] = details
+        return details
+    except Exception as e:
+        logger.error(f"TMDb details fetch failed: {e}")
+        return None
+
+
+@app.post("/movie/details", response_model=MovieDetailsResponse)
+def movie_details(req: MovieDetailsRequest) -> MovieDetailsResponse:
+    if not req.title or not req.title.strip():
+        raise HTTPException(status_code=400, detail="Title required")
+    details = _fetch_tmdb_details(req.title.strip(), req.year)
+    return MovieDetailsResponse(found=bool(details), details=details)
 
 

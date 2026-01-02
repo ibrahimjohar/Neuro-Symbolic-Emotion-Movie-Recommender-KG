@@ -1,0 +1,114 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.brand:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-link {
+  color: #dddddd;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.session-indicator {
+  font-size: 0.85rem;
+  color: #cccccc;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.new-chat-button {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #e6e6e6;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.new-chat-button:hover {
+  background: #f2f2f2;
+  transform: translateY(-1px);
+}
+
+.new-chat-button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .brand {
+    font-size: 1.05rem;
+  }
+  .nav-link {
+    padding: 6px 10px;
+  }
+  .session-indicator {
+    display: none;
+  }
+}
