@@ -47,12 +47,14 @@ def detect_explicit_emotion(text: str) -> Optional[str]:
     return None
 
 def rank_movies(movies, top_emotions):
-    total_weight = sum(score for _, score in top_emotions)
+    #if no top_emotions, return movies unchanged
+    if not top_emotions:
+        return movies
 
-    for m in movies:
-        m["score"] = total_weight
-
-    return sorted(movies, key=lambda x: x["score"], reverse=True)
+    #simple stable ranking placeholder that does not mutate movie dicts.
+    #(keep ontology as ground truth, python only reorders.)
+    #for now sort by title so output is deterministic.
+    return sorted(movies, key=lambda m: (m.get("title") or "").lower())
 
 class ChatRequest(BaseModel):
     text: str
