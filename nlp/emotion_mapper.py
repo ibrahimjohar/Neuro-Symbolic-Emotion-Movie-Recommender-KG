@@ -32,7 +32,5 @@ EMOTION_TO_ONTOLOGY: Dict[str, str] = {
     # add any other labels you use — keep lowercase keys matching ML output
 }
 
-# --- Helpers ---
-def map_ml_to_ontology_individuals(emotions: List[str]) -> List[str]:
-    """Given ML labels (lowercase), return ontology individual names (e.g., 'confusion_1')."""
-    return [EMOTION_TO_ONTOLOGY[e] for e in emotions if e in EMOTION_TO_ONTOLOGY]
+def map_ml_to_ontology_individuals(emotion_names):
+    return [EMOTION_TO_ONTOLOGY[e] for e in emotion_names if e in EMOTION_TO_ONTOLOGY]

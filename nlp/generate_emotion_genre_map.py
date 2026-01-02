@@ -4,12 +4,13 @@ import os
 EXTRACTION_QUERY = """
 PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT DISTINCT ?emotion ?genreClass WHERE {
-  ?emotion emo:suggestsGenre ?genreInd .
+  ?text a emo:TextualInput ;
+        emo:expressesEmotion ?emotion ;
+        emo:suggestsGenre ?genreInd .
+
   ?genreInd rdf:type ?genreClass .
-  FILTER(STRSTARTS(STR(?emotion), STR(emo:)))
-  FILTER(STRSTARTS(STR(?genreClass), STR(emo:)))
 }
 """
 
@@ -26,11 +27,13 @@ def build_map():
     rows = res.get("results", {}).get("bindings", [])
     mapping = {}
     for r in rows:
-        e = r["emotion"]["value"]
-        g = r["genreClass"]["value"]
-        e_short = short_prefixed(e)
-        g_short = short_prefixed(g)
-        mapping.setdefault(e_short, set()).add(g_short)
+        emotion = r["emotion"]["value"]
+        genre_class = r["genreClass"]["value"]
+
+        e_key = short_prefixed(emotion)
+        g_key = short_prefixed(genre_class)
+
+        mapping.setdefault(e_key, set()).add(g_key)
 
     # convert sets -> lists and sort for determinism
     mapping = {k: sorted(list(v)) for k, v in mapping.items()}

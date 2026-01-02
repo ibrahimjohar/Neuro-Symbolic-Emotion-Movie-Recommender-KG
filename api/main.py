@@ -2,13 +2,15 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict, List, Any, Optional
+from collections import Counter
 import uuid
 import re
 
 from dl.emotion_inference import infer_emotions
 from api.sparql_client import run_select
-from session_state import update_session, dominant_emotions
-from nlp.emotion_mapper import map_ml_to_ontology_individuals
+from session_state import update_emotions, aggregated_emotions, is_confident_enough
+from nlp.emotion_genre_map import EMOTION_TO_GENRES
+from nlp.emotion_mapper import EMOTION_TO_ONTOLOGY
 
 app = FastAPI(title="Neuro-Symbolic Emotion Movie Recommender")
 
@@ -79,85 +81,117 @@ def chat(req: ChatRequest):
 
     explicit_emotion = detect_explicit_emotion(text)
     
-    session_id = req.request_id if hasattr(req, "request_id") else "default"
+    #session_id = req.request_id if hasattr(req, "request_id") else "default"
+    session_id = "default"
 
     ml_scores = infer_emotions(text)
     if explicit_emotion:
         ml_scores[explicit_emotion] = max(ml_scores.get(explicit_emotion, 0.0), 0.75)
 
-    session_scores = update_session(session_id, ml_scores)
-    top_emotions = dominant_emotions(session_scores)
-    emotion_names = [e for e, _ in top_emotions]
-    ontology_inds = map_ml_to_ontology_individuals(emotion_names)
+    #update session with current emotion inference
+    update_emotions(session_id, ml_scores)
 
-    dominant_emotion = top_emotions[0][0]
+    #aggregate over turns
+    agg_emotions = aggregated_emotions(session_id)
+
+    #sort by strength
+    top_emotions = sorted(
+        agg_emotions.items(),
+        key=lambda x: x[1],
+        reverse=True
+    )
     
-    if not ontology_inds:
+    top_emotions = [(e, w) for e, w in top_emotions if e != "neutral"]
+    
+    dominant_emotion = top_emotions[0][0] if top_emotions else "neutral"
+    
+    print("TOP_EMOTIONS:", top_emotions)
+    for emo_label, w in top_emotions:
+        emo_ind = EMOTION_TO_ONTOLOGY.get(emo_label)
+        emo_key = f"emo:{emo_ind}" if emo_ind else None
+        print("MAP:", emo_label, "->", emo_key, "IN_GENRE_MAP:", emo_key in EMOTION_TO_GENRES)
+
+    print("GENRE_MAP_KEYS_SAMPLE:", list(EMOTION_TO_GENRES.keys())[:8])
+    
+    genre_counter = Counter()
+
+    for emo_label, weight in top_emotions:
+        emo_local = EMOTION_TO_ONTOLOGY.get(emo_label)
+
+        if not emo_local:
+            continue
+
+        emo_key = emo_local if emo_local.startswith("emo:") else f"emo:{emo_local}"
+
+        print(
+            "RANKING MAP:",
+            emo_label,
+            "->",
+            emo_key,
+            "IN_GENRE_MAP:",
+            emo_key in EMOTION_TO_GENRES
+        )
+
+        for genre in EMOTION_TO_GENRES.get(emo_key, []):
+            genre_counter[genre] += weight
+
+    
+    ranked_genres = [g for g, _ in genre_counter.most_common(3)]
+    
+    if not ranked_genres:
         return ChatResponse(
             request_id=str(uuid.uuid4()),
-            reply="I detected emotions, but they could not be mapped to ontology individuals.",
+            reply="I detected emotions, but the ontology did not prioritize any genres yet.",
             dominant_emotion=dominant_emotion,
+            genres=[],
+            movies=[]
+        )
+        
+    if not is_confident_enough(session_id):
+        return ChatResponse(
+            request_id=str(uuid.uuid4()),
+            reply=(
+                "I’m still getting a better sense of how you’re feeling. "
+                "Can I ask you another quick question?"
+            ),
+            dominant_emotion=top_emotions[0][0] if top_emotions else "neutral",
             genres=[],
             movies=[]
         )
 
 
-    values_block = " ".join(ontology_inds)
+    values_block = " ".join(ranked_genres)
 
     query = f"""
         PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
-        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
         SELECT DISTINCT ?title ?genreLabel WHERE {{
-            VALUES ?emoInd {{ {values_block} }}
+        VALUES ?genreClass {{ {values_block} }}
 
-            ?emoInd emo:suggestsGenre ?genreInd .
-            ?genreInd rdf:type ?genreClass .
-            OPTIONAL {{ ?genreClass rdfs:label ?genreLabel }}
-
-            ?movie a emo:Movie ;
+        ?movie a emo:Movie ;
                 emo:title ?title ;
                 emo:belongsToGenre ?genreClass .
+
+        OPTIONAL {{ ?genreClass rdfs:label ?genreLabel }}
         }}
         LIMIT {MOVIES_LIMIT}
         """
 
-
-    #query = f"""
-    """
-            PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
-            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-            SELECT DISTINCT ?title ?genreLabel WHERE {{
-                emo:text_test emo:suggestsGenre ?genreInd .
-
-                ?genreInd rdf:type ?genreClass .
-                OPTIONAL {{ ?genreClass rdfs:label ?genreLabel }}
-
-                ?movie a emo:Movie ;
-                    emo:title ?title ;
-                    emo:belongsToGenre ?genreClass .
-            }}
-            LIMIT {MOVIES_LIMIT}
-            """
-    
     res = run_select(query)
     bindings = res.get("results", {}).get("bindings", [])
 
     movies = []
     genres = set()
-
     for b in bindings:
         title = b.get("title", {}).get("value")
-        genre = b.get("genreLabel", {}).get("value")
+        genre = b.get("genreLabel", {}).get("value", "")
         if title:
             movies.append({"title": title, "genre": genre})
         if genre:
             genres.add(genre)
 
-    genres = list(genres)
+    genres = [g.replace("emo:", "") for g in ranked_genres]
     
     movies = rank_movies(movies, top_emotions)
     
@@ -170,8 +204,9 @@ def chat(req: ChatRequest):
         )
     else:
         reply = (
-            f"Based on your recent emotions ({', '.join(e for e, _ in top_emotions)}), "
-            f"and genres inferred by the ontology, here are some recommendations."
+            f"Based on your recent emotions "
+            f"({', '.join(e for e, _ in top_emotions)}), "
+            f"I prioritized genres inferred by the ontology."
         )
 
         
