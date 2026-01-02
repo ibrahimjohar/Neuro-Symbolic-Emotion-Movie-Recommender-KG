@@ -8,9 +8,10 @@ import re
 
 from dl.emotion_inference import infer_emotions
 from api.sparql_client import run_select
-from session_state import update_emotions, aggregated_emotions, is_confident_enough
+from session_state import update_emotions, aggregated_emotions, is_confident_enough, get_pending_question, set_pending_question, clear_pending_question
 from nlp.emotion_genre_map import EMOTION_TO_GENRES
 from nlp.emotion_mapper import EMOTION_TO_ONTOLOGY
+from nlp.followup_questions import FOLLOWUP_QUESTIONS
 
 app = FastAPI(title="Neuro-Symbolic Emotion Movie Recommender")
 
@@ -60,6 +61,7 @@ def rank_movies(movies, top_emotions):
     return sorted(movies, key=lambda m: (m.get("title") or "").lower())
 
 class ChatRequest(BaseModel):
+    session_id: str
     text: str
 
 class ChatResponse(BaseModel):
@@ -75,14 +77,34 @@ def health():
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest):
+    session_id = req.session_id
+    
     text = req.text.strip()
     if not text:
         raise HTTPException(status_code=400, detail="Text must be provided")
 
+    pending = get_pending_question(session_id)
+
+    if pending:
+        question = FOLLOWUP_QUESTIONS[pending]
+        answer = text.lower().strip()
+
+        if answer not in question["options"]:
+            return ChatResponse(
+                request_id=str(uuid.uuid4()),
+                reply=f"Please answer with one of: {', '.join(question['options'])}",
+                dominant_emotion="neutral",
+                genres=[],
+                movies=[]
+            )
+
+        mapped_emotion = question["mapping"][answer]
+        update_emotions(session_id, {mapped_emotion: 1.0})
+        clear_pending_question(session_id)
+    
     explicit_emotion = detect_explicit_emotion(text)
     
     #session_id = req.request_id if hasattr(req, "request_id") else "default"
-    session_id = "default"
 
     ml_scores = infer_emotions(text)
     if explicit_emotion:
@@ -148,13 +170,13 @@ def chat(req: ChatRequest):
         )
         
     if not is_confident_enough(session_id):
+        set_pending_question(session_id, "emotion_direction")
+        q = FOLLOWUP_QUESTIONS["emotion_direction"]
+
         return ChatResponse(
             request_id=str(uuid.uuid4()),
-            reply=(
-                "I’m still getting a better sense of how you’re feeling. "
-                "Can I ask you another quick question?"
-            ),
-            dominant_emotion=top_emotions[0][0] if top_emotions else "neutral",
+            reply=q["question"],
+            dominant_emotion=dominant_emotion,
             genres=[],
             movies=[]
         )

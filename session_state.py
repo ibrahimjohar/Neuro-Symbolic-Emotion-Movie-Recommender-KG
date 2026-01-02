@@ -16,6 +16,30 @@ def get_session(session_id: str):
         }
     return _SESSIONS[session_id]
 
+def _get_session(session_id):
+    if session_id not in _SESSIONS:
+        _SESSIONS[session_id] = {
+            "emotions": {},
+            "turns": 0,
+            "pending_question": None
+        }
+    return _SESSIONS[session_id]
+
+def set_pending_question(session_id, question_id):
+    session = _get_session(session_id)
+    session["pending_question"] = question_id
+
+
+def get_pending_question(session_id):
+    session = _get_session(session_id)
+    return session.get("pending_question")
+
+
+def clear_pending_question(session_id):
+    session = _get_session(session_id)
+    session["pending_question"] = None
+
+
 def update_emotions(session_id: str, emotion_scores: dict):
     session = get_session(session_id)
 
