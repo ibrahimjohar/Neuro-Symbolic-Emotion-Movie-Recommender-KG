@@ -7,6 +7,8 @@ import Header from './components/Header';
 import About from './pages/About';
 import { Routes, Route } from 'react-router-dom';
 import HighlightPanel from './components/HighlightPanel';
+import InfoPanel from './components/InfoPanel';
+import Footer from './components/Footer';
 
 const API_URL = 'http://localhost:8000/chat';
 const DETAILS_API_URL = 'http://localhost:8000/movie/details';
@@ -210,23 +212,36 @@ function App() {
     setHighlightDetails(null);
   };
 
+  // Decide when to show movie panels (only after we have a recommendation)
+  const showPanels = (highlightMovies && highlightMovies.length > 0) || Boolean(highlightDetails);
+
   return (
     <div className="app">
       <Header onNewChat={newChat} currentSessionId={sessionId} />
       <Routes>
         <Route path="/" element={
-          <div className="main-layout">
-            <div className="left-panel">
-              <HighlightPanel
-                hidden={!showHighlight}
-                onToggle={toggleHighlight}
-                currentMovie={highlightMovies.length ? highlightMovies[highlightIndex] : null}
-                details={highlightDetails}
-                loading={highlightLoading}
-                onPrev={handlePrevHighlight}
-                onNext={handleNextHighlight}
-              />
-            </div>
+          <div className={`main-layout ${showPanels ? 'three-col' : 'single-col'}`}>
+            {showPanels && (
+              <div className="info-panel-col">
+                <InfoPanel
+                  details={highlightDetails}
+                  currentMovie={highlightMovies.length ? highlightMovies[highlightIndex] : null}
+                />
+              </div>
+            )}
+            {showPanels && (
+              <div className="left-panel poster-panel">
+                <HighlightPanel
+                  hidden={!showHighlight}
+                  onToggle={toggleHighlight}
+                  currentMovie={highlightMovies.length ? highlightMovies[highlightIndex] : null}
+                  details={highlightDetails}
+                  loading={highlightLoading}
+                  onPrev={handlePrevHighlight}
+                  onNext={handleNextHighlight}
+                />
+              </div>
+            )}
             <div className="right-panel chat-container">
               <div className="messages-container">
                 {messages.map((message, index) => (
@@ -242,44 +257,27 @@ function App() {
                 )}
                 <div ref={messagesEndRef} />
               </div>
-              <form className="input-form" onSubmit={handleSend}>
+              <form className="input-form" onSubmit={handleSubmit}>
                 <input
                   ref={inputRef}
                   type="text"
-                  className="chat-input"
-                  placeholder="Tell me how you're feeling or what movie you want..."
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
-                  onKeyPress={handleKeyPress}
+                  placeholder="Tell me how you're feeling or ask for a movie..."
+                  className="chat-input"
                   disabled={isLoading}
-                  autoFocus
                 />
-                <button
-                  type="submit"
-                  className="send-button"
-                  disabled={!inputText.trim() || isLoading}
-                  title="Send message"
-                >
-                  {isLoading ? '⏳' : '📤'}
-                </button>
-                <button
-                  type="button"
-                  className="clear-button"
-                  onClick={clearChat}
-                  title="Clear chat"
-                  style={{ marginLeft: '8px' }}
-                >
-                  Clear
+                <button type="submit" className="send-button" disabled={isLoading || !inputText.trim()}>
+                  Send
                 </button>
               </form>
-              {error && (
-                <div className="error-banner">⚠️ {error}</div>
-              )}
+              {error && <div className="error-banner">{error}</div>}
             </div>
           </div>
         } />
         <Route path="/about" element={<About />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
