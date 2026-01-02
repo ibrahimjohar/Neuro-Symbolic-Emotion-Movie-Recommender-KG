@@ -8,6 +8,7 @@ import re
 from dl.emotion_inference import infer_emotions
 from api.sparql_client import run_select
 from session_state import update_session, dominant_emotions
+from nlp.emotion_mapper import map_ml_to_ontology_individuals
 
 app = FastAPI(title="Neuro-Symbolic Emotion Movie Recommender")
 
@@ -86,10 +87,45 @@ def chat(req: ChatRequest):
 
     session_scores = update_session(session_id, ml_scores)
     top_emotions = dominant_emotions(session_scores)
-    dominant_emotion = top_emotions[0][0]
+    emotion_names = [e for e, _ in top_emotions]
+    ontology_inds = map_ml_to_ontology_individuals(emotion_names)
 
+    dominant_emotion = top_emotions[0][0]
+    
+    if not ontology_inds:
+        return ChatResponse(
+            request_id=str(uuid.uuid4()),
+            reply="I detected emotions, but they could not be mapped to ontology individuals.",
+            dominant_emotion=dominant_emotion,
+            genres=[],
+            movies=[]
+        )
+
+
+    values_block = " ".join(ontology_inds)
 
     query = f"""
+        PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+        SELECT DISTINCT ?title ?genreLabel WHERE {{
+            VALUES ?emoInd {{ {values_block} }}
+
+            ?emoInd emo:suggestsGenre ?genreInd .
+            ?genreInd rdf:type ?genreClass .
+            OPTIONAL {{ ?genreClass rdfs:label ?genreLabel }}
+
+            ?movie a emo:Movie ;
+                emo:title ?title ;
+                emo:belongsToGenre ?genreClass .
+        }}
+        LIMIT {MOVIES_LIMIT}
+        """
+
+
+    #query = f"""
+    """
             PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
