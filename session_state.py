@@ -1,19 +1,33 @@
 from collections import defaultdict
-from typing import Dict
+from typing import Dict, List
 
 #in-memory session store
 _SESSIONS = {}
 
 _SESSIONS.clear()
 
-def update_emotions(session_id: str, ml_scores: dict):
-    session = get_session(session_id)
+# --- Context slots (follow-up answers) ---
 
-    if "confidence" not in session:
-        session["confidence"] = 0.0
+def get_slots(session_id: str) -> dict:
+    session = get_session(session_id)
+    if "slots" not in session:
+        session["slots"] = {}
+    return session["slots"]
+
+
+def set_slot_value(session_id: str, slot_id: str, value: str):
+    session = get_session(session_id)
+    if "slots" not in session:
+        session["slots"] = {}
+    session["slots"][slot_id] = value
+
+
+def filled_slot_count(session_id: str) -> int:
+    return len(get_slots(session_id))
 
 CONFIDENCE_INCREMENT = 0.2
 CONFIDENCE_THRESHOLD = 0.6
+
 
 def get_session(session_id: str):
     session = _SESSIONS.setdefault(
@@ -22,22 +36,29 @@ def get_session(session_id: str):
             "emotions": {},
             "turns": 0,
             "confidence": 0.0,
+            "slots": {},
+            "seen_titles": []
         }
     )
 
     if "confidence" not in session:
         session["confidence"] = 0.0
+    if "seen_titles" not in session:
+        session["seen_titles"] = []
 
     return session
+
 
 def _get_session(session_id):
     if session_id not in _SESSIONS:
         _SESSIONS[session_id] = {
             "emotions": {},
             "turns": 0,
-            "pending_question": None
+            "pending_question": None,
+            "seen_titles": []
         }
     return _SESSIONS[session_id]
+
 
 def set_pending_question(session_id, question_id):
     session = _get_session(session_id)
@@ -71,8 +92,8 @@ def update_emotions(session_id: str, ml_scores: dict):
         session["emotions"][emo].append(score)
 
     session["turns"] += 1
-    
     session["confidence"] = max(session["confidence"], max(ml_scores.values(), default=0.0))
+
 
 def aggregated_emotions(session_id: str):
     session = get_session(session_id)
@@ -83,8 +104,28 @@ def aggregated_emotions(session_id: str):
 
     return aggregated
 
+
 def is_confident_enough(session_id: str) -> bool:
     return get_session(session_id)["confidence"] >= CONFIDENCE_THRESHOLD
+
+
+# --- Recommendation history helpers ---
+
+def get_seen_titles(session_id: str) -> List[str]:
+    return list(get_session(session_id).get("seen_titles", []))
+
+
+def add_seen_titles(session_id: str, titles: List[str], max_keep: int = 50) -> None:
+    session = get_session(session_id)
+    seen = session.get("seen_titles", [])
+    # Append while avoiding duplicates, keep only last max_keep
+    for t in titles:
+        if t and t not in seen:
+            seen.append(t)
+    if len(seen) > max_keep:
+        seen = seen[-max_keep:]
+    session["seen_titles"] = seen
+
 
 class ConversationContext:
     def __init__(self):
@@ -109,6 +150,7 @@ class ConversationContext:
         return max(self.emotion_scores.values())
 
 _CONTEXTS = {}
+
 
 def get_context(session_id: str) -> ConversationContext:
     if session_id not in _CONTEXTS:

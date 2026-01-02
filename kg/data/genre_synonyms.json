@@ -1,0 +1,19 @@
+{
+  "emo:Romance": ["love", "romantic", "romance", "romcom", "rom-com", "relationship", "date night"],
+  "emo:Comedy": ["feel good", "feel-good", "funny", "humor", "light", "cheerful"],
+  "emo:Family": ["family-friendly", "wholesome", "heartwarming"],
+  "emo:Drama": ["serious", "dramatic", "tearjerker", "emotional"],
+  "emo:Horror": ["scary", "spooky", "frightening", "dark"],
+  "emo:Thriller": ["suspense", "tense", "edge of seat"],
+  "emo:SciFi": ["science fiction", "scifi", "sci fi"],
+  "emo:FilmNoir": ["noir", "film noir"],
+  "emo:Documentary": ["doc", "documentary"],
+  "emo:Animation": ["animated", "animation"],
+  "emo:Western": ["western"],
+  "emo:Action": ["action", "high octane", "adrenaline"],
+  "emo:Fantasy": ["fantasy"],
+  "emo:Crime": ["crime"],
+  "emo:War": ["war"],
+  "emo:Mystery": ["mystery", "whodunit"],
+  "emo:Musical": ["musical"]
+}

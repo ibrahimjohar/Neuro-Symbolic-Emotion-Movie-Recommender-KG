@@ -1,68 +1,48 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import Dict, List, Any, Optional
-from collections import Counter
+from pydantic import ConfigDict
+from typing import List, Dict, Optional
 import uuid
 import re
+import logging
+import random
 
 from dl.emotion_inference import infer_emotions
-from api.sparql_client import run_select
-from session_state import update_emotions, aggregated_emotions, is_confident_enough, get_pending_question, set_pending_question, clear_pending_question
+from nlp.emotion_mapper import map_ml_to_ontology_individuals, EMOTION_TO_ONTOLOGY
 from nlp.emotion_genre_map import EMOTION_TO_GENRES
-from nlp.emotion_mapper import EMOTION_TO_ONTOLOGY
 from nlp.followup_questions import FOLLOWUP_QUESTIONS
+from api.sparql_client import run_select
+from session_state import update_emotions, aggregated_emotions, is_confident_enough, get_pending_question, set_pending_question, clear_pending_question, get_slots, set_slot_value, filled_slot_count, get_seen_titles, add_seen_titles
+import json
 
-app = FastAPI(title="Neuro-Symbolic Emotion Movie Recommender")
+app = FastAPI()
+
+# Basic logger
+logger = logging.getLogger("api")
+if not logger.handlers:
+    handler = logging.StreamHandler()
+    formatter = logging.Formatter("[%(asctime)s] %(levelname)s - %(message)s")
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"]
+    ,
+    allow_headers=["*"]
 )
 
-MOVIES_LIMIT = 20
-
-EXPLICIT_EMOTION_KEYWORDS = {
-    "sad": "sadness",
-    "sadness": "sadness",
-    "depressed": "sadness",
-    "unhappy": "sadness",
-    "lonely": "sadness",
-    "heartbroken": "sadness",
-    "happy": "joy",
-    "joyful": "joy",
-    "excited": "excitement",
-    "angry": "anger",
-    "mad": "anger",
-    "furious": "anger",
-    "scared": "fear",
-    "afraid": "fear",
-    "anxious": "fear",
-}
-
-def detect_explicit_emotion(text: str) -> Optional[str]:
-    text_l = text.lower()
-    for word, emotion in EXPLICIT_EMOTION_KEYWORDS.items():
-        if re.search(rf"\b{word}\b", text_l):
-            return emotion
-    return None
-
-def rank_movies(movies, top_emotions):
-    #if no top_emotions, return movies unchanged
-    if not top_emotions:
-        return movies
-
-    #simple stable ranking placeholder that does not mutate movie dicts.
-    #(keep ontology as ground truth, python only reorders.)
-    #for now sort by title so output is deterministic.
-    return sorted(movies, key=lambda m: (m.get("title") or "").lower())
-
 class ChatRequest(BaseModel):
-    session_id: str
+    session_id: Optional[str] = None
+    user_id: Optional[str] = None
     text: str
+    threshold: Optional[float] = None
+    top_k: Optional[int] = None
+    model_config = ConfigDict(extra='ignore')
 
 class ChatResponse(BaseModel):
     request_id: str
@@ -71,173 +51,669 @@ class ChatResponse(BaseModel):
     genres: List[str]
     movies: List[Dict[str, str]]
 
-@app.get("/")
+@app.get("/health")
 def health():
     return {"status": "ok"}
 
-@app.post("/chat", response_model=ChatResponse)
-def chat(req: ChatRequest):
-    session_id = req.session_id
-    
-    text = req.text.strip()
-    if not text:
-        raise HTTPException(status_code=400, detail="Text must be provided")
+@app.post("/chat")
+def chat(req: ChatRequest) -> ChatResponse:
+    try:
+        if not req.text or not req.text.strip():
+            raise HTTPException(status_code=400, detail="Text must be provided")
 
-    pending = get_pending_question(session_id)
+        session_id = req.session_id or req.user_id or "default"
+        text = req.text.strip()
 
-    if pending:
-        question = FOLLOWUP_QUESTIONS[pending]
-        answer = text.lower().strip()
+        # quick genre hint extraction from free text
+        def extract_genre_hint(t: str) -> Optional[str]:
+            _load_genre_labels()
+            _load_genre_synonyms()
+            s_norm = _normalize_simple(t)
+            # 1) direct match against ontology labels/forms
+            for form, curie in GENRE_FORMS_CACHE.items():
+                if form and form in s_norm:
+                    return curie
+            # 2) synonym match loaded from ontology-aligned data
+            for syn, curie in GENRE_SYNONYMS_CACHE.items():
+                if syn and syn in s_norm:
+                    return curie
+            return None
 
-        if answer not in question["options"]:
+        genre_hint = extract_genre_hint(text)
+
+        # 1) Model inference (resilient)
+        try:
+            ml_scores = infer_emotions(text)
+        except Exception as e:
+            logger.error(f"Emotion inference failed: {e}")
+            ml_scores = {}
+
+        # 2) Update session state and aggregate
+        update_emotions(session_id, ml_scores)
+        agg_emotions = aggregated_emotions(session_id)
+
+        # 3) Pick dominant emotion (simple heuristic)
+        top_emotions = sorted(agg_emotions.items(), key=lambda x: x[1], reverse=True)
+        top_emotions = [e for e, _ in top_emotions][:3]
+        dominant_emotion = top_emotions[0] if top_emotions else "neutral"
+
+        # 4) Handle pending follow-up: interpret answer and proceed
+        pending = get_pending_question(session_id)
+        selected_individual = None
+        if pending:
+            selected_value = interpret_followup_answer(pending, text, ml_scores)
+            if selected_value:
+                # store the slot value and use it if it's an ontology individual
+                set_slot_value(session_id, pending, selected_value)
+                if isinstance(selected_value, str) and selected_value.startswith("emo:"):
+                    selected_individual = selected_value
+            clear_pending_question(session_id)
+            # If user answered a different slot implicitly, capture it too
+            if not selected_value:
+                det = detect_any_slot_value(text, ml_scores)
+                if det:
+                    sid, val = det
+                    set_slot_value(session_id, sid, val)
+
+        # decide next slot if needed
+        slots = get_slots(session_id)
+        def _next_slot():
+            # adaptive flow based on emotion_direction
+            direction = slots.get("emotion_direction")
+            base_flow = ["emotion_direction", "desired_outcome", "pace_preference", "violence_tolerance", "era_preference", "content_sensitivity"]
+            intense_flow = ["emotion_direction", "intensity_style", "desired_outcome", "pace_preference", "violence_tolerance", "era_preference", "content_sensitivity"]
+            comfort_flow = ["emotion_direction", "comfort_style", "desired_outcome", "pace_preference", "violence_tolerance", "era_preference", "content_sensitivity"]
+            flow = intense_flow if direction == "intense" else comfort_flow if direction == "comforting" else base_flow
+            for s in flow:
+                if s not in slots:
+                    return s
+            return None
+
+        progress_confident = is_confident_enough(session_id) or filled_slot_count(session_id) >= 2
+
+        # 5) If we are not confident and no interpreted answer, ask next follow-up slot
+        if not selected_individual and not progress_confident:
+            pending = get_pending_question(session_id)
+            if not pending:
+                pending = _next_slot() or "emotion_direction"
+                set_pending_question(session_id, pending)
+            fq = FOLLOWUP_QUESTIONS.get(pending, {})
+            variants = fq.get("variants")
+            question = random.choice(variants) if isinstance(variants, list) and variants else fq.get("question", "Could you tell me more about your mood?")
             return ChatResponse(
                 request_id=str(uuid.uuid4()),
-                reply=f"Please answer with one of: {', '.join(question['options'])}",
-                dominant_emotion="neutral",
+                reply=question,
+                dominant_emotion=dominant_emotion,
                 genres=[],
-                movies=[]
+                movies=[],
             )
 
-        mapped_emotion = question["mapping"][answer]
-        update_emotions(session_id, {mapped_emotion: 1.0})
-        clear_pending_question(session_id)
-    
-    explicit_emotion = detect_explicit_emotion(text)
-    
-    #session_id = req.request_id if hasattr(req, "request_id") else "default"
+        # 6) Map emotion to ontology individuals / genres (use slots first)
+        if not selected_individual:
+            # pick any previously filled slot that maps to an ontology individual
+            for s in ["desired_outcome", "emotion_direction", "cognitive_load"]:
+                v = slots.get(s)
+                if isinstance(v, str) and v.startswith("emo:"):
+                    selected_individual = v
+                    break
+        if not selected_individual:
+            if dominant_emotion in EMOTION_TO_ONTOLOGY:
+                selected_individual = EMOTION_TO_ONTOLOGY[dominant_emotion]
+        individuals = map_ml_to_ontology_individuals(top_emotions) or ([])
+        if not selected_individual and individuals:
+            selected_individual = individuals[0]
 
-    ml_scores = infer_emotions(text)
-    if explicit_emotion:
-        ml_scores[explicit_emotion] = max(ml_scores.get(explicit_emotion, 0.0), 0.75)
+        ranked_genres = EMOTION_TO_GENRES.get(selected_individual or "", [])
 
-    #update session with current emotion inference
-    update_emotions(session_id, ml_scores)
+        # if user gave a genre hint, prioritize it
+        if genre_hint and genre_hint not in ranked_genres:
+            ranked_genres = [genre_hint] + ranked_genres
 
-    #aggregate over turns
-    agg_emotions = aggregated_emotions(session_id)
+        # apply content sensitivity filtering
+        sensitivity = slots.get("content_sensitivity")
+        if sensitivity == "avoid_horror":
+            ranked_genres = [g for g in ranked_genres if "Horror" not in g]
+        elif sensitivity == "avoid_drama":
+            ranked_genres = [g for g in ranked_genres if "Drama" not in g]
+        elif sensitivity == "avoid_violence":
+            ranked_genres = [g for g in ranked_genres if ("Action" not in g and "Crime" not in g and "War" not in g)]
 
-    #sort by strength
-    top_emotions = sorted(
-        agg_emotions.items(),
-        key=lambda x: x[1],
-        reverse=True
-    )
-    
-    top_emotions = [(e, w) for e, w in top_emotions if e != "neutral"]
-    
-    dominant_emotion = top_emotions[0][0] if top_emotions else "neutral"
-    
-    print("TOP_EMOTIONS:", top_emotions)
-    for emo_label, w in top_emotions:
-        emo_ind = EMOTION_TO_ONTOLOGY.get(emo_label)
-        emo_key = f"emo:{emo_ind}" if emo_ind else None
-        print("MAP:", emo_label, "->", emo_key, "IN_GENRE_MAP:", emo_key in EMOTION_TO_GENRES)
+        # 7) Query movies from KG via SPARQL (aligned predicates)
+        # filter to concrete genre classes that exist in the KG
+        _load_genre_labels()
+        allowed_genres = set(GENRE_LABELS_CACHE.keys())
+        # compute genre weights from slots to build ranked list
+        base_genres = list(allowed_genres)
+        weights = {g: 1.0 for g in base_genres}
+        # desired outcome
+        if slots.get("desired_outcome") == "get_excited":
+            for g in ["emo:Action","emo:Thriller","emo:SciFi"]: weights[g] += 0.8
+        elif slots.get("desired_outcome") == "feel_better":
+            for g in ["emo:Comedy","emo:Family","emo:Romance"]: weights[g] += 0.8
+        elif slots.get("desired_outcome") == "process_feelings":
+            for g in ["emo:Drama","emo:Documentary"]: weights[g] += 0.8
+        # intensity/comfort style
+        if slots.get("intensity_style") == "adrenaline":
+            for g in ["emo:Action","emo:Thriller","emo:Adventure"]: weights[g] += 0.7
+        elif slots.get("intensity_style") == "suspense":
+            for g in ["emo:Thriller","emo:Mystery","emo:Crime"]: weights[g] += 0.7
+        elif slots.get("intensity_style") == "dark":
+            for g in ["emo:Horror","emo:Crime","emo:FilmNoir"]: weights[g] += 0.7
+        if slots.get("comfort_style") == "uplifting":
+            for g in ["emo:Comedy","emo:Family","emo:Romance"]: weights[g] += 0.7
+        elif slots.get("comfort_style") == "heartwarming":
+            for g in ["emo:Family","emo:Romance","emo:Drama"]: weights[g] += 0.6
+        elif slots.get("comfort_style") == "calm":
+            for g in ["emo:Drama","emo:Documentary","emo:Fantasy"]: weights[g] += 0.5
+        # cognitive load
+        if slots.get("cognitive_load") == "escapist":
+            for g in ["emo:Fantasy","emo:Comedy","emo:Adventure"]: weights[g] += 0.6
+        elif slots.get("cognitive_load") == "thoughtful":
+            for g in ["emo:Drama","emo:Mystery","emo:Documentary"]: weights[g] += 0.6
+        # pace
+        if slots.get("pace_preference") == "fast":
+            for g in ["emo:Action","emo:Thriller","emo:Adventure"]: weights[g] += 0.6
+        elif slots.get("pace_preference") == "slow":
+            for g in ["emo:Drama","emo:Mystery","emo:Western"]: weights[g] += 0.6
+        # violence tolerance
+        vt = slots.get("violence_tolerance")
+        if vt == "none":
+            for g in ["emo:Action","emo:Crime","emo:War","emo:Horror"]: weights[g] -= 0.7
+        elif vt == "mild":
+            for g in ["emo:Action","emo:Crime","emo:War","emo:Horror"]: weights[g] -= 0.3
+        # content sensitivity filter
+        sensitivity = slots.get("content_sensitivity")
+        if sensitivity == "avoid_horror":
+            for g in ["emo:Horror"]: weights[g] -= 1.0
+        elif sensitivity == "avoid_drama":
+            for g in ["emo:Drama"]: weights[g] -= 0.8
+        elif sensitivity == "avoid_violence":
+            for g in ["emo:Action","emo:Crime","emo:War"]: weights[g] -= 0.9
 
-    print("GENRE_MAP_KEYS_SAMPLE:", list(EMOTION_TO_GENRES.keys())[:8])
-    
-    genre_counter = Counter()
+        # helper: diversify candidates by era, avoid repeats, and apply comfort blocking
+        def _diversify_candidates(candidates_list):
+            seen = set(get_seen_titles(session_id))
+            k = req.top_k or 5
+            era_pref = slots.get("era_preference")
 
-    for emo_label, weight in top_emotions:
-        emo_local = EMOTION_TO_ONTOLOGY.get(emo_label)
+            # block harsher genres for comfort-first scenarios
+            direction = slots.get("emotion_direction")
+            outcome = slots.get("desired_outcome")
+            cstyle = slots.get("comfort_style")
+            blocked = set()
+            if direction == "comforting" or outcome == "feel_better" or cstyle in {"calm", "heartwarming"}:
+                blocked = {"Horror", "War", "Crime"}
 
-        if not emo_local:
-            continue
+            def _is_blocked(c):
+                if not blocked:
+                    return False
+                full = c.get("genres_full")
+                if isinstance(full, list):
+                    lf = {g.lower() for g in full}
+                    return any(b.lower() in lf for b in blocked)
+                g = c.get("genre", "")
+                return g in blocked
 
-        emo_key = emo_local if emo_local.startswith("emo:") else f"emo:{emo_local}"
+            # filter blocked upfront
+            filtered = [c for c in candidates_list if not _is_blocked(c)]
 
-        print(
-            "RANKING MAP:",
-            emo_label,
-            "->",
-            emo_key,
-            "IN_GENRE_MAP:",
-            emo_key in EMOTION_TO_GENRES
-        )
+            # prefer unseen titles; backfill with seen if needed
+            unseen = [c for c in filtered if c.get("title") not in seen]
+            seen_list = [c for c in filtered if c.get("title") in seen]
 
-        for genre in EMOTION_TO_GENRES.get(emo_key, []):
-            genre_counter[genre] += weight
+            def _to_int_year(y):
+                try:
+                    return int(str(y))
+                except Exception:
+                    return 0
 
-    
-    ranked_genres = [g for g, _ in genre_counter.most_common(3)]
-    
-    if not ranked_genres:
-        return ChatResponse(
-            request_id=str(uuid.uuid4()),
-            reply="I detected emotions, but the ontology did not prioritize any genres yet.",
-            dominant_emotion=dominant_emotion,
-            genres=[],
-            movies=[]
-        )
-        
-    if not is_confident_enough(session_id):
-        set_pending_question(session_id, "emotion_direction")
-        q = FOLLOWUP_QUESTIONS["emotion_direction"]
+            def _mix_by_era(pool):
+                modern = [c for c in pool if _to_int_year(c.get("year")) >= 1990]
+                classic = [c for c in pool if _to_int_year(c.get("year")) < 1990]
+                modern.sort(key=lambda x: x.get("score", 0.0), reverse=True)
+                classic.sort(key=lambda x: x.get("score", 0.0), reverse=True)
+                if era_pref == "classic":
+                    primary, secondary = classic, modern
+                elif era_pref == "modern":
+                    primary, secondary = modern, classic
+                else:
+                    primary, secondary = modern, classic
+                take_primary = k // 2 if secondary else k
+                take_secondary = k - take_primary
+                sel = []
+                sel.extend(primary[:take_primary])
+                sel.extend(secondary[:take_secondary])
+                if len(sel) < k:
+                    remaining = [c for c in pool if c not in sel]
+                    remaining.sort(key=lambda x: x.get("score", 0.0), reverse=True)
+                    sel.extend(remaining[:k - len(sel)])
+                return sel[:k]
 
-        return ChatResponse(
-            request_id=str(uuid.uuid4()),
-            reply=q["question"],
-            dominant_emotion=dominant_emotion,
-            genres=[],
-            movies=[]
-        )
+            selected = _mix_by_era(unseen)
+            if len(selected) < k:
+                selected.extend([c for c in _mix_by_era(seen_list) if c not in selected][:k - len(selected)])
 
+            random.shuffle(selected)
+            return [{"title": s.get("title", ""), "genre": s.get("genre", ""), "year": s.get("year", "")} for s in selected[:k]]
 
-    values_block = " ".join(ranked_genres)
+        # seed with emotion-derived genres if available
+        seed = EMOTION_TO_GENRES.get(selected_individual or "", [])
+        for g in seed:
+            if g in weights:
+                weights[g] += 0.5
 
-    query = f"""
+        # finalize ranked list
+        ranked_genres = [g for g, w in sorted(weights.items(), key=lambda x: x[1], reverse=True) if w > 0]
+
+        values_block = " ".join(f"({g})" for g in ranked_genres)
+
+        era = slots.get("era_preference")
+        year_filter = ""
+        if era == "classic":
+            year_filter = "FILTER(xsd:integer(?year) < 1990)"
+        elif era == "modern":
+            year_filter = "FILTER(xsd:integer(?year) >= 1990)"
+
+        query = f"""
         PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-        SELECT DISTINCT ?title ?genreLabel WHERE {{
-        VALUES ?genreClass {{ {values_block} }}
-
-        ?movie a emo:Movie ;
-                emo:title ?title ;
-                emo:belongsToGenre ?genreClass .
-
-        OPTIONAL {{ ?genreClass rdfs:label ?genreLabel }}
-        }}
-        LIMIT {MOVIES_LIMIT}
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+        SELECT ?title ?year ?genre ?genreLabel WHERE {{
+          {f"VALUES (?genre) {{ {values_block} }}" if values_block else ""}
+          ?m a emo:Movie ; emo:hasTitle ?title ; emo:hasYear ?year {"; emo:belongsToGenre ?genre ." if values_block else "."}
+          OPTIONAL {{ ?genre rdfs:label ?genreLabel }}
+          {year_filter}
+        }} LIMIT {req.top_k or 5}
         """
 
-    res = run_select(query)
-    bindings = res.get("results", {}).get("bindings", [])
+        movies = []
+        try:
+            sparql_res = run_select(query, timeout=15)
+            candidates_map = {}
+            for b in sparql_res.get("results", {}).get("bindings", []):
+                title = b.get("title", {}).get("value", "")
+                year = b.get("year", {}).get("value", "")
+                genre_uri = b.get("genre", {}).get("value", "")
+                genre_label = b.get("genreLabel", {}).get("value", "")
+                curie = None
+                if genre_uri and genre_uri.startswith(ONTO_BASE):
+                    local = genre_uri[len(ONTO_BASE):]
+                    curie = f"emo:{local}"
+                if curie is None:
+                    continue
+                w = weights.get(curie, 0.0)
+                entry = candidates_map.setdefault(title, {"title": title, "year": year, "genre": genre_label, "score": 0.0, "best_w": -1.0, "genres_full": set()})
+                entry["score"] += w
+                entry["genres_full"].add(genre_label)
+                if w > entry["best_w"]:
+                    entry["best_w"] = w
+                    entry["genre"] = genre_label
+            candidates = []
+            for v in candidates_map.values():
+                if isinstance(v.get("genres_full"), set):
+                    v["genres_full"] = list(v["genres_full"])
+                candidates.append(v)
+            movies = _diversify_candidates(candidates)
+        except Exception as e:
+            logger.error(f"SPARQL query failed: {e}")
 
-    movies = []
-    genres = set()
-    for b in bindings:
-        title = b.get("title", {}).get("value")
-        genre = b.get("genreLabel", {}).get("value", "")
-        if title:
-            movies.append({"title": title, "genre": genre})
-        if genre:
-            genres.add(genre)
+        if not movies:
+            query_relaxed = f"""
+            PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            SELECT ?title ?year WHERE {{
+              ?m a emo:Movie ; emo:hasTitle ?title ; emo:hasYear ?year .
+              {year_filter}
+            }} LIMIT {req.top_k or 5}
+            """
+            try:
+                sparql_res = run_select(query_relaxed, timeout=15)
+                candidates = []
+                for b in sparql_res.get("results", {}).get("bindings", []):
+                    title = b.get("title", {}).get("value", "")
+                    year = b.get("year", {}).get("value", "")
+                    candidates.append({"title": title, "genre": "", "year": year, "score": 0.5})
+                movies = _diversify_candidates(candidates)
+            except Exception as e:
+                logger.error(f"Era-only SPARQL failed: {e}")
 
-    genres = [g.replace("emo:", "") for g in ranked_genres]
-    
-    movies = rank_movies(movies, top_emotions)
-    
-    if movies:
-        sample_titles = ", ".join(m["title"] for m in movies[:5])
-        reply = (
-            f"I detected you're feeling {dominant_emotion}. "
-            f"Based on inferred genres {', '.join(genres)}, "
-            f"here are some matching movies: {sample_titles}."
+        if not movies:
+            broad_query = f"""
+            PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
+            SELECT ?title ?year WHERE {{
+              ?m a emo:Movie ; emo:hasTitle ?title ; emo:hasYear ?year .
+            }} LIMIT {req.top_k or 5}
+            """
+            try:
+                sparql_res = run_select(broad_query, timeout=15)
+                candidates = []
+                for b in sparql_res.get("results", {}).get("bindings", []):
+                    title = b.get("title", {}).get("value", "")
+                    year = b.get("year", {}).get("value", "")
+                    candidates.append({"title": title, "genre": "", "year": year, "score": 0.3})
+                movies = _diversify_candidates(candidates)
+            except Exception as e:
+                logger.error(f"Broad SPARQL query failed: {e}")
+
+        if not movies:
+            try:
+                with open("data/movie_kb_final.csv", "r", encoding="utf-8") as f:
+                    import csv
+                    rdr = csv.DictReader(f, fieldnames=["id","title","year","genres"])
+                    next(rdr, None)
+                    candidates = []
+                    for row in rdr:
+                        try:
+                            title = row.get("title", "")
+                            year = row.get("year", "")
+                            genres_norm = row.get("genres", "")
+                            if not title:
+                                continue
+                            genre_list = [g.strip() for g in genres_norm.split("|") if g.strip()]
+                            score = 0.0
+                            best_label = ""
+                            best_w = -1.0
+                            for gname in genre_list:
+                                _load_genre_labels()
+                                curie = None
+                                gl = gname.lower()
+                                for k, v in GENRE_LABELS_CACHE.items():
+                                    if v.lower() == gl:
+                                        curie = k
+                                        break
+                                if curie is None:
+                                    curie = f"emo:{re.sub('[^A-Za-z0-9]', '', gname)}"
+                                w = weights.get(curie, 0.0)
+                                score += w
+                                if w > best_w:
+                                    best_w = w
+                                    best_label = gname
+                            candidates.append({"title": title, "genre": best_label or (genre_list[0] if genre_list else ""), "year": year, "score": score, "genres_full": genre_list})
+                        except Exception:
+                            continue
+                    movies = _diversify_candidates(candidates)
+            except Exception as e:
+                logger.error(f"CSV fallback failed: {e}")
+
+        clear_pending_question(session_id)
+        try:
+            add_seen_titles(session_id, [m.get("title", "") for m in movies])
+        except Exception:
+            pass
+        return ChatResponse(
+            request_id=str(uuid.uuid4()),
+            reply="Here are some movies you may like:",
+            dominant_emotion=dominant_emotion,
+            genres=ranked_genres,
+            movies=movies,
         )
-    else:
-        reply = (
-            f"Based on your recent emotions "
-            f"({', '.join(e for e, _ in top_emotions)}), "
-            f"I prioritized genres inferred by the ontology."
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception(f"Unhandled error in /chat: {e}")
+        return ChatResponse(
+            request_id=str(uuid.uuid4()),
+            reply=(
+                "Sorry, I hit an unexpected issue. Tell me a genre (e.g., 'Comedy') "
+                "or how you're feeling, and I'll suggest films."
+            ),
+            dominant_emotion="neutral",
+            genres=[],
+            movies=[],
         )
 
-        
-    return ChatResponse(
-        request_id=str(uuid.uuid4()),
-        reply=reply,
-        dominant_emotion=dominant_emotion,
-        genres=genres,
-        movies=movies
-    )
+def _normalize_text(s: str) -> str:
+    s = s.lower()
+    s = re.sub(r"\s+", " ", s)
+    return s
+
+SLOT_ORDER = [
+    "emotion_direction",
+    "desired_outcome",
+    "pace_preference",
+    "violence_tolerance",
+    "era_preference",
+    "content_sensitivity",
+]
+
+def interpret_followup_answer(pending_id: str, user_text: str, ml_scores: Dict[str, float]) -> Optional[str]:
+    t = _normalize_text(user_text)
+    synonyms = {
+        "emotion_direction": {
+            "comforting": [
+                "comfort", "comforting", "light", "happy", "calm", "gentle",
+                "soothing", "feel better", "uplifting", "positive", "warm",
+                "heartwarming", "wholesome"
+            ],
+            "intense": [
+                "intense", "dark", "thrill", "thrilling", "scary", "horror",
+                "action", "sad", "dramatic", "serious", "heavy"
+            ],
+        },
+        "desired_outcome": {
+            "feel_better": ["feel better", "lift mood", "uplift", "cheer up"],
+            "process_feelings": ["process feelings", "reflect", "think", "ponder"],
+            "get_excited": ["get excited", "pump", "adrenaline", "thrill"],
+        },
+        "era_preference": {
+            "classic": ["classic", "older", "vintage", "retro"],
+            "modern": ["modern", "newer", "recent", "contemporary"],
+        },
+        "content_sensitivity": {
+            "avoid_horror": ["avoid horror", "no horror", "not horror"],
+            "avoid_drama": ["avoid drama", "no drama", "not drama", "heavy"],
+            "avoid_violence": ["avoid violence", "no violence", "not violent", "no action"],
+        },
+        "intensity_style": {
+            "adrenaline": ["adrenaline", "adrenaline pumping", "pump", "exciting", "high octane"],
+            "suspense": ["suspense", "tense", "edge of seat", "thriller"],
+            "dark": ["dark", "edgy", "grisly", "grim", "horror"],
+        },
+        "comfort_style": {
+            "uplifting": ["uplifting", "feel good", "cheer up", "positive"],
+            "heartwarming": ["heartwarming", "warm", "wholesome"],
+            "calm": ["calm", "soothing", "relaxing", "low stakes", "calming", "gentle"],
+        },
+        "pace_preference": {
+            "fast": ["fast", "fast paced", "quick", "rapid"],
+            "slow": ["slow", "slow burn", "steady"],
+        },
+        "violence_tolerance": {
+            "none": ["no violence", "avoid violence"],
+            "mild": ["mild", "some", "a little"],
+            "strong": ["strong", "high", "ok with violence"],
+        }
+    }
+    for slot_id, opts in synonyms.items():
+        for value, words in opts.items():
+            if any(w in t for w in words):
+                return f"emo:{value}" if slot_id in {"desired_outcome","emotion_direction","cognitive_load"} else value
+    joy_dom = (ml_scores.get("joy", 0) + ml_scores.get("admiration", 0))
+    fear_dom = (ml_scores.get("fear", 0) + ml_scores.get("anger", 0))
+    if joy_dom or fear_dom:
+        val = "comforting" if joy_dom >= fear_dom else "intense"
+        return f"emo:{val}"
+    return None
+
+from typing import Tuple
+
+def detect_any_slot_value(user_text: str, ml_scores: Dict[str, float]) -> Optional[Tuple[str, str]]:
+    t = _normalize_text(user_text)
+    synonyms = {
+        "emotion_direction": {
+            "comforting": [
+                "comfort", "comforting", "light", "happy", "calm", "gentle",
+                "soothing", "feel better", "uplifting", "positive", "warm",
+                "heartwarming", "wholesome"
+            ],
+            "intense": [
+                "intense", "dark", "thrill", "thrilling", "scary", "horror",
+                "action", "sad", "dramatic", "serious", "heavy"
+            ],
+        },
+        "desired_outcome": {
+            "feel_better": ["feel better", "lift mood", "uplift", "cheer up"],
+            "process_feelings": ["process feelings", "reflect", "think", "ponder"],
+            "get_excited": ["get excited", "pump", "adrenaline", "thrill"],
+        },
+        "era_preference": {
+            "classic": ["classic", "older", "vintage", "retro"],
+            "modern": ["modern", "newer", "recent", "contemporary"],
+        },
+        "content_sensitivity": {
+            "avoid_horror": ["avoid horror", "no horror", "not horror"],
+            "avoid_drama": ["avoid drama", "no drama", "not drama", "heavy"],
+            "avoid_violence": ["avoid violence", "no violence", "not violent", "no action"],
+        },
+        "intensity_style": {
+            "adrenaline": ["adrenaline", "adrenaline pumping", "pump", "exciting", "high octane"],
+            "suspense": ["suspense", "tense", "edge of seat", "thriller"],
+            "dark": ["dark", "edgy", "grisly", "grim", "horror"],
+        },
+        "comfort_style": {
+            "uplifting": ["uplifting", "feel good", "cheer up", "positive"],
+            "heartwarming": ["heartwarming", "warm", "wholesome"],
+            "calm": ["calm", "soothing", "relaxing", "low stakes", "calming", "gentle"],
+        },
+        "pace_preference": {
+            "fast": ["fast", "fast paced", "quick", "rapid"],
+            "slow": ["slow", "slow burn", "steady"],
+        },
+        "violence_tolerance": {
+            "none": ["no violence", "avoid violence"],
+            "mild": ["mild", "some", "a little"],
+            "strong": ["strong", "high", "ok with violence"],
+        }
+    }
+    for slot_id, opts in synonyms.items():
+        for value, words in opts.items():
+            if any(w in t for w in words):
+                return (slot_id, value)
+    joy_dom = (ml_scores.get("joy", 0) + ml_scores.get("admiration", 0))
+    fear_dom = (ml_scores.get("fear", 0) + ml_scores.get("anger", 0))
+    if joy_dom or fear_dom:
+        return ("emotion_direction", "comforting" if joy_dom >= fear_dom else "intense")
+    return None
+
+GENRE_LABELS_CACHE: Dict[str, str] = {}
+GENRE_FORMS_CACHE: Dict[str, str] = {}
+GENRE_SYNONYMS_CACHE: Dict[str, str] = {}
+ONTO_BASE = "http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#"
+
+def _normalize_simple(s: str) -> str:
+    return re.sub(r"\s+", " ", s.strip().lower())
+
+def _camel_to_words(name: str) -> str:
+    s = re.sub(r"([a-z])([A-Z])", r"\1 \2", name)
+    return re.sub(r"[^a-zA-Z0-9 ]", " ", s).strip()
+
+def _load_genre_labels() -> None:
+    global GENRE_LABELS_CACHE, GENRE_FORMS_CACHE
+    if GENRE_LABELS_CACHE:
+        return
+    try:
+        with open("kg/data/genre_labels.ttl", "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                m = re.search(r"emo:(\w+)\s+rdfs:label\s+\"([^\"]+)\"", line)
+                if m:
+                    curie = f"emo:{m.group(1)}"
+                    label = m.group(2)
+                    GENRE_LABELS_CACHE[curie] = label
+                    GENRE_FORMS_CACHE[curie] = _normalize_simple(label)
+    except Exception:
+        GENRE_LABELS_CACHE["emo:Comedy"] = "Comedy"
+        GENRE_LABELS_CACHE["emo:Drama"] = "Drama"
+        GENRE_LABELS_CACHE["emo:Horror"] = "Horror"
+        GENRE_LABELS_CACHE["emo:Action"] = "Action"
+        GENRE_LABELS_CACHE["emo:Family"] = "Family"
+        GENRE_FORMS_CACHE = {k: _normalize_simple(v) for k, v in GENRE_LABELS_CACHE.items()}
+
+SLOT_ORDER = [
+    "emotion_direction",
+    "desired_outcome",
+    "pace_preference",
+    "violence_tolerance",
+    "era_preference",
+    "content_sensitivity",
+]
+
+def _load_genre_synonyms() -> None:
+    global GENRE_SYNONYMS_CACHE
+    if GENRE_SYNONYMS_CACHE:
+        return
+    try:
+        with open("kg/data/genre_synonyms.json", "r", encoding="utf-8") as f:
+            import json as _json
+            data = _json.load(f)
+            for curie, syn in data.items():
+                if isinstance(syn, list) and syn:
+                    GENRE_SYNONYMS_CACHE[curie] = syn[0]
+    except Exception:
+        GENRE_SYNONYMS_CACHE = {}
+
+def interpret_followup_answer(pending_id: str, user_text: str, ml_scores: Dict[str, float]) -> Optional[str]:
+    t = _normalize_text(user_text)
+    synonyms = {
+        "emotion_direction": {
+            "comforting": [
+                "comfort", "comforting", "light", "happy", "calm", "gentle",
+                "soothing", "feel better", "uplifting", "positive", "warm",
+                "heartwarming", "wholesome"
+            ],
+            "intense": [
+                "intense", "dark", "thrill", "thrilling", "scary", "horror",
+                "action", "sad", "dramatic", "serious", "heavy"
+            ],
+        },
+        "desired_outcome": {
+            "feel_better": ["feel better", "lift mood", "uplift", "cheer up"],
+            "process_feelings": ["process feelings", "reflect", "think", "ponder"],
+            "get_excited": ["get excited", "pump", "adrenaline", "thrill"],
+        },
+        "era_preference": {
+            "classic": ["classic", "older", "vintage", "retro"],
+            "modern": ["modern", "newer", "recent", "contemporary"],
+        },
+        "content_sensitivity": {
+            "avoid_horror": ["avoid horror", "no horror", "not horror"],
+            "avoid_drama": ["avoid drama", "no drama", "not drama", "heavy"],
+            "avoid_violence": ["avoid violence", "no violence", "not violent", "no action"],
+            "none": ["either", "no preference", "anything", "tell me", "idk", "dont know"]
+        },
+        "intensity_style": {
+            "adrenaline": ["adrenaline", "adrenaline pumping", "pump", "exciting", "high octane"],
+            "suspense": ["suspense", "tense", "edge of seat", "thriller"],
+            "dark": ["dark", "edgy", "grisly", "grim", "horror"],
+        },
+        "comfort_style": {
+            "uplifting": ["uplifting", "feel good", "cheer up", "positive"],
+            "heartwarming": ["heartwarming", "warm", "wholesome"],
+            "calm": ["calm", "soothing", "relaxing", "low stakes", "calming", "gentle"],
+            "none": ["either", "no preference", "anything", "tell me", "idk", "dont know"]
+        },
+        "pace_preference": {
+            "fast": ["fast", "fast paced", "quick", "rapid"],
+            "slow": ["slow", "slow burn", "steady"],
+            "none": ["either", "no preference", "anything", "tell me", "idk", "dont know"]
+        },
+        "violence_tolerance": {
+            "none": ["no violence", "avoid violence"],
+            "mild": ["mild", "some", "a little"],
+            "strong": ["strong", "high", "ok with violence"],
+            "none_opt": ["either", "no preference", "anything", "tell me", "idk", "dont know"]
+        }
+    }
+    opts = synonyms.get(pending_id)
+    if not opts:
+        return None
+    for value, words in opts.items():
+        for w in words:
+            if w in t:
+                if pending_id in {"emotion_direction", "desired_outcome"}:
+                    return f"emo:{value}"
+                return value
+    return None
 
 
