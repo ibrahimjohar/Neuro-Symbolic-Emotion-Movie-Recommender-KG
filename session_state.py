@@ -108,6 +108,8 @@ def aggregated_emotions(session_id: str):
 def is_confident_enough(session_id: str) -> bool:
     return get_session(session_id)["confidence"] >= CONFIDENCE_THRESHOLD
 
+def get_turns(session_id: str) -> int:
+    return int(get_session(session_id).get("turns", 0))
 
 # --- Recommendation history helpers ---
 

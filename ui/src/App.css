@@ -1,11 +1,9 @@
-/* layout wrapper */
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* main layout variants */
 .main-layout {
   width: 100%;
   max-width: 1200px;
@@ -14,77 +12,82 @@
   gap: 20px;
   align-items: start;
 }
-.main-layout.three-col { grid-template-columns: 320px 1fr 1fr; }
+.main-layout.three-col { grid-template-columns: 320px 420px 420px; }
+.main-layout.two-col { grid-template-columns: 320px 1fr; }
 .main-layout.single-col { grid-template-columns: 1fr; }
 
-.info-panel-col { }
+.info-panel-col { height: calc(100vh - 160px); }
 
-.left-panel { position: sticky; top: 88px; height: calc(100vh - 160px); overflow-y: auto; }
-.right-panel { }
+.left-panel { position: sticky; top: 88px; height: calc(100vh - 160px); overflow: hidden; }
+.right-panel { height: calc(100vh - 160px); }
 
-/* reset poster overrides to neutral theme */
 .poster-panel .highlight-panel { background: rgba(255, 255, 255, 0.85); color: #111; border: 1px solid rgba(255, 255, 255, 0.2); }
 .poster-panel .hp-title { color: #222; opacity: 1; }
 .poster-panel .hp-btn { background: #111; color: #fff; }
 .poster-panel .hp-toggle { background: #444; }
 .poster-panel .hp-link { color: #0055cc; }
+.poster-panel .highlight-panel { background: transparent; border: none; box-shadow: none; padding: 0; }
+.poster-hidden { display: none; }
 
-/* chat container - fixed alignment and original theme */
 .chat-container {
   width: 100%;
   margin: 0;
-  height: auto;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  height: calc(100vh - 160px);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   align-self: start;
 }
+.main-layout.single-col .chat-container { width: 420px; margin: 0 auto; }
+.main-layout.two-col .chat-container { width: 420px; margin: 0 auto; }
 
 .messages-container {
   flex: 1;
   overflow-y: auto;
   padding: 20px;
-  background: #f8f9fa;
+  background: rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
   gap: 15px;
   scrollbar-width: thin;
-  scrollbar-color: #7b5cfb #e9e9e9;
+  scrollbar-color: #777 #333;
 }
 .messages-container::-webkit-scrollbar { width: 10px; }
-.messages-container::-webkit-scrollbar-track { background: linear-gradient(180deg, #f7f7f7, #eeeeee); border-radius: 12px; }
-.messages-container::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #8a7bff, #5a3cff); border-radius: 12px; border: 2px solid #f0f0f0; }
-.messages-container::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #9a8fff, #6b50ff); }
+.messages-container::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.04); border-radius: 12px; }
+.messages-container::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.22); border-radius: 12px; border: 2px solid rgba(0,0,0,0.15); }
+.messages-container::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.32); }
 
 .input-form {
   display: flex;
   padding: 20px;
-  background: #ffffff;
-  border-top: 1px solid #e0e0e0;
+  background: rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
   gap: 10px;
 }
 
 .chat-input {
   flex: 1;
   padding: 12px 18px;
-  border: 2px solid #e0e0e0;
-  border-radius: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.2s;
 }
-.chat-input:focus { border-color: #000000; }
-.chat-input:disabled { background: #f5f5f5; cursor: not-allowed; }
+.chat-input:focus { border-color: #ffffff; }
+.chat-input:disabled { background: rgba(255, 255, 255, 0.06); cursor: not-allowed; }
 
 .send-button {
   padding: 12px 24px;
   background: #000000;
   color: white;
   border: none;
-  border-radius: 25px;
+  border-radius: 14px;
   font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -113,8 +116,20 @@
 @media (max-width: 900px) {
   .main-layout.three-col { grid-template-columns: 1fr; }
   .left-panel { position: static; height: auto; overflow: visible; }
+  .right-panel { height: auto; }
+  .chat-container { height: auto; }
 }
 @media (max-width: 768px) {
   .messages-container { padding: 15px; }
 }
 
+.panel-animate {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: floatIn 520ms ease-out forwards;
+}
+.panel-info { animation-delay: 60ms; }
+.panel-cover { animation-delay: 120ms; }
+@keyframes floatIn {
+  to { opacity: 1; transform: translateY(0); }
+}

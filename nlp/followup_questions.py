@@ -123,5 +123,33 @@ FOLLOWUP_QUESTIONS = {
             "mild": "mild",
             "strong": "strong"
         }
+    },
+    "usual_preference": {
+        "question": "What do you usually enjoy—family‑friendly, action‑packed, or thoughtful drama?",
+        "variants": [
+            "Do you tend toward family‑friendly, action‑packed, or more thoughtful movies?",
+            "Your baseline taste: cozy family picks, explosive action, or layered drama?",
+            "Would you describe your usual picks as family‑friendly, action‑packed, or thoughtful?"
+        ],
+        "options": ["family‑friendly", "action‑packed", "thoughtful"],
+        "mapping": {
+            "family‑friendly": "family_friendly",
+            "action‑packed": "action_packed",
+            "thoughtful": "thoughtful"
+        }
+    },
+    "music_tone": {
+        "question": "For the film’s musical feel, do you prefer uplifting, somber, or intense?",
+        "variants": [
+            "Score tone: uplifting/feel‑good, somber, or intense?",
+            "Do you enjoy an uplifting score, something somber, or something more intense?",
+            "Music vibe—uplifting, somber, or intense?"
+        ],
+        "options": ["uplifting", "somber", "intense"],
+        "mapping": {
+            "uplifting": "uplifting",
+            "somber": "somber",
+            "intense": "intense"
+        }
     }
 }

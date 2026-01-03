@@ -10,7 +10,10 @@ export default function InfoPanel({ details, currentMovie }) {
 
   return (
     <div className="info-panel">
-      <h1 className="info-title">{title}{year ? ` (${year})` : ''}</h1>
+      <h1 className="info-title">
+        <span className="info-title-text">{title}</span>
+        {year ? <span className="info-year"> ({year})</span> : null}
+      </h1>
       <div className="info-sub">DETAILS</div>
       {rating && <div className="info-meta">Rating: {rating}</div>}
       {genres.length > 0 && (

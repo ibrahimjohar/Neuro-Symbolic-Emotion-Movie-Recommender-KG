@@ -1,13 +1,13 @@
 import React from 'react';
 import './MovieCard.css';
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, onClick }) => {
   const genre = movie.genre || 'Unknown Genre';
   const title = movie.title || 'Untitled Movie';
   const year = movie.year || movie.releaseYear || '';
 
   return (
-    <div className="movie-card">
+    <div className="movie-card" onClick={() => onClick && onClick(movie)}>
       <div className="movie-header">
         <h4 className="movie-title">{title}</h4>
         {year && <span className="movie-year">{year}</span>}

@@ -40,6 +40,7 @@ function App() {
   const [highlightDetails, setHighlightDetails] = useState(null);
   const [highlightLoading, setHighlightLoading] = useState(false);
   const detailsCacheRef = useRef(new Map());
+  const [posterReady, setPosterReady] = useState(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -73,6 +74,31 @@ function App() {
       setHighlightLoading(false);
     }
   };
+
+  const prefetchDetailsForMovies = async (movies) => {
+    try {
+      const tasks = (movies || []).slice(0, 5).map(m => {
+        const key = `${m?.title}|${m?.year || ''}`;
+        if (detailsCacheRef.current.has(key)) return Promise.resolve(detailsCacheRef.current.get(key));
+        return axios.post(DETAILS_API_URL, { title: m?.title, year: m?.year }, { timeout: 12000 })
+          .then(res => {
+            const det = res?.data?.details || null;
+            if (det) {
+              detailsCacheRef.current.set(key, det);
+              if (det.poster_url) {
+                const img = new Image();
+                img.src = det.poster_url;
+              }
+            }
+            return det;
+          })
+          .catch(() => null);
+      });
+      await Promise.all(tasks);
+    } catch (e) {
+      // ignore prefetch errors
+    }
+  };
   const handleNextHighlight = () => {
     if (!highlightMovies.length) return;
     const next = (highlightIndex + 1) % highlightMovies.length;
@@ -88,6 +114,18 @@ function App() {
     fetchHighlightDetails(m?.title, m?.year);
   };
   const toggleHighlight = () => setShowHighlight(s => !s);
+
+  const handleMovieSelect = (movie, index, list) => {
+    if (Array.isArray(list) && list.length) {
+      setHighlightMovies(list);
+    }
+    if (typeof index === 'number') {
+      setHighlightIndex(index);
+    }
+    setPosterReady(false);
+    fetchHighlightDetails(movie?.title, movie?.year);
+    setShowHighlight(true);
+  };
 
   const handleSend = async (e) => {
     e.preventDefault();
@@ -112,7 +150,7 @@ function App() {
       const response = await axios.post(API_URL, {
         text: userMessage,
         session_id: sessionId,
-        threshold: 0.2,
+        rating_threshold: 7.0,
         top_k: 5
       }, {
         timeout: 30000,
@@ -138,7 +176,9 @@ function App() {
         setHighlightMovies(botMessage.movies);
         setHighlightIndex(0);
         const first = botMessage.movies[0];
+        setPosterReady(false);
         fetchHighlightDetails(first?.title, first?.year);
+        prefetchDetailsForMovies(botMessage.movies);
       }
 
     } catch (err) {
@@ -212,17 +252,19 @@ function App() {
     setHighlightDetails(null);
   };
 
-  // Decide when to show movie panels (only after we have a recommendation)
-  const showPanels = (highlightMovies && highlightMovies.length > 0) || Boolean(highlightDetails);
+  // Show panels when we have any recommendation; use 2-col until poster is loaded
+  const haveRecs = Array.isArray(highlightMovies) && highlightMovies.length > 0;
+  const showPanels = haveRecs || Boolean(highlightDetails);
+  const layoutMode = posterReady ? 'three-col' : 'two-col';
 
   return (
     <div className="app">
       <Header onNewChat={newChat} currentSessionId={sessionId} />
       <Routes>
-        <Route path="/" element={
-          <div className={`main-layout ${showPanels ? 'three-col' : 'single-col'}`}>
+        <Route path="/chat" element={
+          <div className={`main-layout ${showPanels ? layoutMode : 'single-col'}`}>
             {showPanels && (
-              <div className="info-panel-col">
+              <div className="info-panel-col panel-animate panel-info">
                 <InfoPanel
                   details={highlightDetails}
                   currentMovie={highlightMovies.length ? highlightMovies[highlightIndex] : null}
@@ -230,7 +272,7 @@ function App() {
               </div>
             )}
             {showPanels && (
-              <div className="left-panel poster-panel">
+              <div className={`left-panel poster-panel panel-animate panel-cover ${posterReady ? '' : 'poster-hidden'}`}>
                 <HighlightPanel
                   hidden={!showHighlight}
                   onToggle={toggleHighlight}
@@ -239,13 +281,14 @@ function App() {
                   loading={highlightLoading}
                   onPrev={handlePrevHighlight}
                   onNext={handleNextHighlight}
+                  onPosterReady={(ready) => setPosterReady(!!ready)}
                 />
               </div>
             )}
             <div className="right-panel chat-container">
               <div className="messages-container">
                 {messages.map((message, index) => (
-                  <ChatMessage key={index} message={message} />
+                  <ChatMessage key={index} message={message} onMovieSelect={handleMovieSelect} />
                 ))}
                 {isLoading && (
                   <div className="message bot-message">
@@ -257,12 +300,13 @@ function App() {
                 )}
                 <div ref={messagesEndRef} />
               </div>
-              <form className="input-form" onSubmit={handleSubmit}>
+              <form className="input-form" onSubmit={handleSend}>
                 <input
                   ref={inputRef}
                   type="text"
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
+                  onKeyDown={handleKeyPress}
                   placeholder="Tell me how you're feeling or ask for a movie..."
                   className="chat-input"
                   disabled={isLoading}
@@ -275,7 +319,7 @@ function App() {
             </div>
           </div>
         } />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<About />} />
       </Routes>
       <Footer />
     </div>

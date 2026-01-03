@@ -1,15 +1,14 @@
 .site-footer {
-  position: sticky;
-  bottom: 0;
   width: 100%;
-  background: #1a0a2b;
-  color: #ffffff;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: #cccccc;
+  border-top: none;
+  margin-top: 24px;
 }
 .footer-inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 14px 24px;
   text-align: center;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }

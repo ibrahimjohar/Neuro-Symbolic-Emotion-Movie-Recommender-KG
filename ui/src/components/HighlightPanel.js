@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './HighlightPanel.css';
 
-export default function HighlightPanel({ currentMovie, details, loading, onPrev, onNext, hidden, onToggle }) {
+export default function HighlightPanel({ currentMovie, details, loading, onPrev, onNext, hidden, onToggle, onPosterReady }) {
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const posterUrl = details?.poster_url;
+
+  useEffect(() => {
+    setImgLoaded(false);
+    if (!posterUrl) return;
+    const img = new Image();
+    img.onload = () => setImgLoaded(true);
+    img.src = posterUrl;
+  }, [posterUrl]);
+  useEffect(() => {
+    if (typeof onPosterReady === 'function') {
+      onPosterReady(posterUrl && imgLoaded);
+    }
+  }, [posterUrl, imgLoaded, onPosterReady]);
+
   return (
     <div className={`highlight-panel ${hidden ? 'collapsed' : ''}`}>
       {hidden ? (
         <div className="hp-collapsed-note">Panel hidden — toggle to show.</div>
       ) : (
         <div className="hp-content">
-          {loading ? (
-            <div className="hp-loading">Fetching poster…</div>
-          ) : details && details.poster_url ? (
-            <img className="hp-poster-large" src={details.poster_url} alt={`${details.title || 'Movie'} poster`} />
-          ) : (
-            <div className="hp-empty">Poster will appear after a recommendation.</div>
-          )}
+          {posterUrl && imgLoaded ? (
+            <img className="hp-poster-large poster-enter" src={posterUrl} alt={`${details?.title || 'Movie'} poster`} />
+          ) : null}
         </div>
       )}
     </div>

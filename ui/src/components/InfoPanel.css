@@ -1,31 +1,44 @@
 .info-panel {
-  background: #f5f3ff;
-  border: 1px solid rgba(106, 60, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 14px;
   padding: 18px 20px;
-  height: auto;
+  height: 100%;
   position: static;
-  overflow: visible;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1) 90%, rgba(0,0,0,0));
 }
 
 .info-title {
-  font-size: clamp(24px, 3vw, 42px);
+  font-size: clamp(22px, 2.6vw, 36px);
   font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #1a132b;
+  letter-spacing: 0.01em;
+  color: #ffffff;
   margin-bottom: 8px;
+  line-height: 1.15;
 }
+.info-title-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.info-year { color: #cccccc; font-weight: 600; }
 
 .info-sub {
   font-size: 16px;
   letter-spacing: 0.18em;
-  color: #2b194b;
+  color: #dddddd;
   margin-bottom: 10px;
 }
 
 .info-meta {
   font-size: 14px;
-  color: #4a3a6b;
+  color: #cccccc;
   margin-bottom: 8px;
 }
 
@@ -37,18 +50,22 @@
 }
 
 .info-genre-pill {
-  background: #e9e5ff;
-  color: #2b194b;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 12px;
-  border: 1px solid rgba(106, 60, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .info-overview {
   font-size: 14px;
   line-height: 1.6;
-  color: #2b194b;
+  color: #e6e6e6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {

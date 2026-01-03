@@ -2,7 +2,7 @@ import React from 'react';
 import MovieCard from './MovieCard';
 import './ChatMessage.css';
 
-const ChatMessage = ({ message }) => {
+const ChatMessage = ({ message, onMovieSelect }) => {
   const isBot = message.type === 'bot';
   const isError = message.isError;
 
@@ -29,7 +29,11 @@ const ChatMessage = ({ message }) => {
             </div>
             <div className="movies-grid">
               {message.movies.slice(0, 5).map((movie, index) => (
-                <MovieCard key={index} movie={movie} />
+                <MovieCard
+                  key={index}
+                  movie={movie}
+                  onClick={(m) => onMovieSelect && onMovieSelect(m, index, message.movies)}
+                />
               ))}
             </div>
           </div>

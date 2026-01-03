@@ -15,7 +15,7 @@ from nlp.emotion_mapper import map_ml_to_ontology_individuals, EMOTION_TO_ONTOLO
 from nlp.emotion_genre_map import EMOTION_TO_GENRES
 from nlp.followup_questions import FOLLOWUP_QUESTIONS
 from api.sparql_client import run_select
-from session_state import update_emotions, aggregated_emotions, is_confident_enough, get_pending_question, set_pending_question, clear_pending_question, get_slots, set_slot_value, filled_slot_count, get_seen_titles, add_seen_titles
+from session_state import update_emotions, aggregated_emotions, is_confident_enough, get_pending_question, set_pending_question, clear_pending_question, get_slots, set_slot_value, filled_slot_count, get_seen_titles, add_seen_titles, get_turns
 import json
 
 app = FastAPI()
@@ -43,6 +43,7 @@ class ChatRequest(BaseModel):
     user_id: Optional[str] = None
     text: str
     threshold: Optional[float] = None
+    rating_threshold: Optional[float] = None
     top_k: Optional[int] = None
     model_config = ConfigDict(extra='ignore')
 
@@ -55,7 +56,11 @@ class ChatResponse(BaseModel):
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return {
+        "status": "ok",
+        "tmdb_enabled": bool(TMDB_API_KEY),
+        "rating_enforced": bool(TMDB_API_KEY)
+    }
 
 @app.post("/chat")
 def chat(req: ChatRequest) -> ChatResponse:
@@ -102,11 +107,13 @@ def chat(req: ChatRequest) -> ChatResponse:
         # 4) Handle pending follow-up: interpret answer and proceed
         pending = get_pending_question(session_id)
         selected_individual = None
+        slot_captured_this_turn = False
         if pending:
             selected_value = interpret_followup_answer(pending, text, ml_scores)
             if selected_value:
                 # store the slot value and use it if it's an ontology individual
                 set_slot_value(session_id, pending, selected_value)
+                slot_captured_this_turn = True
                 if isinstance(selected_value, str) and selected_value.startswith("emo:"):
                     selected_individual = selected_value
             clear_pending_question(session_id)
@@ -116,25 +123,40 @@ def chat(req: ChatRequest) -> ChatResponse:
                 if det:
                     sid, val = det
                     set_slot_value(session_id, sid, val)
+                    slot_captured_this_turn = True
+        else:
+            # allow spontaneous answers without an active pending question
+            det = detect_any_slot_value(text, ml_scores)
+            if det:
+                sid, val = det
+                set_slot_value(session_id, sid, val)
+                slot_captured_this_turn = True
 
         # decide next slot if needed
         slots = get_slots(session_id)
         def _next_slot():
             # adaptive flow based on emotion_direction
             direction = slots.get("emotion_direction")
-            base_flow = ["emotion_direction", "desired_outcome", "pace_preference", "violence_tolerance", "era_preference", "content_sensitivity"]
-            intense_flow = ["emotion_direction", "intensity_style", "desired_outcome", "pace_preference", "violence_tolerance", "era_preference", "content_sensitivity"]
-            comfort_flow = ["emotion_direction", "comfort_style", "desired_outcome", "pace_preference", "violence_tolerance", "era_preference", "content_sensitivity"]
+            base_flow = ["emotion_direction", "desired_outcome", "usual_preference", "music_tone", "pace_preference", "violence_tolerance", "era_preference", "content_sensitivity"]
+            intense_flow = ["emotion_direction", "intensity_style", "desired_outcome", "usual_preference", "music_tone", "pace_preference", "violence_tolerance", "era_preference", "content_sensitivity"]
+            comfort_flow = ["emotion_direction", "comfort_style", "desired_outcome", "usual_preference", "music_tone", "pace_preference", "violence_tolerance", "era_preference", "content_sensitivity"]
             flow = intense_flow if direction == "intense" else comfort_flow if direction == "comforting" else base_flow
             for s in flow:
                 if s not in slots:
                     return s
             return None
 
-        progress_confident = is_confident_enough(session_id) or filled_slot_count(session_id) >= 2
+        required_slots_min = 5
+        min_turns = 2
+        progress_ready = (
+            get_turns(session_id) >= min_turns
+            and (slots.get("emotion_direction") is not None)
+            and (filled_slot_count(session_id) >= required_slots_min)
+            and slot_captured_this_turn
+        )
 
-        # 5) If we are not confident and no interpreted answer, ask next follow-up slot
-        if not selected_individual and not progress_confident:
+        # 5) If not ready, ask next follow-up slot
+        if not progress_ready:
             pending = get_pending_question(session_id)
             if not pending:
                 pending = _next_slot() or "emotion_direction"
@@ -231,6 +253,22 @@ def chat(req: ChatRequest) -> ChatResponse:
             for g in ["emo:Drama"]: weights[g] -= 0.8
         elif sensitivity == "avoid_violence":
             for g in ["emo:Action","emo:Crime","emo:War"]: weights[g] -= 0.9
+        # usual preference (baseline taste)
+        up = slots.get("usual_preference")
+        if up == "family_friendly":
+            for g in ["emo:Family","emo:Animation","emo:Comedy"]: weights[g] += 0.8
+        elif up == "action_packed":
+            for g in ["emo:Action","emo:Adventure","emo:Thriller"]: weights[g] += 0.8
+        elif up == "thoughtful":
+            for g in ["emo:Drama","emo:Mystery","emo:Documentary"]: weights[g] += 0.8
+        # musical score tone preference
+        mt = slots.get("music_tone")
+        if mt == "uplifting":
+            for g in ["emo:Musical","emo:Romance","emo:Family","emo:Comedy"]: weights[g] += 0.6
+        elif mt == "somber":
+            for g in ["emo:Drama","emo:FilmNoir"]: weights[g] += 0.6
+        elif mt == "intense":
+            for g in ["emo:Action","emo:Thriller"]: weights[g] += 0.6
 
         # helper: diversify candidates by era, avoid repeats, and apply comfort blocking
         def _diversify_candidates(candidates_list):
@@ -302,7 +340,7 @@ def chat(req: ChatRequest) -> ChatResponse:
         seed = EMOTION_TO_GENRES.get(selected_individual or "", [])
         for g in seed:
             if g in weights:
-                weights[g] += 0.5
+                weights[g] += 0.2
 
         # finalize ranked list
         ranked_genres = [g for g, w in sorted(weights.items(), key=lambda x: x[1], reverse=True) if w > 0]
@@ -437,6 +475,93 @@ def chat(req: ChatRequest) -> ChatResponse:
             except Exception as e:
                 logger.error(f"CSV fallback failed: {e}")
 
+        def _backfill_candidates(limit_count: int = 40):
+            try:
+                vblock = " ".join(f"({g})" for g in ranked_genres)
+                q = f"""
+                PREFIX emo: <http://www.semanticweb.org/ibrah/ontologies/2025/11/emotion-ontology#>
+                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+                PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                SELECT ?title ?year ?genre ?genreLabel WHERE {{
+                  {f"VALUES (?genre) {{ {vblock} }}" if vblock else ""}
+                  ?m a emo:Movie ; emo:hasTitle ?title ; emo:hasYear ?year {"; emo:belongsToGenre ?genre ." if vblock else "."}
+                  OPTIONAL {{ ?genre rdfs:label ?genreLabel }}
+                  {year_filter}
+                }} LIMIT {limit_count}
+                """
+                sres = run_select(q, timeout=15)
+                cmap = {}
+                for b in sres.get("results", {}).get("bindings", []):
+                    title = b.get("title", {}).get("value", "")
+                    year = b.get("year", {}).get("value", "")
+                    genre_uri = b.get("genre", {}).get("value", "")
+                    genre_label = b.get("genreLabel", {}).get("value", "")
+                    curie = None
+                    if genre_uri and genre_uri.startswith(ONTO_BASE):
+                        local = genre_uri[len(ONTO_BASE):]
+                        curie = f"emo:{local}"
+                    w = weights.get(curie, 0.0) if curie else 0.0
+                    e = cmap.setdefault(title, {"title": title, "year": year, "genre": genre_label, "score": 0.0, "best_w": -1.0, "genres_full": set()})
+                    e["score"] += w
+                    if genre_label:
+                        e["genres_full"].add(genre_label)
+                    if w > e["best_w"]:
+                        e["best_w"] = w
+                        e["genre"] = genre_label
+                cands = []
+                for v in cmap.values():
+                    if isinstance(v.get("genres_full"), set):
+                        v["genres_full"] = list(v["genres_full"])
+                    cands.append(v)
+                return _diversify_candidates(cands)
+            except Exception:
+                return []
+
+        def _rating_pass(title: str, year: Optional[str], threshold: float) -> bool:
+            if not TMDB_API_KEY:
+                return True
+            d = _fetch_tmdb_details(title, year)
+            try:
+                r = float(d.get("rating")) if (d and d.get("rating") is not None) else 0.0
+                return r >= threshold
+            except Exception:
+                return False
+
+        def _filter_and_backfill(mv_list: List[Dict[str, str]], k: int, threshold: float) -> List[Dict[str, str]]:
+            if not mv_list:
+                mv_list = []
+            used = set()
+            passed = []
+            for m in mv_list:
+                t = m.get("title", "")
+                y = m.get("year")
+                if t in used:
+                    continue
+                if _rating_pass(t, y, threshold):
+                    passed.append(m)
+                    used.add(t)
+                if len(passed) >= k:
+                    return passed[:k]
+            tries = 0
+            while len(passed) < k and tries < 5:
+                more = _backfill_candidates(60)
+                for m in more:
+                    t = m.get("title", "")
+                    y = m.get("year")
+                    if t in used:
+                        continue
+                    if _rating_pass(t, y, threshold):
+                        passed.append(m)
+                        used.add(t)
+                        if len(passed) >= k:
+                            break
+                tries += 1
+            return passed[:k]
+
+        rating_threshold = (req.rating_threshold if isinstance(req.rating_threshold, (int, float)) else None) or 7.0
+        kfinal = req.top_k or 5
+        movies = _filter_and_backfill(movies, kfinal, rating_threshold)
+
         clear_pending_question(session_id)
         try:
             add_seen_titles(session_id, [m.get("title", "") for m in movies])
@@ -484,7 +609,7 @@ def interpret_followup_answer(pending_id: str, user_text: str, ml_scores: Dict[s
     synonyms = {
         "emotion_direction": {
             "comforting": [
-                "comfort", "comforting", "light", "happy", "calm", "gentle",
+                "comfort", "comforting", "soft", "light", "happy", "calm", "gentle",
                 "soothing", "feel better", "uplifting", "positive", "warm",
                 "heartwarming", "wholesome"
             ],
@@ -527,6 +652,23 @@ def interpret_followup_answer(pending_id: str, user_text: str, ml_scores: Dict[s
             "strong": ["strong", "high", "ok with violence"],
         }
     }
+    # extended preferences
+    synonyms["usual_preference"] = {
+        "family_friendly": ["family friendly", "family‑friendly", "family", "kids", "wholesome"],
+        "action_packed": ["action packed", "action‑packed", "explosive", "high octane", "stunts"],
+        "thoughtful": ["thoughtful", "layered", "reflective", "serious drama", "slow burn"]
+    }
+    synonyms["music_tone"] = {
+        "uplifting": ["uplifting", "feel good", "cheerful", "bright"],
+        "somber": ["somber", "melancholy", "sad", "dark score"],
+        "intense": ["intense", "tense", "driving", "heavy"]
+    }
+    # first, interpret strictly for the pending slot
+    pending_opts = synonyms.get(pending_id, {})
+    for value, words in pending_opts.items():
+        if any(w in t for w in words):
+            return f"emo:{value}" if pending_id in {"desired_outcome","emotion_direction","cognitive_load"} else value
+    # if not found, allow cross-slot detection to capture implicit answers
     for slot_id, opts in synonyms.items():
         for value, words in opts.items():
             if any(w in t for w in words):
@@ -545,7 +687,7 @@ def detect_any_slot_value(user_text: str, ml_scores: Dict[str, float]) -> Option
     synonyms = {
         "emotion_direction": {
             "comforting": [
-                "comfort", "comforting", "light", "happy", "calm", "gentle",
+                "comfort", "comforting", "soft", "light", "happy", "calm", "gentle",
                 "soothing", "feel better", "uplifting", "positive", "warm",
                 "heartwarming", "wholesome"
             ],
@@ -587,6 +729,16 @@ def detect_any_slot_value(user_text: str, ml_scores: Dict[str, float]) -> Option
             "mild": ["mild", "some", "a little"],
             "strong": ["strong", "high", "ok with violence"],
         }
+    }
+    synonyms["usual_preference"] = {
+        "family_friendly": ["family friendly", "family‑friendly", "family", "kids", "wholesome"],
+        "action_packed": ["action packed", "action‑packed", "explosive", "high octane", "stunts"],
+        "thoughtful": ["thoughtful", "layered", "reflective", "serious drama", "slow burn"]
+    }
+    synonyms["music_tone"] = {
+        "uplifting": ["uplifting", "feel good", "cheerful", "bright"],
+        "somber": ["somber", "melancholy", "sad", "dark score"],
+        "intense": ["intense", "tense", "driving", "heavy"]
     }
     for slot_id, opts in synonyms.items():
         for value, words in opts.items():
@@ -713,8 +865,6 @@ def interpret_followup_answer(pending_id: str, user_text: str, ml_scores: Dict[s
     for value, words in opts.items():
         for w in words:
             if w in t:
-                if pending_id in {"emotion_direction", "desired_outcome"}:
-                    return f"emo:{value}"
                 return value
     return None
 

@@ -68,16 +68,7 @@
 .header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
-}
-
-.session-indicator {
-  font-size: 0.85rem;
-  color: #cccccc;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  padding: 6px 10px;
-  border-radius: 10px;
+  gap: 0;
 }
 
 .new-chat-button {
